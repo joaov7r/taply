@@ -473,8 +473,7 @@
         }
 
 
-        .modal.active
-        .modal-content {
+        .modal.active .modal-content {
 
             transform:
                 translateY(0)
@@ -608,28 +607,18 @@
 
             color: var(--muted);
 
-            line-height: 1.4;
+            line-height: 1.5;
 
             margin-bottom: 13px;
 
         }
 
 
-        .unit-actions {
-
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 8px;
-
-        }
-
-
         .unit-button {
 
-            min-height: 40px;
+            width: 100%;
+
+            min-height: 42px;
 
             border-radius: 10px;
 
@@ -639,7 +628,7 @@
 
             justify-content: center;
 
-            gap: 6px;
+            gap: 7px;
 
             text-decoration: none;
 
@@ -674,9 +663,9 @@
 
         .unit-button svg {
 
-            width: 15px;
+            width: 16px;
 
-            height: 15px;
+            height: 16px;
 
         }
 
@@ -804,9 +793,7 @@
 <div class="container">
 
 
-    <!-- =========================================
-         LOGO
-    ========================================= -->
+    <!-- LOGO -->
 
     <div class="logo">
 
@@ -818,9 +805,7 @@
     </div>
 
 
-    <!-- =========================================
-         DESCRIÇÃO
-    ========================================= -->
+    <!-- DESCRIÇÃO -->
 
     <p class="description">
 
@@ -831,9 +816,7 @@
     </p>
 
 
-    <!-- =========================================
-         ÍCONES
-    ========================================= -->
+    <!-- ÍCONES -->
 
     <div
         class="socials"
@@ -841,9 +824,7 @@
     ></div>
 
 
-    <!-- =========================================
-         LINKS
-    ========================================= -->
+    <!-- LINKS -->
 
     <div
         class="main-links"
@@ -851,9 +832,7 @@
     ></div>
 
 
-    <!-- =========================================
-         FOOTER
-    ========================================= -->
+    <!-- FOOTER -->
 
     <div class="footer">
 
@@ -869,19 +848,17 @@
 </div>
 
 
-<!-- =============================================
-     POPUP DAS UNIDADES
-============================================= -->
+<!-- =====================================================
+     POPUP DE LOCALIZAÇÃO
+===================================================== -->
 
 <div
     class="modal"
-    id="unitsModal"
+    id="locationModal"
 >
 
-    <div
-        class="modal-content"
-        id="modalContent"
-    >
+    <div class="modal-content">
+
 
         <div class="modal-header">
 
@@ -904,7 +881,7 @@
 
             <button
                 class="close-button"
-                id="closeModal"
+                data-close="locationModal"
                 aria-label="Fechar"
             >
 
@@ -917,8 +894,64 @@
 
         <div
             class="units"
-            id="units"
+            id="locationUnits"
         ></div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     POPUP DE AVALIAÇÃO
+===================================================== -->
+
+<div
+    class="modal"
+    id="reviewModal"
+>
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <div class="modal-title">
+
+                    Avalie no Google
+
+                </div>
+
+                <div class="modal-subtitle">
+
+                    Escolha a unidade que você visitou
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="close-button"
+                data-close="reviewModal"
+                aria-label="Fechar"
+            >
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="units"
+            id="reviewUnits"
+        ></div>
+
 
     </div>
 
@@ -939,10 +972,6 @@ const estabelecimento = {
         "Barbearia Dom Roger",
 
 
-    telefone:
-        "551198734659",
-
-
     whatsapp:
         "https://wa.me/551198734659",
 
@@ -958,12 +987,11 @@ const estabelecimento = {
     unidades: [
 
         {
-
             nome:
                 "Jardim da Glória",
 
             endereco:
-                "Cotia - SP",
+                "Av. João Paulo Ablas, 45 - Lj 26 - Jardim da Gloria, Cotia - SP, 06711-250",
 
             maps:
                 "https://share.google/I5p1aL1oMb2lvJbr3",
@@ -975,7 +1003,6 @@ const estabelecimento = {
 
 
         {
-
             nome:
                 "Matriz",
 
@@ -992,7 +1019,6 @@ const estabelecimento = {
 
 
         {
-
             nome:
                 "Vianna Village",
 
@@ -1009,7 +1035,6 @@ const estabelecimento = {
 
 
         {
-
             nome:
                 "Capuava",
 
@@ -1177,23 +1202,6 @@ const calendarIcon = `
 `;
 
 
-const phoneIcon = `
-
-<svg viewBox="0 0 24 24">
-
-    <path
-        d="M6.6 3.5l3 1.2 1.1 3.1-2 1.8c1 2.1 2.7 3.8 4.8 4.8l1.8-2 3.1 1.1 1.2 3c.2.5-.1 1.1-.6 1.3-1 .4-2.1.6-3.2.4-5.9-1-10.5-5.6-11.5-11.5-.2-1.1 0-2.2.4-3.2.2-.5.8-.7 1.3-.5Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linejoin="round"
-    />
-
-</svg>
-
-`;
-
-
 const starIcon = `
 
 <svg viewBox="0 0 24 24">
@@ -1225,22 +1233,69 @@ const mainLinks =
     );
 
 
-const unitsContainer =
+const locationUnits =
     document.getElementById(
-        "units"
+        "locationUnits"
     );
 
 
-const modal =
+const reviewUnits =
     document.getElementById(
-        "unitsModal"
+        "reviewUnits"
     );
 
 
-const closeModal =
+/* =====================================================
+   POPUPS
+===================================================== */
+
+
+const locationModal =
     document.getElementById(
-        "closeModal"
+        "locationModal"
     );
+
+
+const reviewModal =
+    document.getElementById(
+        "reviewModal"
+    );
+
+
+/* =====================================================
+   ABRIR MODAL
+===================================================== */
+
+
+function abrirModal(modal) {
+
+    modal.classList.add(
+        "active"
+    );
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
+}
+
+
+/* =====================================================
+   FECHAR MODAL
+===================================================== */
+
+
+function fecharModal(modal) {
+
+    modal.classList.remove(
+        "active"
+    );
+
+    document.body.classList.remove(
+        "modal-open"
+    );
+
+}
 
 
 /* =====================================================
@@ -1322,72 +1377,6 @@ socials.appendChild(
 );
 
 
-/* Localização */
-
-const locationButton =
-    document.createElement("button");
-
-
-locationButton.className =
-    "social-button";
-
-
-locationButton.type =
-    "button";
-
-
-locationButton.setAttribute(
-    "aria-label",
-    "Localização"
-);
-
-
-locationButton.innerHTML =
-    locationIcon;
-
-
-socials.appendChild(
-    locationButton
-);
-
-
-/* =====================================================
-   ABRIR LOCALIZAÇÃO
-===================================================== */
-
-
-locationButton.addEventListener(
-    "click",
-    () => {
-
-        /*
-         * Se tiver apenas uma unidade,
-         * abre o Maps diretamente.
-         *
-         * Se tiver várias,
-         * abre o popup.
-         */
-
-        if (
-            estabelecimento.unidades.length === 1
-        ) {
-
-            window.open(
-                estabelecimento.unidades[0].maps,
-                "_blank"
-            );
-
-            return;
-
-        }
-
-
-        abrirModal();
-
-    }
-);
-
-
 /* =====================================================
    LINKS PRINCIPAIS
 ===================================================== */
@@ -1415,6 +1404,23 @@ const links = [
     {
 
         icon:
+            locationIcon,
+
+        title:
+            "Localização",
+
+        subtitle:
+            "Encontre a unidade mais próxima",
+
+        action:
+            "location"
+
+    },
+
+
+    {
+
+        icon:
             starIcon,
 
         title:
@@ -1424,7 +1430,7 @@ const links = [
             "Deixe sua avaliação",
 
         action:
-            "google"
+            "review"
 
     }
 
@@ -1461,11 +1467,39 @@ links.forEach(
         }
 
 
-        if (link.action === "google") {
+        if (
+            link.action ===
+            "location"
+        ) {
 
             element.addEventListener(
                 "click",
-                abrirModal
+                () => {
+
+                    abrirModal(
+                        locationModal
+                    );
+
+                }
+            );
+
+        }
+
+
+        if (
+            link.action ===
+            "review"
+        ) {
+
+            element.addEventListener(
+                "click",
+                () => {
+
+                    abrirModal(
+                        reviewModal
+                    );
+
+                }
             );
 
         }
@@ -1516,7 +1550,7 @@ links.forEach(
 
 
 /* =====================================================
-   CRIAR UNIDADES
+   POPUP DE LOCALIZAÇÃO
 ===================================================== */
 
 
@@ -1550,56 +1584,23 @@ estabelecimento.unidades.forEach(
             </div>
 
 
-            <div class="unit-actions">
+            <a
+                class="unit-button"
+                href="${unidade.maps}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
 
+                ${locationIcon}
 
-                <a
-                    class="unit-button"
-                    href="tel:+${estabelecimento.telefone}"
-                >
+                Como chegar
 
-                    ${phoneIcon}
-
-                    Ligar
-
-                </a>
-
-
-                <a
-                    class="unit-button"
-                    href="${unidade.maps}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    ${locationIcon}
-
-                    Como chegar
-
-                </a>
-
-
-                <a
-                    class="unit-button review-button"
-                    href="${unidade.google}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="grid-column: 1 / -1;"
-                >
-
-                    ${starIcon}
-
-                    Avaliar no Google
-
-                </a>
-
-
-            </div>
+            </a>
 
         `;
 
 
-        unitsContainer.appendChild(
+        locationUnits.appendChild(
             element
         );
 
@@ -1608,55 +1609,118 @@ estabelecimento.unidades.forEach(
 
 
 /* =====================================================
-   MODAL
+   POPUP DE AVALIAÇÃO
 ===================================================== */
 
 
-function abrirModal() {
-
-    modal.classList.add(
-        "active"
-    );
-
-    document.body.classList.add(
-        "modal-open"
-    );
-
-}
+estabelecimento.unidades.forEach(
+    unidade => {
 
 
-function fecharModal() {
-
-    modal.classList.remove(
-        "active"
-    );
-
-    document.body.classList.remove(
-        "modal-open"
-    );
-
-}
+        const element =
+            document.createElement(
+                "div"
+            );
 
 
-/* Fechar no X */
+        element.className =
+            "unit";
 
-closeModal.addEventListener(
-    "click",
-    fecharModal
+
+        element.innerHTML = `
+
+            <div class="unit-name">
+
+                ${unidade.nome}
+
+            </div>
+
+
+            <div class="unit-address">
+
+                Escolha esta unidade para avaliar.
+
+            </div>
+
+
+            <a
+                class="unit-button review-button"
+                href="${unidade.google}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                ${starIcon}
+
+                Avaliar no Google
+
+            </a>
+
+        `;
+
+
+        reviewUnits.appendChild(
+            element
+        );
+
+    }
 );
 
 
-/* Fechar clicando fora */
+/* =====================================================
+   BOTÕES FECHAR
+===================================================== */
 
-modal.addEventListener(
+
+document
+    .querySelectorAll(
+        "[data-close]"
+    )
+    .forEach(
+        button => {
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+
+                    const modalId =
+                        button.getAttribute(
+                            "data-close"
+                        );
+
+
+                    fecharModal(
+                        document.getElementById(
+                            modalId
+                        )
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+/* =====================================================
+   FECHAR CLICANDO FORA
+===================================================== */
+
+
+locationModal.addEventListener(
     "click",
     event => {
 
         if (
-            event.target === modal
+            event.target ===
+            locationModal
         ) {
 
-            fecharModal();
+            fecharModal(
+                locationModal
+            );
 
         }
 
@@ -1664,17 +1728,46 @@ modal.addEventListener(
 );
 
 
-/* Fechar com ESC */
+reviewModal.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target ===
+            reviewModal
+        ) {
+
+            fecharModal(
+                reviewModal
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   FECHAR COM ESC
+===================================================== */
+
 
 document.addEventListener(
     "keydown",
     event => {
 
+
         if (
             event.key === "Escape"
         ) {
 
-            fecharModal();
+            fecharModal(
+                locationModal
+            );
+
+            fecharModal(
+                reviewModal
+            );
 
         }
 
