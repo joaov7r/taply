@@ -14,12 +14,10 @@
         :root {
             --primary: #050505;
             --secondary: #111111;
-            --accent: #ffffff;
             --text: #ffffff;
             --muted: #969696;
             --border: rgba(255,255,255,0.08);
         }
-
 
         * {
             margin: 0;
@@ -27,9 +25,7 @@
             box-sizing: border-box;
         }
 
-
         body {
-
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
@@ -52,65 +48,49 @@
             color: var(--text);
 
             display: flex;
-
             justify-content: center;
-
         }
 
-
         .container {
-
             width: 100%;
-
             max-width: 520px;
-
             min-height: 100vh;
 
             padding: 38px 22px 24px;
 
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
-
         }
 
-
-        /* LOGO */
+        /* =========================
+           LOGO
+        ========================= */
 
         .logo {
-
             width: 100%;
-
             max-width: 350px;
 
             margin-bottom: 15px;
 
             display: flex;
-
             justify-content: center;
-
         }
 
-
         .logo img {
-
             width: 100%;
-
             height: auto;
 
             display: block;
 
             object-fit: contain;
-
         }
 
-
-        /* DESCRIÇÃO */
+        /* =========================
+           DESCRIÇÃO
+        ========================= */
 
         .description {
-
             font-size: 13px;
 
             color: var(--muted);
@@ -124,191 +104,23 @@
             margin-bottom: 28px;
 
             letter-spacing: 0.2px;
-
         }
 
+        /* =========================
+           LINKS PRINCIPAIS
+        ========================= */
 
-        /* TÍTULO */
-
-        .section-title {
-
-            width: 100%;
-
-            text-align: left;
-
-            font-size: 12px;
-
-            font-weight: 600;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1.5px;
-
-            color: #777;
-
-            margin-bottom: 12px;
-
-        }
-
-
-        /* UNIDADES */
-
-        .units {
-
+        .main-links {
             width: 100%;
 
             display: flex;
-
             flex-direction: column;
 
             gap: 12px;
-
-            margin-bottom: 24px;
-
         }
-
-
-        .unit {
-
-            width: 100%;
-
-            padding: 16px;
-
-            border-radius: 16px;
-
-            background: var(--secondary);
-
-            border: 1px solid var(--border);
-
-            box-shadow:
-                0 6px 20px rgba(0,0,0,0.20);
-
-        }
-
-
-        .unit-name {
-
-            font-size: 16px;
-
-            font-weight: 600;
-
-            margin-bottom: 4px;
-
-        }
-
-
-        .unit-address {
-
-            font-size: 11px;
-
-            color: var(--muted);
-
-            margin-bottom: 14px;
-
-            line-height: 1.4;
-
-        }
-
-
-        .unit-actions {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 8px;
-
-        }
-
-
-        .unit-button {
-
-            min-height: 42px;
-
-            border-radius: 11px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 7px;
-
-            text-decoration: none;
-
-            font-size: 12px;
-
-            font-weight: 600;
-
-            color: #fff;
-
-            background: #1b1b1b;
-
-            border: 1px solid rgba(255,255,255,0.08);
-
-            transition: 0.18s ease;
-
-        }
-
-
-        .unit-button:hover {
-
-            background: #242424;
-
-            transform: translateY(-1px);
-
-        }
-
-
-        .unit-button svg {
-
-            width: 16px;
-
-            height: 16px;
-
-            display: block;
-
-        }
-
-
-        .review-button {
-
-            background: #ffffff;
-
-            color: #050505;
-
-            border: none;
-
-        }
-
-
-        .review-button:hover {
-
-            background: #eeeeee;
-
-        }
-
-
-        /* OUTROS LINKS */
-
-        .other-links {
-
-            width: 100%;
-
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 12px;
-
-        }
-
 
         .link {
-
             width: 100%;
-
             min-height: 62px;
 
             padding: 12px 16px;
@@ -324,7 +136,6 @@
             text-decoration: none;
 
             display: flex;
-
             align-items: center;
 
             position: relative;
@@ -334,25 +145,20 @@
             box-shadow:
                 0 6px 20px rgba(0,0,0,0.20);
 
+            cursor: pointer;
         }
 
-
         .link:hover {
-
             transform: translateY(-2px);
 
             background: #181818;
 
             border-color:
                 rgba(255,255,255,0.15);
-
         }
 
-
         .icon {
-
             width: 40px;
-
             height: 40px;
 
             border-radius: 12px;
@@ -361,31 +167,22 @@
                 rgba(255,255,255,0.07);
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
 
             margin-right: 14px;
 
             flex-shrink: 0;
-
         }
 
-
         .icon svg {
-
             width: 21px;
-
             height: 21px;
 
             display: block;
-
         }
 
-
         .link-content {
-
             display: flex;
 
             flex-direction: column;
@@ -393,104 +190,224 @@
             gap: 3px;
 
             text-align: left;
-
         }
 
-
         .link-title {
-
             font-size: 15px;
 
             font-weight: 600;
-
         }
 
-
         .link-subtitle {
-
             font-size: 11px;
 
             color: var(--muted);
-
         }
 
-
         .arrow {
-
             margin-left: auto;
 
             font-size: 22px;
 
             color: #666;
 
+            transition:
+                transform 0.25s ease;
         }
 
+        /* =========================
+           MENU UNIDADES
+        ========================= */
 
-        /* FOOTER */
+        .units-container {
+            width: 100%;
+
+            display: none;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+            margin-top: 12px;
+
+            margin-bottom: 12px;
+
+            animation:
+                fadeIn 0.25s ease;
+        }
+
+        .units-container.open {
+            display: flex;
+        }
+
+        .units-menu.open .arrow {
+            transform:
+                rotate(90deg);
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+        /* =========================
+           CARD DA UNIDADE
+        ========================= */
+
+        .unit {
+            width: 100%;
+
+            padding: 15px;
+
+            border-radius: 15px;
+
+            background: #0d0d0d;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            box-shadow:
+                0 4px 15px
+                rgba(0,0,0,0.15);
+        }
+
+        .unit-name {
+            font-size: 15px;
+
+            font-weight: 600;
+
+            margin-bottom: 4px;
+        }
+
+        .unit-address {
+            font-size: 11px;
+
+            color: var(--muted);
+
+            margin-bottom: 13px;
+
+            line-height: 1.4;
+        }
+
+        .unit-actions {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 8px;
+        }
+
+        .unit-button {
+            min-height: 40px;
+
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 7px;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            color: #fff;
+
+            background: #1b1b1b;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            transition:
+                0.18s ease;
+        }
+
+        .unit-button:hover {
+            background: #242424;
+
+            transform:
+                translateY(-1px);
+        }
+
+        .unit-button svg {
+            width: 15px;
+            height: 15px;
+
+            display: block;
+        }
+
+        .review-button {
+            background: #ffffff;
+
+            color: #050505;
+
+            border: none;
+        }
+
+        .review-button:hover {
+            background: #eeeeee;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         .footer {
-
             margin-top: auto;
 
             padding-top: 38px;
 
             text-align: center;
-
         }
 
-
         .powered {
-
             font-size: 11px;
 
             color: #666;
 
             letter-spacing: 0.4px;
-
         }
 
-
         .powered strong {
-
             color: #999;
 
             font-weight: 600;
-
         }
 
-
-        /* CELULAR */
+        /* =========================
+           CELULAR
+        ========================= */
 
         @media (max-width: 420px) {
 
             .container {
-
                 padding:
-                    30px
-                    17px
-                    22px;
-
+                    30px 17px 22px;
             }
-
 
             .logo {
-
                 max-width: 320px;
-
             }
-
 
             .unit {
-
-                padding: 15px;
-
-            }
-
-
-            .unit-actions {
-
-                grid-template-columns: 1fr 1fr;
-
+                padding: 14px;
             }
 
         }
@@ -506,7 +423,9 @@
 <div class="container">
 
 
-    <!-- LOGO -->
+    <!-- =========================
+         LOGO
+    ========================= -->
 
     <div class="logo">
 
@@ -518,7 +437,9 @@
     </div>
 
 
-    <!-- DESCRIÇÃO -->
+    <!-- =========================
+         DESCRIÇÃO
+    ========================= -->
 
     <p class="description">
 
@@ -529,39 +450,35 @@
     </p>
 
 
-    <!-- TÍTULO -->
-
-    <div class="section-title">
-
-        Escolha sua unidade
-
-    </div>
-
-
-    <!-- UNIDADES -->
+    <!-- =========================
+         LINKS
+    ========================= -->
 
     <div
-        class="units"
-        id="units"
+        class="main-links"
+        id="mainLinks"
     ></div>
 
 
-    <!-- OUTROS LINKS -->
+    <!-- =========================
+         UNIDADES
+    ========================= -->
 
     <div
-        class="other-links"
-        id="otherLinks"
+        class="units-container"
+        id="unitsContainer"
     ></div>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <div class="footer">
 
         <div class="powered">
 
-            Powered by
-            <strong>Taply</strong>
+            Powered by <strong>Taply</strong>
 
         </div>
 
@@ -574,108 +491,9 @@
 <script>
 
 
-/* ==================================================
-   CONFIGURAÇÃO
-   ================================================== */
-
-
-const estabelecimento = {
-
-
-    whatsapp:
-        "https://wa.me/551198734659",
-
-
-    instagram:
-        "https://www.instagram.com/dom.roger_/",
-
-
-    agendamento:
-        "https://cashbarber.com.br/barbeariadomroger/inicio",
-
-
-    /* ==============================================
-       UNIDADES
-       ============================================== */
-
-
-    unidades: [
-
-        {
-
-            nome:
-                "Jardim da Glória",
-
-            endereco:
-                "Cotia - SP",
-
-            maps:
-                "https://share.google/I5p1aL1oMb2lvJbr3",
-
-            google:
-                "https://www.google.com/search?q=Barbearia+Dom+Roger+Jardim+Da+Gl%C3%B3ria+Cotia"
-
-        },
-
-
-        {
-
-            nome:
-                "Matriz",
-
-            endereco:
-                "Av. Eid Mansur, 803 - Parque São George",
-
-            maps:
-                "https://share.google/pO2cxL504a6fTDSEa",
-
-            google:
-                "https://www.google.com/search?q=Barbearia+Dom+Roger+Matriz+Cotia"
-
-        },
-
-
-        {
-
-            nome:
-                "Vianna Village",
-
-            endereco:
-                "R. Mesopotâmia, 109 - Cotia",
-
-            maps:
-                "https://share.google/yslnNkrHiEY3EZdB3",
-
-            google:
-                "https://www.google.com/search?q=Barbearia+Dom+Roger+Vianna+Village+Cotia"
-
-        },
-
-
-        {
-
-            nome:
-                "Capuava",
-
-            endereco:
-                "Estr. do Capuava, 4421 - Cotia",
-
-            maps:
-                "https://share.google/3BkKdrDc8EXBG0CYs",
-
-            google:
-                "https://www.google.com/search?q=Barbearia+Dom+Roger+Capuava+Cotia"
-
-        }
-
-    ]
-
-};
-
-
-/* ==================================================
+/* =====================================================
    ÍCONES
-   ================================================== */
+===================================================== */
 
 
 const locationIcon = `
@@ -743,7 +561,7 @@ const instagramIcon = `
     <defs>
 
         <linearGradient
-            id="ig"
+            id="instagramGradient"
             x1="0%"
             y1="100%"
             x2="100%"
@@ -781,7 +599,7 @@ const instagramIcon = `
         width="40"
         height="40"
         rx="11"
-        fill="url(#ig)"
+        fill="url(#instagramGradient)"
     />
 
 
@@ -835,13 +653,288 @@ const calendarIcon = `
 `;
 
 
-/* ==================================================
-   CRIAÇÃO DAS UNIDADES
-   ================================================== */
+/* =====================================================
+   DADOS DO CLIENTE
+===================================================== */
+
+
+const estabelecimento = {
+
+    whatsapp:
+        "https://wa.me/551198734659",
+
+    instagram:
+        "https://www.instagram.com/dom.roger_/",
+
+    agendamento:
+        "https://cashbarber.com.br/barbeariadomroger/inicio",
+
+    unidades: [
+
+        {
+            nome:
+                "Jardim da Glória",
+
+            endereco:
+                "Cotia - SP",
+
+            maps:
+                "https://share.google/I5p1aL1oMb2lvJbr3",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Jardim+Da+Gl%C3%B3ria+Cotia"
+        },
+
+
+        {
+            nome:
+                "Matriz",
+
+            endereco:
+                "Av. Eid Mansur, 803 - Parque São George",
+
+            maps:
+                "https://share.google/pO2cxL504a6fTDSEa",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Matriz+Cotia"
+        },
+
+
+        {
+            nome:
+                "Vianna Village",
+
+            endereco:
+                "R. Mesopotâmia, 109 - Cotia",
+
+            maps:
+                "https://share.google/yslnNkrHiEY3EZdB3",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Vianna+Village+Cotia"
+        },
+
+
+        {
+            nome:
+                "Capuava",
+
+            endereco:
+                "Estr. do Capuava, 4421 - Cotia",
+
+            maps:
+                "https://share.google/3BkKdrDc8EXBG0CYs",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Capuava+Cotia"
+        }
+
+    ]
+
+};
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+
+const mainLinks =
+    document.getElementById(
+        "mainLinks"
+    );
 
 
 const unitsContainer =
-    document.getElementById("units");
+    document.getElementById(
+        "unitsContainer"
+    );
+
+
+/* =====================================================
+   BOTÃO DE UNIDADES
+===================================================== */
+
+
+const unitsMenu =
+    document.createElement("div");
+
+
+unitsMenu.className =
+    "link units-menu";
+
+
+unitsMenu.innerHTML = `
+
+    <div class="icon">
+
+        ${locationIcon}
+
+    </div>
+
+
+    <div class="link-content">
+
+        <div class="link-title">
+
+            Nossas unidades
+
+        </div>
+
+
+        <div class="link-subtitle">
+
+            Escolha a unidade mais próxima
+
+        </div>
+
+    </div>
+
+
+    <div class="arrow">
+
+        ›
+
+    </div>
+
+`;
+
+
+mainLinks.appendChild(
+    unitsMenu
+);
+
+
+/* =====================================================
+   OUTROS LINKS
+===================================================== */
+
+
+const links = [
+
+    {
+
+        icon:
+            whatsappIcon,
+
+        title:
+            "Fale conosco",
+
+        subtitle:
+            "Entre em contato pelo WhatsApp",
+
+        url:
+            estabelecimento.whatsapp
+
+    },
+
+
+    {
+
+        icon:
+            instagramIcon,
+
+        title:
+            "Siga no Instagram",
+
+        subtitle:
+            "@dom.roger_",
+
+        url:
+            estabelecimento.instagram
+
+    },
+
+
+    {
+
+        icon:
+            calendarIcon,
+
+        title:
+            "Agende seu horário",
+
+        subtitle:
+            "Escolha sua unidade e horário",
+
+        url:
+            estabelecimento.agendamento
+
+    }
+
+];
+
+
+links.forEach(link => {
+
+
+    const element =
+        document.createElement("a");
+
+
+    element.className =
+        "link";
+
+
+    element.href =
+        link.url;
+
+
+    element.target =
+        "_blank";
+
+
+    element.rel =
+        "noopener noreferrer";
+
+
+    element.innerHTML = `
+
+        <div class="icon">
+
+            ${link.icon}
+
+        </div>
+
+
+        <div class="link-content">
+
+            <div class="link-title">
+
+                ${link.title}
+
+            </div>
+
+
+            <div class="link-subtitle">
+
+                ${link.subtitle}
+
+            </div>
+
+        </div>
+
+
+        <div class="arrow">
+
+            ›
+
+        </div>
+
+    `;
+
+
+    mainLinks.appendChild(
+        element
+    );
+
+});
+
+
+/* =====================================================
+   CRIAR UNIDADES
+===================================================== */
 
 
 estabelecimento.unidades.forEach(
@@ -916,136 +1009,30 @@ estabelecimento.unidades.forEach(
 );
 
 
-/* ==================================================
-   OUTROS LINKS
-   ================================================== */
+/* =====================================================
+   ABRIR / FECHAR UNIDADES
+===================================================== */
 
 
-const otherLinks = [
-
-    {
-
-        icon:
-            whatsappIcon,
-
-        title:
-            "Fale conosco",
-
-        subtitle:
-            "Entre em contato pelo WhatsApp",
-
-        url:
-            estabelecimento.whatsapp
-
-    },
+unitsMenu.addEventListener(
+    "click",
+    () => {
 
 
-    {
-
-        icon:
-            instagramIcon,
-
-        title:
-            "Siga no Instagram",
-
-        subtitle:
-            "@dom.roger_",
-
-        url:
-            estabelecimento.instagram
-
-    },
+        const aberto =
+            unitsContainer.classList.toggle(
+                "open"
+            );
 
 
-    {
+        unitsMenu.classList.toggle(
+            "open",
+            aberto
+        );
 
-        icon:
-            calendarIcon,
-
-        title:
-            "Agende seu horário",
-
-        subtitle:
-            "Escolha sua unidade e horário",
-
-        url:
-            estabelecimento.agendamento
 
     }
-
-];
-
-
-const otherLinksContainer =
-    document.getElementById(
-        "otherLinks"
-    );
-
-
-otherLinks.forEach(link => {
-
-
-    const element =
-        document.createElement("a");
-
-
-    element.href =
-        link.url;
-
-
-    element.target =
-        "_blank";
-
-
-    element.rel =
-        "noopener noreferrer";
-
-
-    element.className =
-        "link";
-
-
-    element.innerHTML = `
-
-        <div class="icon">
-
-            ${link.icon}
-
-        </div>
-
-
-        <div class="link-content">
-
-            <div class="link-title">
-
-                ${link.title}
-
-            </div>
-
-
-            <div class="link-subtitle">
-
-                ${link.subtitle}
-
-            </div>
-
-        </div>
-
-
-        <div class="arrow">
-
-            ›
-
-        </div>
-
-    `;
-
-
-    otherLinksContainer.appendChild(
-        element
-    );
-
-});
+);
 
 
 </script>
