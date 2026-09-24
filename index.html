@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Barbearia Dom Roger</title>
 
     <style>
+
         :root {
             --primary: #050505;
             --secondary: #151515;
             --accent: #ffffff;
             --text: #ffffff;
             --muted: #a7a7a7;
-            --button-text: #ffffff;
         }
 
         * {
@@ -23,8 +26,15 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                         Roboto, Helvetica, Arial, sans-serif;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
 
             min-height: 100vh;
 
@@ -40,48 +50,68 @@
 
             display: flex;
             justify-content: center;
+
         }
+
+
+        /* CONTAINER */
 
         .container {
+
             width: 100%;
             max-width: 520px;
+
             min-height: 100vh;
 
-            padding: 35px 22px 25px;
+            padding:
+                35px
+                22px
+                25px;
 
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
         }
+
 
         /* LOGO */
 
-.logo {
-    width: 100%;
-    max-width: 360px;
-    height: auto;
+        .logo {
 
-    background: transparent;
+            width: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            max-width: 370px;
 
-    margin-bottom: 22px;
+            margin-bottom: 22px;
 
-    box-shadow: none;
-}
+            display: flex;
 
-.logo img {
-    width: 100%;
-    height: auto;
+            justify-content: center;
 
-    object-fit: contain;
-}
+        }
+
+        .logo img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            object-fit: contain;
+
+        }
+
+
         /* NOME */
 
         .business-name {
+
             font-size: 25px;
+
             font-weight: 700;
 
             text-align: center;
@@ -89,9 +119,14 @@
             letter-spacing: -0.5px;
 
             margin-bottom: 7px;
+
         }
 
+
+        /* DESCRIÇÃO */
+
         .description {
+
             font-size: 14px;
 
             color: var(--muted);
@@ -103,37 +138,49 @@
             max-width: 380px;
 
             margin-bottom: 27px;
+
         }
 
-        /* BOTÕES */
+
+        /* LINKS */
 
         .links {
+
             width: 100%;
 
             display: flex;
+
             flex-direction: column;
 
             gap: 13px;
+
         }
 
+
+        /* BOTÃO */
+
         .link {
+
             width: 100%;
 
-            min-height: 60px;
+            min-height: 62px;
 
-            padding: 14px 18px;
+            padding: 12px 17px;
 
             border-radius: 15px;
 
             background: var(--secondary);
 
-            border: 1px solid rgba(255,255,255,0.08);
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
 
             color: var(--text);
 
             text-decoration: none;
 
             display: flex;
+
             align-items: center;
 
             position: relative;
@@ -144,31 +191,51 @@
                 border 0.18s ease;
 
             box-shadow:
-                0 5px 18px rgba(0,0,0,0.18);
+                0 5px 18px
+                rgba(0,0,0,0.18);
+
         }
+
 
         .link:hover {
-            transform: translateY(-2px);
 
-            background: rgba(255,255,255,0.08);
+            transform:
+                translateY(-2px);
 
-            border-color: rgba(255,255,255,0.18);
+            background:
+                rgba(255,255,255,0.08);
+
+            border-color:
+                rgba(255,255,255,0.18);
+
         }
+
 
         .link:active {
-            transform: scale(0.98);
+
+            transform:
+                scale(0.98);
+
         }
 
+
+        /* ÍCONE */
+
         .icon {
-            width: 38px;
-            height: 38px;
+
+            width: 39px;
+
+            height: 39px;
 
             border-radius: 11px;
 
-            background: rgba(255,255,255,0.09);
+            background:
+                rgba(255,255,255,0.09);
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             font-size: 18px;
@@ -176,368 +243,545 @@
             margin-right: 13px;
 
             flex-shrink: 0;
+
         }
 
+
+        /* TEXTO DO BOTÃO */
+
         .link-content {
+
             display: flex;
+
             flex-direction: column;
 
             gap: 2px;
 
             text-align: left;
+
         }
+
 
         .link-title {
+
             font-size: 15px;
+
             font-weight: 600;
+
         }
 
+
         .link-subtitle {
+
             font-size: 11px;
 
             color: var(--muted);
+
         }
+
+
+        /* SETA */
 
         .arrow {
+
             margin-left: auto;
 
-            font-size: 20px;
+            font-size: 21px;
 
             color: var(--muted);
+
         }
 
-        /* DESTAQUE */
+
+        /* BOTÃO PRINCIPAL */
 
         .highlight {
+
             background: var(--accent);
 
             color: var(--primary);
 
             border: none;
+
         }
+
 
         .highlight .icon {
-            background: rgba(0,0,0,0.08);
+
+            background:
+                rgba(0,0,0,0.08);
+
         }
+
 
         .highlight .link-subtitle {
-            color: rgba(0,0,0,0.55);
+
+            color:
+                rgba(0,0,0,0.55);
+
         }
+
 
         .highlight .arrow {
-            color: rgba(0,0,0,0.5);
+
+            color:
+                rgba(0,0,0,0.5);
+
         }
 
+
         .highlight:hover {
-            background: var(--accent);
+
+            background:
+                var(--accent);
+
             opacity: 0.92;
+
         }
+
 
         /* FOOTER */
 
         .footer {
+
             margin-top: auto;
 
             padding-top: 35px;
 
             text-align: center;
+
         }
 
+
         .powered {
+
             font-size: 11px;
 
             color: #777;
 
             letter-spacing: 0.3px;
+
         }
 
+
         .powered strong {
+
             color: #aaa;
 
             font-weight: 600;
+
         }
 
-        /* RESPONSIVO */
+
+        /* CELULAR */
 
         @media (max-width: 420px) {
 
             .container {
+
                 padding-left: 17px;
+
                 padding-right: 17px;
+
             }
+
+
+            .logo {
+
+                max-width: 330px;
+
+            }
+
 
             .business-name {
+
                 font-size: 23px;
+
             }
 
+
             .link {
-                min-height: 58px;
+
+                min-height: 59px;
+
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-    <!-- LOGO -->
-    <div class="logo">
-    <img src="logo-dom-roger.png" alt="Barbearia Dom Roger">
-</div>
 
-    <!-- INFORMAÇÕES -->
-    <h1 class="business-name" id="businessName">
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <img
+            src="logo-dom-roger.png"
+            alt="Barbearia Dom Roger"
+        >
+
+    </div>
+
+
+    <!-- NOME -->
+
+    <h1
+        class="business-name"
+        id="businessName"
+    >
         Barbearia Dom Roger
     </h1>
 
-    <p class="description" id="description">
+
+    <!-- DESCRIÇÃO -->
+
+    <p
+        class="description"
+        id="description"
+    >
         Corte, barba e estilo. Atendimento com qualidade e personalidade.
     </p>
 
-    <!-- LINKS -->
-    <div class="links" id="links"></div>
+
+    <!-- BOTÕES -->
+
+    <div
+        class="links"
+        id="links"
+    ></div>
+
 
     <!-- FOOTER -->
+
     <div class="footer">
+
         <div class="powered">
-            Powered by <strong>Taply</strong>
+
+            Powered by
+            <strong>Taply</strong>
+
         </div>
+
     </div>
+
 
 </div>
 
 
 <script>
 
-    /* =====================================================
-       CONFIGURAÇÃO DO ESTABELECIMENTO
-       ===================================================== */
 
-    const estabelecimento = {
-
-        /* NOME */
-        nome: "Barbearia Dom Roger",
-
-        /* DESCRIÇÃO */
-        descricao:
-            "Corte, barba e estilo. Atendimento com qualidade e personalidade.",
-
-        /* CORES */
-
-        corPrincipal: "#050505",
-
-        corSecundaria: "#151515",
-
-        corDestaque: "#FFFFFF",
-
-        corTexto: "#FFFFFF",
-
-        corTextoSecundario: "#A7A7A7",
+/* =====================================================
+   CONFIGURAÇÃO DO ESTABELECIMENTO
+   ===================================================== */
 
 
-        /* LOGO */
-
-        /*
-           Se tiver uma imagem da logo, coloque aqui a URL.
-
-           Exemplo:
-
-           logo:
-           "https://meusite.com/logo.png"
-
-           Se deixar vazio, aparecerão as letras abaixo.
-        */
-
-        logo: "",
-
-        iniciais: "DR",
+const estabelecimento = {
 
 
-        /* LINKS */
-
-        google:
-            "https://www.google.com/",
-
-        whatsapp:
-            "https://wa.me/5511999999999",
-
-        instagram:
-            "https://instagram.com/",
-
-        maps:
-            "https://maps.google.com/",
-
-        servicos:
-            "#",
-
-        agendamento:
-            "#"
-    };
+    nome:
+        "Barbearia Dom Roger",
 
 
-    /* =====================================================
-       APLICAÇÃO DAS CORES
-       ===================================================== */
-
-    document.documentElement.style.setProperty(
-        "--primary",
-        estabelecimento.corPrincipal
-    );
-
-    document.documentElement.style.setProperty(
-        "--secondary",
-        estabelecimento.corSecundaria
-    );
-
-    document.documentElement.style.setProperty(
-        "--accent",
-        estabelecimento.corDestaque
-    );
-
-    document.documentElement.style.setProperty(
-        "--text",
-        estabelecimento.corTexto
-    );
-
-    document.documentElement.style.setProperty(
-        "--muted",
-        estabelecimento.corTextoSecundario
-    );
+    descricao:
+        "Corte, barba e estilo. Atendimento com qualidade e personalidade.",
 
 
-    /* =====================================================
-       INFORMAÇÕES
-       ===================================================== */
+    /* CORES */
 
-    document.getElementById("businessName").textContent =
-        estabelecimento.nome;
+    corPrincipal:
+        "#050505",
 
-    document.getElementById("description").textContent =
-        estabelecimento.descricao;
+    corSecundaria:
+        "#151515",
+
+    corDestaque:
+        "#FFFFFF",
+
+    corTexto:
+        "#FFFFFF",
+
+    corTextoSecundario:
+        "#A7A7A7",
 
 
-    /* =====================================================
-       LOGO
-       ===================================================== */
+    /* LINKS */
 
-    const logoElement = document.getElementById("logo");
+    google:
+        "https://www.google.com/",
 
-    if (estabelecimento.logo !== "") {
+    whatsapp:
+        "https://wa.me/5511999999999",
 
-        logoElement.innerHTML =
-            `<img src="${estabelecimento.logo}" alt="Logo">`;
+    instagram:
+        "https://instagram.com/",
 
-    } else {
+    maps:
+        "https://maps.google.com/",
 
-        logoElement.textContent =
-            estabelecimento.iniciais;
+    servicos:
+        "#",
+
+    agendamento:
+        "#"
+
+};
+
+
+/* =====================================================
+   CORES
+   ===================================================== */
+
+
+document.documentElement.style.setProperty(
+    "--primary",
+    estabelecimento.corPrincipal
+);
+
+
+document.documentElement.style.setProperty(
+    "--secondary",
+    estabelecimento.corSecundaria
+);
+
+
+document.documentElement.style.setProperty(
+    "--accent",
+    estabelecimento.corDestaque
+);
+
+
+document.documentElement.style.setProperty(
+    "--text",
+    estabelecimento.corTexto
+);
+
+
+document.documentElement.style.setProperty(
+    "--muted",
+    estabelecimento.corTextoSecundario
+);
+
+
+/* =====================================================
+   INFORMAÇÕES
+   ===================================================== */
+
+
+document.getElementById(
+    "businessName"
+).textContent =
+    estabelecimento.nome;
+
+
+document.getElementById(
+    "description"
+).textContent =
+    estabelecimento.descricao;
+
+
+/* =====================================================
+   BOTÕES
+   ===================================================== */
+
+
+const links = [
+
+
+    {
+
+        icon: "⭐",
+
+        title:
+            "Avalie no Google",
+
+        subtitle:
+            "Sua opinião é muito importante",
+
+        url:
+            estabelecimento.google,
+
+        highlight:
+            true
+
+    },
+
+
+    {
+
+        icon: "💬",
+
+        title:
+            "Fale pelo WhatsApp",
+
+        subtitle:
+            "Entre em contato conosco",
+
+        url:
+            estabelecimento.whatsapp
+
+    },
+
+
+    {
+
+        icon: "📸",
+
+        title:
+            "Instagram",
+
+        subtitle:
+            "Acompanhe nosso trabalho",
+
+        url:
+            estabelecimento.instagram
+
+    },
+
+
+    {
+
+        icon: "📍",
+
+        title:
+            "Como chegar",
+
+        subtitle:
+            "Veja nossa localização",
+
+        url:
+            estabelecimento.maps
+
+    },
+
+
+    {
+
+        icon: "✂️",
+
+        title:
+            "Serviços",
+
+        subtitle:
+            "Conheça nossos serviços",
+
+        url:
+            estabelecimento.servicos
+
+    },
+
+
+    {
+
+        icon: "📅",
+
+        title:
+            "Agende seu horário",
+
+        subtitle:
+            "Reserve seu atendimento",
+
+        url:
+            estabelecimento.agendamento
 
     }
 
 
-    /* =====================================================
-       BOTÕES
-       ===================================================== */
-
-    const links = [
-
-        {
-            icon: "⭐",
-            title: "Avalie no Google",
-            subtitle: "Sua opinião é muito importante",
-            url: estabelecimento.google,
-            highlight: true
-        },
-
-        {
-            icon: "💬",
-            title: "Fale pelo WhatsApp",
-            subtitle: "Entre em contato conosco",
-            url: estabelecimento.whatsapp
-        },
-
-        {
-            icon: "📸",
-            title: "Instagram",
-            subtitle: "Acompanhe nosso trabalho",
-            url: estabelecimento.instagram
-        },
-
-        {
-            icon: "📍",
-            title: "Como chegar",
-            subtitle: "Veja nossa localização",
-            url: estabelecimento.maps
-        },
-
-        {
-            icon: "✂️",
-            title: "Serviços",
-            subtitle: "Conheça nossos serviços",
-            url: estabelecimento.servicos
-        },
-
-        {
-            icon: "📅",
-            title: "Agende seu horário",
-            subtitle: "Reserve seu atendimento",
-            url: estabelecimento.agendamento
-        }
-
-    ];
+];
 
 
-    const linksContainer =
-        document.getElementById("links");
+/* =====================================================
+   CRIAÇÃO DOS BOTÕES
+   ===================================================== */
 
 
-    links.forEach(link => {
-
-        const element =
-            document.createElement("a");
-
-        element.href = link.url;
-
-        element.target = "_blank";
-
-        element.rel = "noopener noreferrer";
-
-        element.className =
-            "link" +
-            (link.highlight ? " highlight" : "");
+const linksContainer =
+    document.getElementById("links");
 
 
-        element.innerHTML = `
+links.forEach(link => {
 
-            <div class="icon">
-                ${link.icon}
-            </div>
 
-            <div class="link-content">
+    const element =
+        document.createElement("a");
 
-                <div class="link-title">
-                    ${link.title}
-                </div>
 
-                <div class="link-subtitle">
-                    ${link.subtitle}
-                </div>
+    element.href =
+        link.url;
+
+
+    element.target =
+        "_blank";
+
+
+    element.rel =
+        "noopener noreferrer";
+
+
+    element.className =
+        "link" +
+        (
+            link.highlight
+                ? " highlight"
+                : ""
+        );
+
+
+    element.innerHTML = `
+
+        <div class="icon">
+
+            ${link.icon}
+
+        </div>
+
+
+        <div class="link-content">
+
+            <div class="link-title">
+
+                ${link.title}
 
             </div>
 
-            <div class="arrow">
-                ›
+
+            <div class="link-subtitle">
+
+                ${link.subtitle}
+
             </div>
 
-        `;
+        </div>
 
 
-        linksContainer.appendChild(element);
+        <div class="arrow">
 
-    });
+            ›
+
+        </div>
+
+    `;
+
+
+    linksContainer.appendChild(
+        element
+    );
+
+
+});
+
 
 </script>
 
+
 </body>
+
 </html>
