@@ -52,18 +52,16 @@
             color: var(--text);
 
             display: flex;
+
             justify-content: center;
 
         }
 
 
-        /* ==========================================
-           CONTAINER
-           ========================================== */
-
         .container {
 
             width: 100%;
+
             max-width: 520px;
 
             min-height: 100vh;
@@ -71,24 +69,26 @@
             padding: 38px 22px 24px;
 
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
 
         }
 
 
-        /* ==========================================
-           LOGO
-           ========================================== */
+        /* LOGO */
 
         .logo {
 
             width: 100%;
+
             max-width: 350px;
 
-            margin-bottom: 18px;
+            margin-bottom: 15px;
 
             display: flex;
+
             justify-content: center;
 
         }
@@ -97,6 +97,7 @@
         .logo img {
 
             width: 100%;
+
             height: auto;
 
             display: block;
@@ -106,9 +107,7 @@
         }
 
 
-        /* ==========================================
-           DESCRIÇÃO
-           ========================================== */
+        /* DESCRIÇÃO */
 
         .description {
 
@@ -122,18 +121,178 @@
 
             max-width: 350px;
 
-            margin-bottom: 30px;
+            margin-bottom: 28px;
 
             letter-spacing: 0.2px;
 
         }
 
 
-        /* ==========================================
-           LINKS
-           ========================================== */
+        /* TÍTULO */
 
-        .links {
+        .section-title {
+
+            width: 100%;
+
+            text-align: left;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            color: #777;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* UNIDADES */
+
+        .units {
+
+            width: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .unit {
+
+            width: 100%;
+
+            padding: 16px;
+
+            border-radius: 16px;
+
+            background: var(--secondary);
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                0 6px 20px rgba(0,0,0,0.20);
+
+        }
+
+
+        .unit-name {
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .unit-address {
+
+            font-size: 11px;
+
+            color: var(--muted);
+
+            margin-bottom: 14px;
+
+            line-height: 1.4;
+
+        }
+
+
+        .unit-actions {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 8px;
+
+        }
+
+
+        .unit-button {
+
+            min-height: 42px;
+
+            border-radius: 11px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            color: #fff;
+
+            background: #1b1b1b;
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition: 0.18s ease;
+
+        }
+
+
+        .unit-button:hover {
+
+            background: #242424;
+
+            transform: translateY(-1px);
+
+        }
+
+
+        .unit-button svg {
+
+            width: 16px;
+
+            height: 16px;
+
+            display: block;
+
+        }
+
+
+        .review-button {
+
+            background: #ffffff;
+
+            color: #050505;
+
+            border: none;
+
+        }
+
+
+        .review-button:hover {
+
+            background: #eeeeee;
+
+        }
+
+
+        /* OUTROS LINKS */
+
+        .other-links {
 
             width: 100%;
 
@@ -146,15 +305,11 @@
         }
 
 
-        /* ==========================================
-           BOTÃO
-           ========================================== */
-
         .link {
 
             width: 100%;
 
-            min-height: 64px;
+            min-height: 62px;
 
             padding: 12px 16px;
 
@@ -174,10 +329,7 @@
 
             position: relative;
 
-            transition:
-                transform 0.18s ease,
-                background 0.18s ease,
-                border-color 0.18s ease;
+            transition: 0.18s ease;
 
             box-shadow:
                 0 6px 20px rgba(0,0,0,0.20);
@@ -197,20 +349,10 @@
         }
 
 
-        .link:active {
-
-            transform: scale(0.985);
-
-        }
-
-
-        /* ==========================================
-           ÍCONE
-           ========================================== */
-
         .icon {
 
             width: 40px;
+
             height: 40px;
 
             border-radius: 12px;
@@ -221,6 +363,7 @@
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             margin-right: 14px;
@@ -230,29 +373,16 @@
         }
 
 
-       .icon svg {
+        .icon svg {
+
             width: 21px;
+
             height: 21px;
 
             display: block;
 
-
-            stroke: currentColor;
-
-            fill: none;
-
-            stroke-width: 1.8;
-
-            stroke-linecap: round;
-
-            stroke-linejoin: round;
-
         }
 
-
-        /* ==========================================
-           TEXTO
-           ========================================== */
 
         .link-content {
 
@@ -273,8 +403,6 @@
 
             font-weight: 600;
 
-            letter-spacing: -0.1px;
-
         }
 
 
@@ -287,91 +415,18 @@
         }
 
 
-        /* ==========================================
-           SETA
-           ========================================== */
-
         .arrow {
 
             margin-left: auto;
 
             font-size: 22px;
 
-            font-weight: 300;
-
             color: #666;
 
-            padding-left: 10px;
-
         }
 
 
-        /* ==========================================
-           GOOGLE
-           ========================================== */
-
-        .google {
-
-            background: #ffffff;
-
-            color: #050505;
-
-            border: none;
-
-        }
-
-
-        .google .icon {
-
-            background: #eeeeee;
-
-        }
-
-
-        .google .link-subtitle {
-
-            color: #666666;
-
-        }
-
-
-        .google .arrow {
-
-            color: #777777;
-
-        }
-
-
-        .google:hover {
-
-            background: #f2f2f2;
-
-        }
-
-
-        /* ==========================================
-           WHATSAPP
-           ========================================== */
-
-        .whatsapp {
-
-            border-color:
-                rgba(255,255,255,0.12);
-
-        }
-
-
-        .whatsapp .icon {
-
-            background:
-                rgba(255,255,255,0.11);
-
-        }
-
-
-        /* ==========================================
-           FOOTER
-           ========================================== */
+        /* FOOTER */
 
         .footer {
 
@@ -404,9 +459,7 @@
         }
 
 
-        /* ==========================================
-           CELULAR
-           ========================================== */
+        /* CELULAR */
 
         @media (max-width: 420px) {
 
@@ -424,23 +477,19 @@
 
                 max-width: 320px;
 
-                margin-bottom: 15px;
+            }
+
+
+            .unit {
+
+                padding: 15px;
 
             }
 
 
-            .description {
+            .unit-actions {
 
-                font-size: 12px;
-
-                margin-bottom: 25px;
-
-            }
-
-
-            .link {
-
-                min-height: 61px;
+                grid-template-columns: 1fr 1fr;
 
             }
 
@@ -457,9 +506,7 @@
 <div class="container">
 
 
-    <!-- ==========================================
-         LOGO
-         ========================================== -->
+    <!-- LOGO -->
 
     <div class="logo">
 
@@ -471,32 +518,43 @@
     </div>
 
 
-    <!-- ==========================================
-         DESCRIÇÃO
-         ========================================== -->
+    <!-- DESCRIÇÃO -->
 
-    <p
-        class="description"
-        id="description"
-    >
+    <p class="description">
+
         Corte • Barba • Estilo<br>
+
         Atendimento com qualidade e personalidade.
+
     </p>
 
 
-    <!-- ==========================================
-         BOTÕES
-         ========================================== -->
+    <!-- TÍTULO -->
+
+    <div class="section-title">
+
+        Escolha sua unidade
+
+    </div>
+
+
+    <!-- UNIDADES -->
 
     <div
-        class="links"
-        id="links"
+        class="units"
+        id="units"
     ></div>
 
 
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
+    <!-- OUTROS LINKS -->
+
+    <div
+        class="other-links"
+        id="otherLinks"
+    ></div>
+
+
+    <!-- FOOTER -->
 
     <div class="footer">
 
@@ -517,102 +575,102 @@
 
 
 /* ==================================================
-   CONFIGURAÇÃO DO ESTABELECIMENTO
+   CONFIGURAÇÃO
    ================================================== */
 
 
 const estabelecimento = {
 
 
-    descricao:
-        "Corte • Barba • Estilo<br>Atendimento com qualidade e personalidade.",
-
-
-    /* CORES */
-
-    corPrincipal:
-        "#050505",
-
-    corSecundaria:
-        "#111111",
-
-    corDestaque:
-        "#FFFFFF",
-
-    corTexto:
-        "#FFFFFF",
-
-    corTextoSecundario:
-        "#969696",
-
-
-    /* LINKS */
-
-    google:
-        "https://www.google.com/",
-
     whatsapp:
-        "https://wa.me/5511999999999",
+        "https://wa.me/551198734659",
+
 
     instagram:
-        "https://instagram.com/",
+        "https://www.instagram.com/dom.roger_/",
 
-    maps:
-        "https://maps.google.com/",
-
-    servicos:
-        "#",
 
     agendamento:
-        "#"
+        "https://cashbarber.com.br/barbeariadomroger/inicio",
+
+
+    /* ==============================================
+       UNIDADES
+       ============================================== */
+
+
+    unidades: [
+
+        {
+
+            nome:
+                "Jardim da Glória",
+
+            endereco:
+                "Cotia - SP",
+
+            maps:
+                "https://share.google/I5p1aL1oMb2lvJbr3",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Jardim+Da+Gl%C3%B3ria+Cotia"
+
+        },
+
+
+        {
+
+            nome:
+                "Matriz",
+
+            endereco:
+                "Av. Eid Mansur, 803 - Parque São George",
+
+            maps:
+                "https://share.google/pO2cxL504a6fTDSEa",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Matriz+Cotia"
+
+        },
+
+
+        {
+
+            nome:
+                "Vianna Village",
+
+            endereco:
+                "R. Mesopotâmia, 109 - Cotia",
+
+            maps:
+                "https://share.google/yslnNkrHiEY3EZdB3",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Vianna+Village+Cotia"
+
+        },
+
+
+        {
+
+            nome:
+                "Capuava",
+
+            endereco:
+                "Estr. do Capuava, 4421 - Cotia",
+
+            maps:
+                "https://share.google/3BkKdrDc8EXBG0CYs",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Capuava+Cotia"
+
+        }
+
+    ]
 
 };
-
-
-/* ==================================================
-   APLICA CORES
-   ================================================== */
-
-
-document.documentElement.style.setProperty(
-    "--primary",
-    estabelecimento.corPrincipal
-);
-
-
-document.documentElement.style.setProperty(
-    "--secondary",
-    estabelecimento.corSecundaria
-);
-
-
-document.documentElement.style.setProperty(
-    "--accent",
-    estabelecimento.corDestaque
-);
-
-
-document.documentElement.style.setProperty(
-    "--text",
-    estabelecimento.corTexto
-);
-
-
-document.documentElement.style.setProperty(
-    "--muted",
-    estabelecimento.corTextoSecundario
-);
-
-
-/* ==================================================
-   DESCRIÇÃO
-   ================================================== */
-
-
-document.getElementById(
-    "description"
-).innerHTML =
-    estabelecimento.descricao;
 
 
 /* ==================================================
@@ -620,185 +678,255 @@ document.getElementById(
    ================================================== */
 
 
-const icons = {
+const locationIcon = `
 
-    google: `
-        <svg viewBox="0 0 48 48">
-            <path fill="#4285F4"
-                d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.6 2.3 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.3l7.8 6.1C12.3 13.9 17.7 9.5 24 9.5z"/>
-            <path fill="#34A853"
-                d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.5 3-2.3 5.5-4.8 7.2l7.7 6c4.5-4.1 6.9-10.1 6.9-17.7z"/>
-            <path fill="#FBBC05"
-                d="M10.4 28.6c-1-3-1-6.2 0-9.2l-7.8-6.1c-3.5 6.9-3.5 15.1 0 22l7.8-6.7z"/>
-            <path fill="#EA4335"
-                d="M24 48c6.2 0 11.4-2 15.3-5.8l-7.7-6c-2.1 1.4-4.7 2.2-7.6 2.2-6.3 0-11.7-4.3-13.6-10.1l-7.8 6.1C6.5 42.6 14.6 48 24 48z"/>
-        </svg>
-    `,
+<svg viewBox="0 0 24 24">
 
-    whatsapp: `
-        <svg viewBox="0 0 48 48">
-            <path fill="#25D366"
-                d="M24 4C13 4 4 12.9 4 23.8c0 3.5.9 6.9 2.7 9.9L4 44l10.6-2.7c2.9 1.6 6.1 2.4 9.4 2.4 11 0 20-8.9 20-19.9S35 4 24 4z"/>
-            <path fill="#fff"
-                d="M34.5 28.7c-.5-.3-3.1-1.5-3.6-1.7-.5-.2-.8-.3-1.2.3-.3.5-1.3 1.7-1.6 2.1-.3.4-.6.4-1.1.1-.5-.3-2.1-.8-4-2.5-1.5-1.3-2.5-2.9-2.8-3.4-.3-.5 0-.8.2-1.1.2-.2.5-.6.8-.9.3-.3.3-.5.5-.9.2-.4.1-.7 0-1-.1-.3-1.2-2.9-1.7-4-.5-1.1-1-1-1.3-1h-1.1c-.4 0-1 .1-1.5.7-.5.5-2 1.9-2 4.6s2 5.3 2.3 5.7c.3.4 3.9 6 9.4 8.4 1.3.6 2.4 1 3.2 1.2 1.3.4 2.5.3 3.4.2 1-.1 3.1-1.3 3.5-2.5.4-1.2.4-2.2.3-2.5-.1-.3-.5-.4-1-.7z"/>
-        </svg>
-    `,
+    <path
+        d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+    />
 
-    instagram: `
-        <svg viewBox="0 0 48 48">
-            <defs>
-                <linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#FFDD55"/>
-                    <stop offset="30%" stop-color="#FF543E"/>
-                    <stop offset="60%" stop-color="#C837AB"/>
-                    <stop offset="100%" stop-color="#405DE6"/>
-                </linearGradient>
-            </defs>
+    <circle
+        cx="12"
+        cy="9"
+        r="2.2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+    />
 
-            <rect
-                x="4"
-                y="4"
-                width="40"
-                height="40"
-                rx="11"
-                fill="url(#ig)"
+</svg>
+
+`;
+
+
+const starIcon = `
+
+<svg viewBox="0 0 24 24">
+
+    <path
+        d="M12 3.5l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.9l6.1-.9L12 3.5z"
+        fill="currentColor"
+    />
+
+</svg>
+
+`;
+
+
+const whatsappIcon = `
+
+<svg viewBox="0 0 48 48">
+
+    <path
+        fill="#25D366"
+        d="M24 4C13 4 4 12.9 4 23.8c0 3.5.9 6.9 2.7 9.9L4 44l10.6-2.7c2.9 1.6 6.1 2.4 9.4 2.4 11 0 20-8.9 20-19.9S35 4 24 4z"
+    />
+
+    <path
+        fill="#fff"
+        d="M34.5 28.7c-.5-.3-3.1-1.5-3.6-1.7-.5-.2-.8-.3-1.2.3-.3.5-1.3 1.7-1.6 2.1-.3.4-.6.4-1.1.1-.5-.3-2.1-.8-4-2.5-1.5-1.3-2.5-2.9-2.8-3.4-.3-.5 0-.8.2-1.1.2-.2.5-.6.8-.9.3-.3.3-.5.5-.9.2-.4.1-.7 0-1-.1-.3-1.2-2.9-1.7-4-.5-1.1-1-1-1.3-1h-1.1c-.4 0-1 .1-1.5.7-.5.5-2 1.9-2 4.6s2 5.3 2.3 5.7c.3.4 3.9 6 9.4 8.4 1.3.6 2.4 1 3.2 1.2 1.3.4 2.5.3 3.4.2 1-.1 3.1-1.3 3.5-2.5.4-1.2.4-2.2.3-2.5-.1-.3-.5-.4-1-.7z"
+    />
+
+</svg>
+
+`;
+
+
+const instagramIcon = `
+
+<svg viewBox="0 0 48 48">
+
+    <defs>
+
+        <linearGradient
+            id="ig"
+            x1="0%"
+            y1="100%"
+            x2="100%"
+            y2="0%"
+        >
+
+            <stop
+                offset="0%"
+                stop-color="#FFDD55"
             />
 
-            <circle
-                cx="24"
-                cy="24"
-                r="9"
-                fill="none"
-                stroke="#fff"
-                stroke-width="3"
+            <stop
+                offset="30%"
+                stop-color="#FF543E"
             />
 
-            <circle
-                cx="34"
-                cy="14"
-                r="2.2"
-                fill="#fff"
-            />
-        </svg>
-    `,
-
-    maps: `
-        <svg viewBox="0 0 48 48">
-            <path
-                fill="#EA4335"
-                d="M24 4C15.2 4 8 11.2 8 20c0 11.8 16 24 16 24s16-12.2 16-24C40 11.2 32.8 4 24 4z"
+            <stop
+                offset="60%"
+                stop-color="#C837AB"
             />
 
-            <circle
-                cx="24"
-                cy="20"
-                r="6"
-                fill="#fff"
-            />
-        </svg>
-    `,
-
-    services: `
-        <svg viewBox="0 0 48 48">
-
-            <path
-                d="M10 10L38 38"
-                stroke="currentColor"
-                stroke-width="4"
-                stroke-linecap="round"
+            <stop
+                offset="100%"
+                stop-color="#405DE6"
             />
 
-            <path
-                d="M38 10L10 38"
-                stroke="currentColor"
-                stroke-width="4"
-                stroke-linecap="round"
-            />
+        </linearGradient>
 
-            <circle
-                cx="10"
-                cy="10"
-                r="4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-            />
+    </defs>
 
-            <circle
-                cx="38"
-                cy="10"
-                r="4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-            />
 
-        </svg>
-    `,
+    <rect
+        x="4"
+        y="4"
+        width="40"
+        height="40"
+        rx="11"
+        fill="url(#ig)"
+    />
 
-    calendar: `
-        <svg viewBox="0 0 48 48">
 
-            <rect
-                x="7"
-                y="10"
-                width="34"
-                height="31"
-                rx="4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-            />
+    <circle
+        cx="24"
+        cy="24"
+        r="9"
+        fill="none"
+        stroke="#fff"
+        stroke-width="3"
+    />
 
-            <path
-                d="M7 18h34"
-                stroke="currentColor"
-                stroke-width="3"
-            />
 
-            <path
-                d="M16 5v9M32 5v9"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-            />
+    <circle
+        cx="34"
+        cy="14"
+        r="2.2"
+        fill="#fff"
+    />
 
-        </svg>
-    `
-};
+</svg>
+
+`;
+
+
+const calendarIcon = `
+
+<svg viewBox="0 0 24 24">
+
+    <rect
+        x="3"
+        y="5"
+        width="18"
+        height="16"
+        rx="2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+    />
+
+    <path
+        d="M16 3v4M8 3v4M3 10h18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+    />
+
+</svg>
+
+`;
+
 
 /* ==================================================
-   BOTÕES
+   CRIAÇÃO DAS UNIDADES
    ================================================== */
 
 
-const links = [
+const unitsContainer =
+    document.getElementById("units");
 
+
+estabelecimento.unidades.forEach(
+    unidade => {
+
+
+        const element =
+            document.createElement("div");
+
+
+        element.className =
+            "unit";
+
+
+        element.innerHTML = `
+
+            <div class="unit-name">
+
+                ${unidade.nome}
+
+            </div>
+
+
+            <div class="unit-address">
+
+                ${unidade.endereco}
+
+            </div>
+
+
+            <div class="unit-actions">
+
+
+                <a
+                    class="unit-button"
+                    href="${unidade.maps}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    ${locationIcon}
+
+                    Como chegar
+
+                </a>
+
+
+                <a
+                    class="unit-button review-button"
+                    href="${unidade.google}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    ${starIcon}
+
+                    Avaliar no Google
+
+                </a>
+
+
+            </div>
+
+        `;
+
+
+        unitsContainer.appendChild(
+            element
+        );
+
+    }
+);
+
+
+/* ==================================================
+   OUTROS LINKS
+   ================================================== */
+
+
+const otherLinks = [
 
     {
 
         icon:
-            icons.google,
-
-        title:
-            "Avalie no Google",
-
-        subtitle:
-            "Sua opinião é muito importante",
-
-        url:
-            estabelecimento.google,
-
-        className:
-            "google"
-
-    },
-
-
-    {
-
-        icon:
-            icons.whatsapp,
+            whatsappIcon,
 
         title:
             "Fale conosco",
@@ -807,10 +935,7 @@ const links = [
             "Entre em contato pelo WhatsApp",
 
         url:
-            estabelecimento.whatsapp,
-
-        className:
-            "whatsapp"
+            estabelecimento.whatsapp
 
     },
 
@@ -818,13 +943,13 @@ const links = [
     {
 
         icon:
-            icons.instagram,
+            instagramIcon,
 
         title:
             "Siga no Instagram",
 
         subtitle:
-            "Acompanhe nosso trabalho",
+            "@dom.roger_",
 
         url:
             estabelecimento.instagram
@@ -835,67 +960,29 @@ const links = [
     {
 
         icon:
-            icons.maps,
-
-        title:
-            "Como chegar",
-
-        subtitle:
-            "Veja nossa localização",
-
-        url:
-            estabelecimento.maps
-
-    },
-
-
-    {
-
-        icon:
-            icons.services,
-
-        title:
-            "Nossos serviços",
-
-        subtitle:
-            "Conheça nossos serviços",
-
-        url:
-            estabelecimento.servicos
-
-    },
-
-
-    {
-
-        icon:
-            icons.calendar,
+            calendarIcon,
 
         title:
             "Agende seu horário",
 
         subtitle:
-            "Reserve seu atendimento",
+            "Escolha sua unidade e horário",
 
         url:
             estabelecimento.agendamento
 
     }
 
-
 ];
 
 
-/* ==================================================
-   CRIAÇÃO DOS BOTÕES
-   ================================================== */
+const otherLinksContainer =
+    document.getElementById(
+        "otherLinks"
+    );
 
 
-const linksContainer =
-    document.getElementById("links");
-
-
-links.forEach(link => {
+otherLinks.forEach(link => {
 
 
     const element =
@@ -915,12 +1002,7 @@ links.forEach(link => {
 
 
     element.className =
-        "link" +
-        (
-            link.className
-                ? " " + link.className
-                : ""
-        );
+        "link";
 
 
     element.innerHTML = `
@@ -959,10 +1041,9 @@ links.forEach(link => {
     `;
 
 
-    linksContainer.appendChild(
+    otherLinksContainer.appendChild(
         element
     );
-
 
 });
 
