@@ -13,11 +13,12 @@
 
         :root {
             --primary: #050505;
-            --secondary: #111111;
+            --secondary: rgba(20,20,20,0.78);
             --text: #ffffff;
-            --muted: #969696;
-            --border: rgba(255,255,255,0.08);
+            --muted: #a0a0a0;
+            --border: rgba(255,255,255,0.10);
         }
+
 
         * {
             margin: 0;
@@ -25,7 +26,9 @@
             box-sizing: border-box;
         }
 
+
         body {
+
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
@@ -38,220 +41,407 @@
             min-height: 100vh;
 
             background:
+
                 radial-gradient(
-                    circle at top,
-                    rgba(255,255,255,0.07),
-                    transparent 38%
+                    circle at 50% -10%,
+                    rgba(255,255,255,0.10),
+                    transparent 35%
                 ),
+
+                radial-gradient(
+                    circle at 0% 100%,
+                    rgba(255,255,255,0.04),
+                    transparent 35%
+                ),
+
                 var(--primary);
 
             color: var(--text);
 
             display: flex;
+
             justify-content: center;
+
         }
+
 
         body.modal-open {
             overflow: hidden;
         }
 
+
+        /* =========================================
+           CONTAINER
+        ========================================= */
+
         .container {
+
             width: 100%;
+
             max-width: 520px;
+
             min-height: 100vh;
 
-            padding: 38px 22px 24px;
+            padding:
+                42px 22px 25px;
 
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
+
         }
 
-        /* =========================
+
+        /* =========================================
            LOGO
-        ========================= */
+        ========================================= */
 
         .logo {
+
             width: 100%;
+
             max-width: 350px;
-            margin-bottom: 15px;
+
+            margin-bottom: 13px;
 
             display: flex;
+
             justify-content: center;
+
         }
+
 
         .logo img {
+
             width: 100%;
+
             height: auto;
+
             display: block;
+
             object-fit: contain;
+
         }
 
-        /* =========================
+
+        /* =========================================
            DESCRIÇÃO
-        ========================= */
+        ========================================= */
 
         .description {
+
             font-size: 13px;
+
             color: var(--muted);
+
             text-align: center;
+
             line-height: 1.6;
 
-            max-width: 350px;
+            max-width: 360px;
+
+            margin-bottom: 20px;
+
+            letter-spacing: 0.2px;
+
+        }
+
+
+        /* =========================================
+           ÍCONES SOCIAIS
+        ========================================= */
+
+        .socials {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
 
             margin-bottom: 28px;
 
-            letter-spacing: 0.2px;
         }
 
-        /* =========================
-           LINKS
-        ========================= */
+
+        .social-button {
+
+            width: 52px;
+
+            height: 52px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            color: white;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            backdrop-filter: blur(10px);
+
+            -webkit-backdrop-filter: blur(10px);
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+
+        }
+
+
+        .social-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            background:
+                rgba(255,255,255,0.11);
+
+            border-color:
+                rgba(255,255,255,0.20);
+
+        }
+
+
+        .social-button svg {
+
+            width: 24px;
+
+            height: 24px;
+
+        }
+
+
+        /* =========================================
+           LINKS PRINCIPAIS
+        ========================================= */
 
         .main-links {
+
             width: 100%;
 
             display: flex;
+
             flex-direction: column;
 
             gap: 12px;
+
         }
 
-        .link {
+
+        .main-link {
+
             width: 100%;
-            min-height: 62px;
 
-            padding: 12px 16px;
+            min-height: 68px;
 
-            border-radius: 16px;
+            padding: 12px 17px;
 
-            background: var(--secondary);
+            border-radius: 17px;
 
-            border: 1px solid var(--border);
+            background:
+                rgba(20,20,20,0.78);
 
-            color: var(--text);
+            border:
+                1px solid
+                var(--border);
+
+            backdrop-filter: blur(12px);
+
+            -webkit-backdrop-filter: blur(12px);
+
+            color: white;
 
             text-decoration: none;
 
             display: flex;
+
             align-items: center;
 
             position: relative;
 
-            transition: 0.18s ease;
+            cursor: pointer;
 
             box-shadow:
-                0 6px 20px rgba(0,0,0,0.20);
+                0 8px 28px
+                rgba(0,0,0,0.22);
 
-            cursor: pointer;
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease;
+
         }
 
-        .link:hover {
-            transform: translateY(-2px);
 
-            background: #181818;
+        .main-link:hover {
+
+            transform:
+                translateY(-2px);
+
+            background:
+                rgba(30,30,30,0.88);
 
             border-color:
-                rgba(255,255,255,0.15);
+                rgba(255,255,255,0.16);
+
         }
 
-        .icon {
-            width: 40px;
-            height: 40px;
 
-            border-radius: 12px;
+        .main-icon {
+
+            width: 43px;
+
+            height: 43px;
+
+            border-radius: 13px;
 
             background:
                 rgba(255,255,255,0.07);
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             margin-right: 14px;
 
             flex-shrink: 0;
+
         }
 
-        .icon svg {
-            width: 21px;
-            height: 21px;
-            display: block;
+
+        .main-icon svg {
+
+            width: 22px;
+
+            height: 22px;
+
         }
 
-        .link-content {
+
+        .main-content {
+
             display: flex;
+
             flex-direction: column;
 
             gap: 3px;
 
             text-align: left;
+
         }
 
-        .link-title {
+
+        .main-title {
+
             font-size: 15px;
+
             font-weight: 600;
+
         }
 
-        .link-subtitle {
+
+        .main-subtitle {
+
             font-size: 11px;
+
             color: var(--muted);
+
         }
 
-        .arrow {
+
+        .main-arrow {
+
             margin-left: auto;
 
-            font-size: 22px;
+            font-size: 23px;
 
             color: #666;
+
         }
 
-        /* =========================
+
+        /* =========================================
            MODAL
-        ========================= */
+        ========================================= */
 
         .modal {
+
             position: fixed;
 
             inset: 0;
 
             width: 100%;
+
             height: 100%;
 
             background:
                 rgba(0,0,0,0.78);
 
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter:
+                blur(10px);
+
+            -webkit-backdrop-filter:
+                blur(10px);
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
-            padding: 20px;
+            padding: 18px;
 
             z-index: 999;
 
             opacity: 0;
+
             visibility: hidden;
 
             transition:
                 opacity 0.25s ease,
                 visibility 0.25s ease;
+
         }
+
 
         .modal.active {
+
             opacity: 1;
+
             visibility: visible;
+
         }
 
-        /* =========================
-           CAIXA DO POPUP
-        ========================= */
+
+        /* =========================================
+           MODAL CONTENT
+        ========================================= */
 
         .modal-content {
+
             width: 100%;
+
             max-width: 480px;
 
             max-height: 90vh;
@@ -263,127 +453,157 @@
 
             border:
                 1px solid
-                rgba(255,255,255,0.10);
+                rgba(255,255,255,0.11);
 
-            border-radius: 22px;
+            border-radius: 23px;
 
             padding: 22px;
 
             box-shadow:
-                0 25px 80px
-                rgba(0,0,0,0.55);
+                0 30px 90px
+                rgba(0,0,0,0.60);
 
             transform:
                 translateY(20px)
-                scale(0.97);
+                scale(0.96);
 
             transition:
                 transform 0.25s ease;
+
         }
 
-        .modal.active .modal-content {
+
+        .modal.active
+        .modal-content {
+
             transform:
                 translateY(0)
                 scale(1);
+
         }
 
-        /* =========================
-           CABEÇALHO POPUP
-        ========================= */
+
+        /* =========================================
+           MODAL HEADER
+        ========================================= */
 
         .modal-header {
+
             display: flex;
 
             align-items: center;
+
             justify-content: space-between;
 
             margin-bottom: 20px;
+
         }
+
 
         .modal-title {
+
             font-size: 20px;
+
             font-weight: 700;
+
         }
 
+
         .modal-subtitle {
+
             font-size: 11px;
 
             color: var(--muted);
 
             margin-top: 4px;
+
         }
 
+
         .close-button {
+
             width: 36px;
+
             height: 36px;
 
             border-radius: 50%;
 
-            border: 1px solid
+            border:
+                1px solid
                 rgba(255,255,255,0.08);
 
-            background: #191919;
+            background: #1a1a1a;
 
-            color: #fff;
+            color: white;
 
             font-size: 22px;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             cursor: pointer;
 
             transition: 0.18s ease;
+
         }
+
 
         .close-button:hover {
+
             background: #292929;
+
         }
 
-        /* =========================
-           LISTA DE UNIDADES
-        ========================= */
+
+        /* =========================================
+           UNIDADES
+        ========================================= */
 
         .units {
+
             display: flex;
 
             flex-direction: column;
 
-            gap: 10px;
+            gap: 11px;
+
         }
 
+
         .unit {
+
             width: 100%;
 
             padding: 15px;
 
-            border-radius: 15px;
+            border-radius: 16px;
 
-            background: #151515;
+            background:
+                #161616;
 
             border:
                 1px solid
                 rgba(255,255,255,0.07);
 
-            transition: 0.18s ease;
         }
 
-        .unit:hover {
-            border-color:
-                rgba(255,255,255,0.14);
-
-            background: #181818;
-        }
 
         .unit-name {
+
             font-size: 15px;
+
             font-weight: 600;
 
             margin-bottom: 4px;
+
         }
 
+
         .unit-address {
+
             font-size: 11px;
 
             color: var(--muted);
@@ -391,18 +611,24 @@
             line-height: 1.4;
 
             margin-bottom: 13px;
+
         }
 
+
         .unit-actions {
+
             display: grid;
 
             grid-template-columns:
                 1fr 1fr;
 
             gap: 8px;
+
         }
 
+
         .unit-button {
+
             min-height: 40px;
 
             border-radius: 10px;
@@ -410,9 +636,10 @@
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
-            gap: 7px;
+            gap: 6px;
 
             text-decoration: none;
 
@@ -420,102 +647,148 @@
 
             font-weight: 600;
 
-            color: #fff;
+            color: white;
 
-            background: #202020;
+            background:
+                #202020;
 
             border:
                 1px solid
                 rgba(255,255,255,0.08);
 
             transition: 0.18s ease;
+
         }
 
+
         .unit-button:hover {
-            background: #292929;
+
+            background:
+                #292929;
 
             transform:
                 translateY(-1px);
+
         }
+
 
         .unit-button svg {
+
             width: 15px;
+
             height: 15px;
 
-            display: block;
         }
+
 
         .review-button {
-            background: #ffffff;
 
-            color: #050505;
+            background:
+                white;
+
+            color:
+                #050505;
 
             border: none;
+
         }
+
 
         .review-button:hover {
-            background: #eeeeee;
+
+            background:
+                #eeeeee;
+
         }
 
-        /* =========================
+
+        /* =========================================
            FOOTER
-        ========================= */
+        ========================================= */
 
         .footer {
+
             margin-top: auto;
 
-            padding-top: 38px;
+            padding-top: 40px;
 
             text-align: center;
+
         }
 
+
         .powered {
+
             font-size: 11px;
 
             color: #666;
 
             letter-spacing: 0.4px;
+
         }
 
+
         .powered strong {
+
             color: #999;
 
             font-weight: 600;
+
         }
 
-        /* =========================
-           CELULAR
-        ========================= */
+
+        /* =========================================
+           MOBILE
+        ========================================= */
 
         @media (max-width: 420px) {
 
             .container {
+
                 padding:
-                    30px 17px 22px;
+                    32px 17px 22px;
+
             }
+
 
             .logo {
+
                 max-width: 320px;
+
             }
+
+
+            .social-button {
+
+                width: 50px;
+
+                height: 50px;
+
+            }
+
 
             .modal {
+
                 padding: 14px;
+
             }
 
+
             .modal-content {
+
                 padding: 18px;
 
                 border-radius: 20px;
 
                 max-height: 92vh;
+
             }
+
 
             .modal-title {
-                font-size: 18px;
-            }
 
-            .unit {
-                padding: 14px;
+                font-size: 18px;
+
             }
 
         }
@@ -531,7 +804,9 @@
 <div class="container">
 
 
-    <!-- LOGO -->
+    <!-- =========================================
+         LOGO
+    ========================================= -->
 
     <div class="logo">
 
@@ -543,7 +818,9 @@
     </div>
 
 
-    <!-- DESCRIÇÃO -->
+    <!-- =========================================
+         DESCRIÇÃO
+    ========================================= -->
 
     <p class="description">
 
@@ -554,7 +831,19 @@
     </p>
 
 
-    <!-- LINKS PRINCIPAIS -->
+    <!-- =========================================
+         ÍCONES
+    ========================================= -->
+
+    <div
+        class="socials"
+        id="socials"
+    ></div>
+
+
+    <!-- =========================================
+         LINKS
+    ========================================= -->
 
     <div
         class="main-links"
@@ -562,7 +851,9 @@
     ></div>
 
 
-    <!-- FOOTER -->
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
 
     <div class="footer">
 
@@ -578,25 +869,21 @@
 </div>
 
 
-<!-- =====================================================
-     MODAL DAS UNIDADES
-===================================================== -->
-
+<!-- =============================================
+     POPUP DAS UNIDADES
+============================================= -->
 
 <div
     class="modal"
     id="unitsModal"
 >
 
-
     <div
         class="modal-content"
         id="modalContent"
     >
 
-
         <div class="modal-header">
-
 
             <div>
 
@@ -625,7 +912,6 @@
 
             </button>
 
-
         </div>
 
 
@@ -633,7 +919,6 @@
             class="units"
             id="units"
         ></div>
-
 
     </div>
 
@@ -644,47 +929,109 @@
 
 
 /* =====================================================
-   ÍCONES
+   CONFIGURAÇÃO DO CLIENTE
 ===================================================== */
 
 
-const locationIcon = `
+const estabelecimento = {
 
-<svg viewBox="0 0 24 24">
-
-    <path
-        d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.8"
-    />
-
-    <circle
-        cx="12"
-        cy="9"
-        r="2.2"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.8"
-    />
-
-</svg>
-
-`;
+    nome:
+        "Barbearia Dom Roger",
 
 
-const starIcon = `
+    telefone:
+        "551198734659",
 
-<svg viewBox="0 0 24 24">
 
-    <path
-        d="M12 3.5l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.9l6.1-.9L12 3.5z"
-        fill="currentColor"
-    />
+    whatsapp:
+        "https://wa.me/551198734659",
 
-</svg>
 
-`;
+    instagram:
+        "https://www.instagram.com/dom.roger_/",
+
+
+    agendamento:
+        "https://cashbarber.com.br/barbeariadomroger/inicio",
+
+
+    unidades: [
+
+        {
+
+            nome:
+                "Jardim da Glória",
+
+            endereco:
+                "Cotia - SP",
+
+            maps:
+                "https://share.google/I5p1aL1oMb2lvJbr3",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Jardim+Da+Gl%C3%B3ria+Cotia"
+
+        },
+
+
+        {
+
+            nome:
+                "Matriz",
+
+            endereco:
+                "Av. Eid Mansur, 803 - Parque São George",
+
+            maps:
+                "https://share.google/pO2cxL504a6fTDSEa",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Matriz+Cotia"
+
+        },
+
+
+        {
+
+            nome:
+                "Vianna Village",
+
+            endereco:
+                "R. Mesopotâmia, 109 - Cotia",
+
+            maps:
+                "https://share.google/yslnNkrHiEY3EZdB3",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Vianna+Village+Cotia"
+
+        },
+
+
+        {
+
+            nome:
+                "Capuava",
+
+            endereco:
+                "Estr. do Capuava, 4421 - Cotia",
+
+            maps:
+                "https://share.google/3BkKdrDc8EXBG0CYs",
+
+            google:
+                "https://www.google.com/search?q=Barbearia+Dom+Roger+Capuava+Cotia"
+
+        }
+
+    ]
+
+};
+
+
+/* =====================================================
+   ÍCONES
+===================================================== */
 
 
 const whatsappIcon = `
@@ -777,6 +1124,31 @@ const instagramIcon = `
 `;
 
 
+const locationIcon = `
+
+<svg viewBox="0 0 24 24">
+
+    <path
+        d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+    />
+
+    <circle
+        cx="12"
+        cy="9"
+        r="2.2"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+    />
+
+</svg>
+
+`;
+
+
 const calendarIcon = `
 
 <svg viewBox="0 0 24 24">
@@ -805,88 +1177,46 @@ const calendarIcon = `
 `;
 
 
-/* =====================================================
-   DADOS DO CLIENTE
-===================================================== */
+const phoneIcon = `
+
+<svg viewBox="0 0 24 24">
+
+    <path
+        d="M6.6 3.5l3 1.2 1.1 3.1-2 1.8c1 2.1 2.7 3.8 4.8 4.8l1.8-2 3.1 1.1 1.2 3c.2.5-.1 1.1-.6 1.3-1 .4-2.1.6-3.2.4-5.9-1-10.5-5.6-11.5-11.5-.2-1.1 0-2.2.4-3.2.2-.5.8-.7 1.3-.5Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linejoin="round"
+    />
+
+</svg>
+
+`;
 
 
-const estabelecimento = {
+const starIcon = `
 
-    whatsapp:
-        "https://wa.me/551198734659",
+<svg viewBox="0 0 24 24">
 
-    instagram:
-        "https://www.instagram.com/dom.roger_/",
+    <path
+        d="M12 3.5l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.9l6.1-.9L12 3.5z"
+        fill="currentColor"
+    />
 
-    agendamento:
-        "https://cashbarber.com.br/barbeariadomroger/inicio",
+</svg>
 
-    unidades: [
-
-        {
-            nome:
-                "Jardim da Glória",
-
-            endereco:
-                "Cotia - SP",
-
-            maps:
-                "https://share.google/I5p1aL1oMb2lvJbr3",
-
-            google:
-                "https://www.google.com/search?q=Barbearia+Dom+Roger+Jardim+Da+Gl%C3%B3ria+Cotia"
-        },
-
-        {
-            nome:
-                "Matriz",
-
-            endereco:
-                "Av. Eid Mansur, 803 - Parque São George",
-
-            maps:
-                "https://share.google/pO2cxL504a6fTDSEa",
-
-            google:
-                "https://www.google.com/search?q=Barbearia+Dom+Roger+Matriz+Cotia"
-        },
-
-        {
-            nome:
-                "Vianna Village",
-
-            endereco:
-                "R. Mesopotâmia, 109 - Cotia",
-
-            maps:
-                "https://share.google/yslnNkrHiEY3EZdB3",
-
-            google:
-                "https://www.google.com/search?q=Barbearia+Dom+Roger+Vianna+Village+Cotia"
-        },
-
-        {
-            nome:
-                "Capuava",
-
-            endereco:
-                "Estr. do Capuava, 4421 - Cotia",
-
-            maps:
-                "https://share.google/3BkKdrDc8EXBG0CYs",
-
-            google:
-                "https://www.google.com/search?q=Barbearia+Dom+Roger+Capuava+Cotia"
-        }
-
-    ]
-
-};
+`;
 
 
 /* =====================================================
    ELEMENTOS
 ===================================================== */
+
+
+const socials =
+    document.getElementById(
+        "socials"
+    );
 
 
 const mainLinks =
@@ -914,116 +1244,159 @@ const closeModal =
 
 
 /* =====================================================
-   BOTÃO NOSSAS UNIDADES
+   ÍCONES SOCIAIS
 ===================================================== */
 
 
-const unitsMenu =
-    document.createElement("div");
+/* WhatsApp */
+
+const whatsappButton =
+    document.createElement("a");
 
 
-unitsMenu.className =
-    "link";
+whatsappButton.className =
+    "social-button";
 
 
-unitsMenu.innerHTML = `
-
-    <div class="icon">
-
-        ${locationIcon}
-
-    </div>
+whatsappButton.href =
+    estabelecimento.whatsapp;
 
 
-    <div class="link-content">
-
-        <div class="link-title">
-
-            Nossas unidades
-
-        </div>
+whatsappButton.target =
+    "_blank";
 
 
-        <div class="link-subtitle">
-
-            Escolha a unidade mais próxima
-
-        </div>
-
-    </div>
+whatsappButton.rel =
+    "noopener noreferrer";
 
 
-    <div class="arrow">
-
-        ›
-
-    </div>
-
-`;
+whatsappButton.setAttribute(
+    "aria-label",
+    "WhatsApp"
+);
 
 
-mainLinks.appendChild(
-    unitsMenu
+whatsappButton.innerHTML =
+    whatsappIcon;
+
+
+socials.appendChild(
+    whatsappButton
+);
+
+
+/* Instagram */
+
+const instagramButton =
+    document.createElement("a");
+
+
+instagramButton.className =
+    "social-button";
+
+
+instagramButton.href =
+    estabelecimento.instagram;
+
+
+instagramButton.target =
+    "_blank";
+
+
+instagramButton.rel =
+    "noopener noreferrer";
+
+
+instagramButton.setAttribute(
+    "aria-label",
+    "Instagram"
+);
+
+
+instagramButton.innerHTML =
+    instagramIcon;
+
+
+socials.appendChild(
+    instagramButton
+);
+
+
+/* Localização */
+
+const locationButton =
+    document.createElement("button");
+
+
+locationButton.className =
+    "social-button";
+
+
+locationButton.type =
+    "button";
+
+
+locationButton.setAttribute(
+    "aria-label",
+    "Localização"
+);
+
+
+locationButton.innerHTML =
+    locationIcon;
+
+
+socials.appendChild(
+    locationButton
 );
 
 
 /* =====================================================
-   ABRIR MODAL
+   ABRIR LOCALIZAÇÃO
 ===================================================== */
 
 
-unitsMenu.addEventListener(
+locationButton.addEventListener(
     "click",
     () => {
 
-        modal.classList.add(
-            "active"
-        );
+        /*
+         * Se tiver apenas uma unidade,
+         * abre o Maps diretamente.
+         *
+         * Se tiver várias,
+         * abre o popup.
+         */
 
-        document.body.classList.add(
-            "modal-open"
-        );
+        if (
+            estabelecimento.unidades.length === 1
+        ) {
+
+            window.open(
+                estabelecimento.unidades[0].maps,
+                "_blank"
+            );
+
+            return;
+
+        }
+
+
+        abrirModal();
 
     }
 );
 
 
 /* =====================================================
-   OUTROS LINKS
+   LINKS PRINCIPAIS
 ===================================================== */
 
 
 const links = [
 
     {
-        icon:
-            whatsappIcon,
 
-        title:
-            "Fale conosco",
-
-        subtitle:
-            "Entre em contato pelo WhatsApp",
-
-        url:
-            estabelecimento.whatsapp
-    },
-
-    {
-        icon:
-            instagramIcon,
-
-        title:
-            "Siga no Instagram",
-
-        subtitle:
-            "@dom.roger_",
-
-        url:
-            estabelecimento.instagram
-    },
-
-    {
         icon:
             calendarIcon,
 
@@ -1035,75 +1408,111 @@ const links = [
 
         url:
             estabelecimento.agendamento
+
+    },
+
+
+    {
+
+        icon:
+            starIcon,
+
+        title:
+            "Avalie no Google",
+
+        subtitle:
+            "Deixe sua avaliação",
+
+        action:
+            "google"
+
     }
 
 ];
 
 
-links.forEach(link => {
+links.forEach(
+    link => {
 
 
-    const element =
-        document.createElement("a");
+        const element =
+            document.createElement(
+                link.url
+                    ? "a"
+                    : "div"
+            );
 
 
-    element.className =
-        "link";
+        element.className =
+            "main-link";
 
 
-    element.href =
-        link.url;
+        if (link.url) {
+
+            element.href =
+                link.url;
+
+            element.target =
+                "_blank";
+
+            element.rel =
+                "noopener noreferrer";
+
+        }
 
 
-    element.target =
-        "_blank";
+        if (link.action === "google") {
+
+            element.addEventListener(
+                "click",
+                abrirModal
+            );
+
+        }
 
 
-    element.rel =
-        "noopener noreferrer";
+        element.innerHTML = `
 
+            <div class="main-icon">
 
-    element.innerHTML = `
-
-        <div class="icon">
-
-            ${link.icon}
-
-        </div>
-
-
-        <div class="link-content">
-
-            <div class="link-title">
-
-                ${link.title}
+                ${link.icon}
 
             </div>
 
 
-            <div class="link-subtitle">
+            <div class="main-content">
 
-                ${link.subtitle}
+                <div class="main-title">
+
+                    ${link.title}
+
+                </div>
+
+
+                <div class="main-subtitle">
+
+                    ${link.subtitle}
+
+                </div>
 
             </div>
 
-        </div>
+
+            <div class="main-arrow">
+
+                ›
+
+            </div>
+
+        `;
 
 
-        <div class="arrow">
+        mainLinks.appendChild(
+            element
+        );
 
-            ›
-
-        </div>
-
-    `;
-
-
-    mainLinks.appendChild(
-        element
-    );
-
-});
+    }
+);
 
 
 /* =====================================================
@@ -1146,6 +1555,18 @@ estabelecimento.unidades.forEach(
 
                 <a
                     class="unit-button"
+                    href="tel:+${estabelecimento.telefone}"
+                >
+
+                    ${phoneIcon}
+
+                    Ligar
+
+                </a>
+
+
+                <a
+                    class="unit-button"
                     href="${unidade.maps}"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -1163,6 +1584,7 @@ estabelecimento.unidades.forEach(
                     href="${unidade.google}"
                     target="_blank"
                     rel="noopener noreferrer"
+                    style="grid-column: 1 / -1;"
                 >
 
                     ${starIcon}
@@ -1186,8 +1608,21 @@ estabelecimento.unidades.forEach(
 
 
 /* =====================================================
-   FECHAR MODAL
+   MODAL
 ===================================================== */
+
+
+function abrirModal() {
+
+    modal.classList.add(
+        "active"
+    );
+
+    document.body.classList.add(
+        "modal-open"
+    );
+
+}
 
 
 function fecharModal() {
@@ -1203,16 +1638,15 @@ function fecharModal() {
 }
 
 
+/* Fechar no X */
+
 closeModal.addEventListener(
     "click",
     fecharModal
 );
 
 
-/* =====================================================
-   FECHAR CLICANDO FORA
-===================================================== */
-
+/* Fechar clicando fora */
 
 modal.addEventListener(
     "click",
@@ -1230,10 +1664,7 @@ modal.addEventListener(
 );
 
 
-/* =====================================================
-   FECHAR COM ESC
-===================================================== */
-
+/* Fechar com ESC */
 
 document.addEventListener(
     "keydown",
