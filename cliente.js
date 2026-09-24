@@ -6,8 +6,13 @@ const estabelecimento = {
 
     botoes: {
     agendamento: "Agende seu horário",
+    agendamentoSubtitulo: "Escolha sua unidade e horário",
+
     localizacao: "Encontre uma unidade",
-    avaliacao: "Avalie no Google"
+    localizacaoSubtitulo: "Veja todas as nossas unidades",
+
+    avaliacao: "Avalie no Google",
+    avaliacaoSubtitulo: "Sua opinião é muito importante"
     },
 
     logo: "assets/logos/logo-dom-roger.png",
