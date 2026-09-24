@@ -2,6 +2,8 @@ const estabelecimento = {
 
     nome: "Barbearia Dom Roger",
 
+    descricao: "Corte • Barba • Estilo. 🥇 A 1ª barbearia por assinatura de Cotia",
+
     logo: "assets/logos/logo-dom-roger.png",
 
     fundo: "assets/backgrounds/fundo-barbearia.png",
