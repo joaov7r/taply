@@ -4,249 +4,284 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Taply | Seu negócio a um toque</title>
-
-    <meta name="description" content="Conecte seus clientes ao seu negócio de forma simples e rápida.">
+    <title>Barbearia Dom Roger</title>
 
     <style>
+        :root {
+            --primary: #050505;
+            --secondary: #151515;
+            --accent: #ffffff;
+            --text: #ffffff;
+            --muted: #a7a7a7;
+            --button-text: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #111111;
-            --secondary: #ffffff;
-            --background: #f4f4f4;
-            --text: #111111;
-            --muted: #777777;
-            --border: #e5e5e5;
-        }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                          Roboto, Helvetica, Arial, sans-serif;
-            background: var(--background);
-            color: var(--text);
+
             min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(255,255,255,0.08),
+                    transparent 35%
+                ),
+                var(--primary);
+
+            color: var(--text);
+
+            display: flex;
+            justify-content: center;
         }
 
-        .page {
+        .container {
             width: 100%;
             max-width: 520px;
-            margin: 0 auto;
             min-height: 100vh;
-            padding: 28px 18px 24px;
+
+            padding: 35px 22px 25px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* TOPO */
-
-        .profile {
-            text-align: center;
-            margin-bottom: 28px;
-        }
+        /* LOGO */
 
         .logo {
-            width: 88px;
-            height: 88px;
-            margin: 0 auto 16px;
+            width: 96px;
+            height: 96px;
+
             border-radius: 50%;
-            background: #111;
+
+            background: var(--accent);
+
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 27px;
+
+            color: var(--primary);
+
+            font-size: 30px;
             font-weight: 800;
-            letter-spacing: -1px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+
+            margin-bottom: 18px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.35);
+
+            overflow: hidden;
         }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        /* NOME */
 
         .business-name {
             font-size: 25px;
-            font-weight: 750;
-            letter-spacing: -0.6px;
+            font-weight: 700;
+
+            text-align: center;
+
+            letter-spacing: -0.5px;
+
             margin-bottom: 7px;
         }
 
         .description {
-            color: var(--muted);
             font-size: 14px;
+
+            color: var(--muted);
+
+            text-align: center;
+
             line-height: 1.5;
-            max-width: 340px;
-            margin: 0 auto;
+
+            max-width: 380px;
+
+            margin-bottom: 27px;
         }
 
         /* BOTÕES */
 
         .links {
+            width: 100%;
+
             display: flex;
             flex-direction: column;
-            gap: 12px;
+
+            gap: 13px;
         }
 
         .link {
-            position: relative;
+            width: 100%;
+
+            min-height: 60px;
+
+            padding: 14px 18px;
+
+            border-radius: 15px;
+
+            background: var(--secondary);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            color: var(--text);
+
+            text-decoration: none;
+
             display: flex;
             align-items: center;
-            min-height: 62px;
-            padding: 12px 18px;
-            border-radius: 17px;
-            background: white;
-            border: 1px solid var(--border);
-            color: var(--text);
-            text-decoration: none;
-            transition: transform .18s ease,
-                        box-shadow .18s ease,
-                        border-color .18s ease;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.035);
+
+            position: relative;
+
+            transition:
+                transform 0.18s ease,
+                background 0.18s ease,
+                border 0.18s ease;
+
+            box-shadow:
+                0 5px 18px rgba(0,0,0,0.18);
         }
 
         .link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(0,0,0,0.08);
-            border-color: #d5d5d5;
+
+            background: rgba(255,255,255,0.08);
+
+            border-color: rgba(255,255,255,0.18);
+        }
+
+        .link:active {
+            transform: scale(0.98);
         }
 
         .icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: #f1f1f1;
+            width: 38px;
+            height: 38px;
+
+            border-radius: 11px;
+
+            background: rgba(255,255,255,0.09);
+
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 19px;
-            flex-shrink: 0;
+
+            font-size: 18px;
+
             margin-right: 13px;
+
+            flex-shrink: 0;
         }
 
-        .link-text {
-            flex: 1;
+        .link-content {
+            display: flex;
+            flex-direction: column;
+
+            gap: 2px;
+
+            text-align: left;
         }
 
         .link-title {
             font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 2px;
+            font-weight: 600;
         }
 
-        .link-description {
-            font-size: 12px;
-            color: #888;
+        .link-subtitle {
+            font-size: 11px;
+
+            color: var(--muted);
         }
 
         .arrow {
+            margin-left: auto;
+
             font-size: 20px;
-            color: #aaa;
-            margin-left: 10px;
+
+            color: var(--muted);
         }
 
-        /* BOTÃO PRINCIPAL */
+        /* DESTAQUE */
 
-        .primary {
-            background: #111;
-            color: white;
-            border-color: #111;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+        .highlight {
+            background: var(--accent);
+
+            color: var(--primary);
+
+            border: none;
         }
 
-        .primary:hover {
-            background: #222;
-            border-color: #222;
+        .highlight .icon {
+            background: rgba(0,0,0,0.08);
         }
 
-        .primary .icon {
-            background: rgba(255,255,255,0.13);
+        .highlight .link-subtitle {
+            color: rgba(0,0,0,0.55);
         }
 
-        .primary .link-description,
-        .primary .arrow {
-            color: rgba(255,255,255,0.65);
+        .highlight .arrow {
+            color: rgba(0,0,0,0.5);
         }
 
-        /* SEPARADOR */
-
-        .section-title {
-            margin: 27px 4px 12px;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #999;
+        .highlight:hover {
+            background: var(--accent);
+            opacity: 0.92;
         }
 
-        /* RODAPÉ */
+        /* FOOTER */
 
         .footer {
+            margin-top: auto;
+
+            padding-top: 35px;
+
             text-align: center;
-            padding-top: 30px;
-            padding-bottom: 10px;
         }
 
-        .taply-logo {
-            font-size: 17px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .footer-text {
-            margin-top: 5px;
+        .powered {
             font-size: 11px;
-            color: #999;
+
+            color: #777;
+
+            letter-spacing: 0.3px;
         }
 
-        /* DESKTOP */
+        .powered strong {
+            color: #aaa;
 
-        @media (min-width: 700px) {
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 30px 0;
+            font-weight: 600;
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 420px) {
+
+            .container {
+                padding-left: 17px;
+                padding-right: 17px;
             }
 
-            .page {
-                min-height: auto;
-            }
-        }
-
-        /* ANIMAÇÃO */
-
-        .link {
-            animation: appear .45s ease both;
-        }
-
-        .link:nth-child(2) {
-            animation-delay: .04s;
-        }
-
-        .link:nth-child(3) {
-            animation-delay: .08s;
-        }
-
-        .link:nth-child(4) {
-            animation-delay: .12s;
-        }
-
-        .link:nth-child(5) {
-            animation-delay: .16s;
-        }
-
-        .link:nth-child(6) {
-            animation-delay: .20s;
-        }
-
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(8px);
+            .business-name {
+                font-size: 23px;
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .link {
+                min-height: 58px;
             }
         }
     </style>
@@ -254,179 +289,265 @@
 
 <body>
 
-    <main class="page">
+<div class="container">
 
-        <!-- PERFIL -->
+    <!-- LOGO -->
+    <div class="logo" id="logo">
+        DR
+    </div>
 
-        <section class="profile">
+    <!-- INFORMAÇÕES -->
+    <h1 class="business-name" id="businessName">
+        Barbearia Dom Roger
+    </h1>
 
-            <!--
-                FUTURAMENTE:
-                aqui colocaremos a LOGO do cliente.
-            -->
+    <p class="description" id="description">
+        Corte, barba e estilo. Atendimento com qualidade e personalidade.
+    </p>
 
-            <div class="logo">
-                TAP
+    <!-- LINKS -->
+    <div class="links" id="links"></div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="powered">
+            Powered by <strong>Taply</strong>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+    /* =====================================================
+       CONFIGURAÇÃO DO ESTABELECIMENTO
+       ===================================================== */
+
+    const estabelecimento = {
+
+        /* NOME */
+        nome: "Barbearia Dom Roger",
+
+        /* DESCRIÇÃO */
+        descricao:
+            "Corte, barba e estilo. Atendimento com qualidade e personalidade.",
+
+        /* CORES */
+
+        corPrincipal: "#050505",
+
+        corSecundaria: "#151515",
+
+        corDestaque: "#FFFFFF",
+
+        corTexto: "#FFFFFF",
+
+        corTextoSecundario: "#A7A7A7",
+
+
+        /* LOGO */
+
+        /*
+           Se tiver uma imagem da logo, coloque aqui a URL.
+
+           Exemplo:
+
+           logo:
+           "https://meusite.com/logo.png"
+
+           Se deixar vazio, aparecerão as letras abaixo.
+        */
+
+        logo: "",
+
+        iniciais: "DR",
+
+
+        /* LINKS */
+
+        google:
+            "https://www.google.com/",
+
+        whatsapp:
+            "https://wa.me/5511999999999",
+
+        instagram:
+            "https://instagram.com/",
+
+        maps:
+            "https://maps.google.com/",
+
+        servicos:
+            "#",
+
+        agendamento:
+            "#"
+    };
+
+
+    /* =====================================================
+       APLICAÇÃO DAS CORES
+       ===================================================== */
+
+    document.documentElement.style.setProperty(
+        "--primary",
+        estabelecimento.corPrincipal
+    );
+
+    document.documentElement.style.setProperty(
+        "--secondary",
+        estabelecimento.corSecundaria
+    );
+
+    document.documentElement.style.setProperty(
+        "--accent",
+        estabelecimento.corDestaque
+    );
+
+    document.documentElement.style.setProperty(
+        "--text",
+        estabelecimento.corTexto
+    );
+
+    document.documentElement.style.setProperty(
+        "--muted",
+        estabelecimento.corTextoSecundario
+    );
+
+
+    /* =====================================================
+       INFORMAÇÕES
+       ===================================================== */
+
+    document.getElementById("businessName").textContent =
+        estabelecimento.nome;
+
+    document.getElementById("description").textContent =
+        estabelecimento.descricao;
+
+
+    /* =====================================================
+       LOGO
+       ===================================================== */
+
+    const logoElement = document.getElementById("logo");
+
+    if (estabelecimento.logo !== "") {
+
+        logoElement.innerHTML =
+            `<img src="${estabelecimento.logo}" alt="Logo">`;
+
+    } else {
+
+        logoElement.textContent =
+            estabelecimento.iniciais;
+
+    }
+
+
+    /* =====================================================
+       BOTÕES
+       ===================================================== */
+
+    const links = [
+
+        {
+            icon: "⭐",
+            title: "Avalie no Google",
+            subtitle: "Sua opinião é muito importante",
+            url: estabelecimento.google,
+            highlight: true
+        },
+
+        {
+            icon: "💬",
+            title: "Fale pelo WhatsApp",
+            subtitle: "Entre em contato conosco",
+            url: estabelecimento.whatsapp
+        },
+
+        {
+            icon: "📸",
+            title: "Instagram",
+            subtitle: "Acompanhe nosso trabalho",
+            url: estabelecimento.instagram
+        },
+
+        {
+            icon: "📍",
+            title: "Como chegar",
+            subtitle: "Veja nossa localização",
+            url: estabelecimento.maps
+        },
+
+        {
+            icon: "✂️",
+            title: "Serviços",
+            subtitle: "Conheça nossos serviços",
+            url: estabelecimento.servicos
+        },
+
+        {
+            icon: "📅",
+            title: "Agende seu horário",
+            subtitle: "Reserve seu atendimento",
+            url: estabelecimento.agendamento
+        }
+
+    ];
+
+
+    const linksContainer =
+        document.getElementById("links");
+
+
+    links.forEach(link => {
+
+        const element =
+            document.createElement("a");
+
+        element.href = link.url;
+
+        element.target = "_blank";
+
+        element.rel = "noopener noreferrer";
+
+        element.className =
+            "link" +
+            (link.highlight ? " highlight" : "");
+
+
+        element.innerHTML = `
+
+            <div class="icon">
+                ${link.icon}
             </div>
 
-            <h1 class="business-name">
-                Nome do estabelecimento
-            </h1>
+            <div class="link-content">
 
-            <p class="description">
-                Tudo o que você precisa saber sobre nosso negócio em um só lugar.
-            </p>
-
-        </section>
-
-
-        <!-- LINKS PRINCIPAIS -->
-
-        <section class="links">
-
-            <a class="link primary"
-               href="#"
-               target="_blank">
-
-                <div class="icon">⭐</div>
-
-                <div class="link-text">
-                    <div class="link-title">
-                        Avalie nossa empresa
-                    </div>
-
-                    <div class="link-description">
-                        Sua opinião é muito importante
-                    </div>
+                <div class="link-title">
+                    ${link.title}
                 </div>
 
-                <div class="arrow">›</div>
-
-            </a>
-
-
-            <a class="link"
-               href="#"
-               target="_blank">
-
-                <div class="icon">📱</div>
-
-                <div class="link-text">
-                    <div class="link-title">
-                        Fale conosco
-                    </div>
-
-                    <div class="link-description">
-                        Atendimento pelo WhatsApp
-                    </div>
+                <div class="link-subtitle">
+                    ${link.subtitle}
                 </div>
 
-                <div class="arrow">›</div>
-
-            </a>
-
-
-            <a class="link"
-               href="#"
-               target="_blank">
-
-                <div class="icon">📸</div>
-
-                <div class="link-text">
-                    <div class="link-title">
-                        Instagram
-                    </div>
-
-                    <div class="link-description">
-                        Acompanhe nossas novidades
-                    </div>
-                </div>
-
-                <div class="arrow">›</div>
-
-            </a>
-
-
-            <a class="link"
-               href="#"
-               target="_blank">
-
-                <div class="icon">📍</div>
-
-                <div class="link-text">
-                    <div class="link-title">
-                        Como chegar
-                    </div>
-
-                    <div class="link-description">
-                        Veja nossa localização
-                    </div>
-                </div>
-
-                <div class="arrow">›</div>
-
-            </a>
-
-
-            <a class="link"
-               href="#"
-               target="_blank">
-
-                <div class="icon">🛍️</div>
-
-                <div class="link-text">
-                    <div class="link-title">
-                        Produtos e serviços
-                    </div>
-
-                    <div class="link-description">
-                        Conheça o que oferecemos
-                    </div>
-                </div>
-
-                <div class="arrow">›</div>
-
-            </a>
-
-
-            <a class="link"
-               href="#"
-               target="_blank">
-
-                <div class="icon">🌐</div>
-
-                <div class="link-text">
-                    <div class="link-title">
-                        Nosso site
-                    </div>
-
-                    <div class="link-description">
-                        Conheça mais sobre a empresa
-                    </div>
-                </div>
-
-                <div class="arrow">›</div>
-
-            </a>
-
-        </section>
-
-
-        <!-- RODAPÉ -->
-
-        <footer class="footer">
-
-            <div class="taply-logo">
-                taply
             </div>
 
-            <div class="footer-text">
-                Seu negócio a um toque.
+            <div class="arrow">
+                ›
             </div>
 
-        </footer>
+        `;
 
-    </main>
+
+        linksContainer.appendChild(element);
+
+    });
+
+</script>
 
 </body>
 </html>
