@@ -2,6 +2,10 @@ const estabelecimento = {
 
     nome: "Barbearia Dom Roger",
 
+    logo: "assets/logos/dom-roger.png",
+
+    fundo: "assets/backgrounds/dom-roger.png",
+
     whatsapp: "https://wa.me/5511988734659?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Barbearia%20Dom%20Roger%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio.",
 
     instagram: "https://www.instagram.com/barbeariadom.roger/",
