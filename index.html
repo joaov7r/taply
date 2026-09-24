@@ -13,17 +13,20 @@
 
         :root {
             --primary: #050505;
-            --secondary: #151515;
+            --secondary: #111111;
             --accent: #ffffff;
             --text: #ffffff;
-            --muted: #a7a7a7;
+            --muted: #969696;
+            --border: rgba(255,255,255,0.08);
         }
+
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
 
         body {
 
@@ -41,8 +44,8 @@
             background:
                 radial-gradient(
                     circle at top,
-                    rgba(255,255,255,0.08),
-                    transparent 35%
+                    rgba(255,255,255,0.07),
+                    transparent 38%
                 ),
                 var(--primary);
 
@@ -54,7 +57,9 @@
         }
 
 
-        /* CONTAINER */
+        /* ==========================================
+           CONTAINER
+           ========================================== */
 
         .container {
 
@@ -63,40 +68,35 @@
 
             min-height: 100vh;
 
-            padding:
-                35px
-                22px
-                25px;
+            padding: 38px 22px 24px;
 
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
 
         }
 
 
-        /* LOGO */
+        /* ==========================================
+           LOGO
+           ========================================== */
 
         .logo {
 
             width: 100%;
+            max-width: 350px;
 
-            max-width: 370px;
-
-            margin-bottom: 22px;
+            margin-bottom: 18px;
 
             display: flex;
-
             justify-content: center;
 
         }
 
+
         .logo img {
 
             width: 100%;
-
             height: auto;
 
             display: block;
@@ -106,43 +106,32 @@
         }
 
 
-        /* NOME */
-
-        .business-name {
-
-            font-size: 25px;
-
-            font-weight: 700;
-
-            text-align: center;
-
-            letter-spacing: -0.5px;
-
-            margin-bottom: 7px;
-
-        }
-
-
-        /* DESCRIÇÃO */
+        /* ==========================================
+           DESCRIÇÃO
+           ========================================== */
 
         .description {
 
-            font-size: 14px;
+            font-size: 13px;
 
             color: var(--muted);
 
             text-align: center;
 
-            line-height: 1.5;
+            line-height: 1.6;
 
-            max-width: 380px;
+            max-width: 350px;
 
-            margin-bottom: 27px;
+            margin-bottom: 30px;
+
+            letter-spacing: 0.2px;
 
         }
 
 
-        /* LINKS */
+        /* ==========================================
+           LINKS
+           ========================================== */
 
         .links {
 
@@ -152,28 +141,28 @@
 
             flex-direction: column;
 
-            gap: 13px;
+            gap: 12px;
 
         }
 
 
-        /* BOTÃO */
+        /* ==========================================
+           BOTÃO
+           ========================================== */
 
         .link {
 
             width: 100%;
 
-            min-height: 62px;
+            min-height: 64px;
 
-            padding: 12px 17px;
+            padding: 12px 16px;
 
-            border-radius: 15px;
+            border-radius: 16px;
 
             background: var(--secondary);
 
-            border:
-                1px solid
-                rgba(255,255,255,0.08);
+            border: 1px solid var(--border);
 
             color: var(--text);
 
@@ -188,66 +177,80 @@
             transition:
                 transform 0.18s ease,
                 background 0.18s ease,
-                border 0.18s ease;
+                border-color 0.18s ease;
 
             box-shadow:
-                0 5px 18px
-                rgba(0,0,0,0.18);
+                0 6px 20px rgba(0,0,0,0.20);
 
         }
 
 
         .link:hover {
 
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
 
-            background:
-                rgba(255,255,255,0.08);
+            background: #181818;
 
             border-color:
-                rgba(255,255,255,0.18);
+                rgba(255,255,255,0.15);
 
         }
 
 
         .link:active {
 
-            transform:
-                scale(0.98);
+            transform: scale(0.985);
 
         }
 
 
-        /* ÍCONE */
+        /* ==========================================
+           ÍCONE
+           ========================================== */
 
         .icon {
 
-            width: 39px;
+            width: 40px;
+            height: 40px;
 
-            height: 39px;
-
-            border-radius: 11px;
+            border-radius: 12px;
 
             background:
-                rgba(255,255,255,0.09);
+                rgba(255,255,255,0.07);
 
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
-            font-size: 18px;
-
-            margin-right: 13px;
+            margin-right: 14px;
 
             flex-shrink: 0;
 
         }
 
 
-        /* TEXTO DO BOTÃO */
+        .icon svg {
+
+            width: 19px;
+            height: 19px;
+
+            stroke: currentColor;
+
+            fill: none;
+
+            stroke-width: 1.8;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+
+        }
+
+
+        /* ==========================================
+           TEXTO
+           ========================================== */
 
         .link-content {
 
@@ -255,7 +258,7 @@
 
             flex-direction: column;
 
-            gap: 2px;
+            gap: 3px;
 
             text-align: left;
 
@@ -267,6 +270,8 @@
             font-size: 15px;
 
             font-weight: 600;
+
+            letter-spacing: -0.1px;
 
         }
 
@@ -280,73 +285,97 @@
         }
 
 
-        /* SETA */
+        /* ==========================================
+           SETA
+           ========================================== */
 
         .arrow {
 
             margin-left: auto;
 
-            font-size: 21px;
+            font-size: 22px;
 
-            color: var(--muted);
+            font-weight: 300;
+
+            color: #666;
+
+            padding-left: 10px;
 
         }
 
 
-        /* BOTÃO PRINCIPAL */
+        /* ==========================================
+           GOOGLE
+           ========================================== */
 
-        .highlight {
+        .google {
 
-            background: var(--accent);
+            background: #ffffff;
 
-            color: var(--primary);
+            color: #050505;
 
             border: none;
 
         }
 
 
-        .highlight .icon {
+        .google .icon {
+
+            background: #eeeeee;
+
+        }
+
+
+        .google .link-subtitle {
+
+            color: #666666;
+
+        }
+
+
+        .google .arrow {
+
+            color: #777777;
+
+        }
+
+
+        .google:hover {
+
+            background: #f2f2f2;
+
+        }
+
+
+        /* ==========================================
+           WHATSAPP
+           ========================================== */
+
+        .whatsapp {
+
+            border-color:
+                rgba(255,255,255,0.12);
+
+        }
+
+
+        .whatsapp .icon {
 
             background:
-                rgba(0,0,0,0.08);
+                rgba(255,255,255,0.11);
 
         }
 
 
-        .highlight .link-subtitle {
-
-            color:
-                rgba(0,0,0,0.55);
-
-        }
-
-
-        .highlight .arrow {
-
-            color:
-                rgba(0,0,0,0.5);
-
-        }
-
-
-        .highlight:hover {
-
-            background:
-                var(--accent);
-
-            opacity: 0.92;
-
-        }
-
-
-        /* FOOTER */
+        /* ==========================================
+           FOOTER
+           ========================================== */
 
         .footer {
 
             margin-top: auto;
 
-            padding-top: 35px;
+            padding-top: 38px;
 
             text-align: center;
 
@@ -357,52 +386,59 @@
 
             font-size: 11px;
 
-            color: #777;
+            color: #666;
 
-            letter-spacing: 0.3px;
+            letter-spacing: 0.4px;
 
         }
 
 
         .powered strong {
 
-            color: #aaa;
+            color: #999;
 
             font-weight: 600;
 
         }
 
 
-        /* CELULAR */
+        /* ==========================================
+           CELULAR
+           ========================================== */
 
         @media (max-width: 420px) {
 
             .container {
 
-                padding-left: 17px;
-
-                padding-right: 17px;
+                padding:
+                    30px
+                    17px
+                    22px;
 
             }
 
 
             .logo {
 
-                max-width: 330px;
+                max-width: 320px;
+
+                margin-bottom: 15px;
 
             }
 
 
-            .business-name {
+            .description {
 
-                font-size: 23px;
+                font-size: 12px;
+
+                margin-bottom: 25px;
 
             }
 
 
             .link {
 
-                min-height: 59px;
+                min-height: 61px;
 
             }
 
@@ -419,7 +455,9 @@
 <div class="container">
 
 
-    <!-- LOGO -->
+    <!-- ==========================================
+         LOGO
+         ========================================== -->
 
     <div class="logo">
 
@@ -431,18 +469,22 @@
     </div>
 
 
-    <!-- NOME -->
+    <!-- ==========================================
+         DESCRIÇÃO
+         ========================================== -->
 
-<p
-    class="description"
-    id="description"
->
-    Corte • Barba • Estilo<br>
-    Atendimento com qualidade e personalidade.
-</p>
+    <p
+        class="description"
+        id="description"
+    >
+        Corte • Barba • Estilo<br>
+        Atendimento com qualidade e personalidade.
+    </p>
 
 
-    <!-- BOTÕES -->
+    <!-- ==========================================
+         BOTÕES
+         ========================================== -->
 
     <div
         class="links"
@@ -450,7 +492,9 @@
     ></div>
 
 
-    <!-- FOOTER -->
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
 
     <div class="footer">
 
@@ -470,20 +514,16 @@
 <script>
 
 
-/* =====================================================
+/* ==================================================
    CONFIGURAÇÃO DO ESTABELECIMENTO
-   ===================================================== */
+   ================================================== */
 
 
 const estabelecimento = {
 
 
-    nome:
-        "Barbearia Dom Roger",
-
-
     descricao:
-        "Corte, barba e estilo. Atendimento com qualidade e personalidade.",
+        "Corte • Barba • Estilo<br>Atendimento com qualidade e personalidade.",
 
 
     /* CORES */
@@ -492,7 +532,7 @@ const estabelecimento = {
         "#050505",
 
     corSecundaria:
-        "#151515",
+        "#111111",
 
     corDestaque:
         "#FFFFFF",
@@ -501,7 +541,7 @@ const estabelecimento = {
         "#FFFFFF",
 
     corTextoSecundario:
-        "#A7A7A7",
+        "#969696",
 
 
     /* LINKS */
@@ -527,9 +567,9 @@ const estabelecimento = {
 };
 
 
-/* =====================================================
-   CORES
-   ===================================================== */
+/* ==================================================
+   APLICA CORES
+   ================================================== */
 
 
 document.documentElement.style.setProperty(
@@ -562,20 +602,88 @@ document.documentElement.style.setProperty(
 );
 
 
-/* =====================================================
-   INFORMAÇÕES
-   ===================================================== */
-    
+/* ==================================================
+   DESCRIÇÃO
+   ================================================== */
+
 
 document.getElementById(
     "description"
-).textContent =
+).innerHTML =
     estabelecimento.descricao;
 
 
-/* =====================================================
+/* ==================================================
+   ÍCONES
+   ================================================== */
+
+
+const icons = {
+
+
+    google: `
+        <svg viewBox="0 0 24 24">
+            <path d="M12 3a9 9 0 1 0 9 9"/>
+            <path d="M21 8h-9"/>
+            <path d="M21 8v5"/>
+        </svg>
+    `,
+
+
+    whatsapp: `
+        <svg viewBox="0 0 24 24">
+            <path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/>
+            <path d="M8.5 9.5c.3 1.7 2.3 3.7 4 4"/>
+            <path d="M8.8 8.8c.3-.4.7-.4 1-.1l.8.9c.2.2.2.5 0 .8l-.4.5"/>
+        </svg>
+    `,
+
+
+    instagram: `
+        <svg viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1"/>
+        </svg>
+    `,
+
+
+    maps: `
+        <svg viewBox="0 0 24 24">
+            <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/>
+            <circle cx="12" cy="9" r="2.2"/>
+        </svg>
+    `,
+
+
+    services: `
+        <svg viewBox="0 0 24 24">
+            <path d="M6 4v16"/>
+            <path d="M18 4v16"/>
+            <path d="M4 8h4"/>
+            <path d="M16 16h4"/>
+            <path d="M8 12h8"/>
+        </svg>
+    `,
+
+
+    calendar: `
+        <svg viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="16" rx="2"/>
+            <path d="M16 3v4"/>
+            <path d="M8 3v4"/>
+            <path d="M3 10h18"/>
+            <path d="M8 14h2"/>
+            <path d="M14 14h2"/>
+        </svg>
+    `
+
+};
+
+
+/* ==================================================
    BOTÕES
-   ===================================================== */
+   ================================================== */
 
 
 const links = [
@@ -583,7 +691,8 @@ const links = [
 
     {
 
-        icon: "⭐",
+        icon:
+            icons.google,
 
         title:
             "Avalie no Google",
@@ -594,34 +703,39 @@ const links = [
         url:
             estabelecimento.google,
 
-        highlight:
-            true
+        className:
+            "google"
 
     },
 
 
     {
 
-        icon: "💬",
+        icon:
+            icons.whatsapp,
 
         title:
-            "Fale pelo WhatsApp",
+            "Fale conosco",
 
         subtitle:
-            "Entre em contato conosco",
+            "Entre em contato pelo WhatsApp",
 
         url:
-            estabelecimento.whatsapp
+            estabelecimento.whatsapp,
+
+        className:
+            "whatsapp"
 
     },
 
 
     {
 
-        icon: "📸",
+        icon:
+            icons.instagram,
 
         title:
-            "Instagram",
+            "Siga no Instagram",
 
         subtitle:
             "Acompanhe nosso trabalho",
@@ -634,7 +748,8 @@ const links = [
 
     {
 
-        icon: "📍",
+        icon:
+            icons.maps,
 
         title:
             "Como chegar",
@@ -650,10 +765,11 @@ const links = [
 
     {
 
-        icon: "✂️",
+        icon:
+            icons.services,
 
         title:
-            "Serviços",
+            "Nossos serviços",
 
         subtitle:
             "Conheça nossos serviços",
@@ -666,7 +782,8 @@ const links = [
 
     {
 
-        icon: "📅",
+        icon:
+            icons.calendar,
 
         title:
             "Agende seu horário",
@@ -683,9 +800,9 @@ const links = [
 ];
 
 
-/* =====================================================
+/* ==================================================
    CRIAÇÃO DOS BOTÕES
-   ===================================================== */
+   ================================================== */
 
 
 const linksContainer =
@@ -714,8 +831,8 @@ links.forEach(link => {
     element.className =
         "link" +
         (
-            link.highlight
-                ? " highlight"
+            link.className
+                ? " " + link.className
                 : ""
         );
 
