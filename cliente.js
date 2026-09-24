@@ -4,6 +4,12 @@ const estabelecimento = {
 
     descricao: "Corte • Barba • Estilo. 🥇 A 1ª barbearia por assinatura de Cotia",
 
+    botoes: {
+    agendamento: "Agende seu horário",
+    localizacao: "Encontre uma unidade",
+    avaliacao: "Avalie no Google"
+    },
+
     logo: "assets/logos/logo-dom-roger.png",
 
     fundo: "assets/backgrounds/fundo-barbearia.png",
