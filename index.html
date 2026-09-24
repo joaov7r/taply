@@ -880,13 +880,7 @@ box-shadow:
 
     <!-- DESCRIÇÃO -->
 
-    <p class="description">
-
-        Corte • Barba • Estilo<br>
-
-        🥇 A 1ª barbearia por assinatura de Cotia
-
-    </p>
+   <p class="description" id="description"></p>
 
 
     <!-- ÍCONES -->
@@ -1216,6 +1210,9 @@ const starIcon = `
 document.querySelector(".logo img").src = estabelecimento.logo;
 
 document.querySelector(".logo img").alt = estabelecimento.nome;
+
+document.getElementById("description").textContent =
+    estabelecimento.descricao;
 
 document.body.style.setProperty(
     "--cliente-fundo",
