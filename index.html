@@ -16,7 +16,9 @@
             --secondary: rgba(20,20,20,0.78);
             --text: #ffffff;
             --muted: #a0a0a0;
-            --border: rgba(255,255,255,0.10);
+            --border: rgba(255,255,255,0.10);]
+
+            --cliente-fundo: url("assets/backgrounds/fundo-barbearia.png");
         }
 
 
@@ -1028,7 +1030,7 @@ box-shadow:
 
 </div>
 
-<script src="cliente.js"></script>
+<script src="./cliente.js"></script>
 <script>
 
 
@@ -1207,12 +1209,18 @@ const starIcon = `
    IDENTIDADE VISUAL DO CLIENTE
 ===================================================== */
 
-const logoElement = document.querySelector(".logo img");
+/* =====================================================
+   IDENTIDADE VISUAL DO CLIENTE
+===================================================== */
 
-if (logoElement) {
-    logoElement.src = estabelecimento.logo;
-    logoElement.alt = estabelecimento.nome;
-}
+document.querySelector(".logo img").src = estabelecimento.logo;
+
+document.querySelector(".logo img").alt = estabelecimento.nome;
+
+document.body.style.setProperty(
+    "--cliente-fundo",
+    `url("${estabelecimento.fundo}")`
+);
 
     const backgroundStyle = document.createElement("style");
 
@@ -1223,7 +1231,7 @@ backgroundStyle.textContent = `
                 rgba(0, 0, 0, 0.72),
                 rgba(0, 0, 0, 0.88)
             ),
-            url("${estabelecimento.fundo}");
+           var(--cliente-fundo);
     }
 `;
 
