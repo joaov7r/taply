@@ -1203,6 +1203,32 @@ const starIcon = `
    ELEMENTOS
 ===================================================== */
 
+    /* =====================================================
+   IDENTIDADE VISUAL DO CLIENTE
+===================================================== */
+
+const logoElement = document.querySelector(".logo img");
+
+if (logoElement) {
+    logoElement.src = estabelecimento.logo;
+    logoElement.alt = estabelecimento.nome;
+}
+
+    const backgroundStyle = document.createElement("style");
+
+backgroundStyle.textContent = `
+    body::before {
+        background:
+            linear-gradient(
+                rgba(0, 0, 0, 0.72),
+                rgba(0, 0, 0, 0.88)
+            ),
+            url("${estabelecimento.fundo}");
+    }
+`;
+
+document.head.appendChild(backgroundStyle);
+
 
 const socials =
     document.getElementById(
