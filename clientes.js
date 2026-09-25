@@ -59,3 +59,40 @@ const clientes = {
     }
 
 };
+
+    "cliente-teste": {
+
+        nome: "Cliente Teste",
+
+        descricao: "Esta é uma página de teste da Taply.",
+
+        botoes: {
+            agendamento: "Agende agora",
+            agendamentoSubtitulo: "Teste de agendamento",
+
+            localizacao: "Nossa localização",
+            localizacaoSubtitulo: "Teste de localização",
+
+            avaliacao: "Avalie nossa empresa",
+            avaliacaoSubtitulo: "Teste de avaliação"
+        },
+
+        logo: "assets/logos/logo-dom-roger.png",
+
+        fundo: "assets/backgrounds/fundo-barbearia.png",
+
+        whatsapp: "https://wa.me/5511988734659",
+
+        instagram: "https://www.instagram.com/barbeariadom.roger/",
+
+        agendamento: "https://cashbarber.com.br/barbeariadomroger/inicio",
+
+        unidades: [
+            {
+                nome: "Unidade Teste",
+                endereco: "Endereço de teste - Cotia - SP",
+                maps: "https://www.google.com/maps",
+                google: "https://www.google.com/"
+            }
+        ]
+    }
