@@ -1205,14 +1205,13 @@ const starIcon = `
 
 const logo = document.querySelector(".logo img");
 
-if (estabelecimento.logo) {
-
+if (
+    estabelecimento.logo &&
+    !estabelecimento.logo.endsWith("/")
+) {
     logo.src = estabelecimento.logo;
-
 } else {
-
     logo.src = "assets/logos/logo-taply.png";
-
 }
 
 logo.alt = estabelecimento.nome;
