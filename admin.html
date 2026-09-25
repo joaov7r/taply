@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Painel Taply</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                #111;
+
+            color: #fff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+
+            font-size: 32px;
+        }
+
+        .subtitle {
+            margin: 0 0 35px;
+
+            color: #aaa;
+
+            font-size: 15px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            padding: 25px;
+
+            background: #1b1b1b;
+
+            border: 1px solid
+                rgba(255,255,255,0.10);
+
+            border-radius: 16px;
+        }
+
+        .card h2 {
+            margin: 0 0 20px;
+
+            font-size: 19px;
+        }
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+
+            color: #ccc;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid
+                rgba(255,255,255,0.15);
+
+            border-radius: 9px;
+
+            background: #111;
+
+            color: #fff;
+
+            font-size: 14px;
+
+            outline: none;
+        }
+
+        textarea {
+            min-height: 90px;
+
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color:
+                rgba(255,255,255,0.40);
+        }
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .button {
+            width: 100%;
+
+            padding: 15px;
+
+            border: 0;
+
+            border-radius: 10px;
+
+            background: #fff;
+
+            color: #111;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        .result {
+            display: none;
+
+            margin-top: 20px;
+            padding: 20px;
+
+            background: #0d0d0d;
+
+            border: 1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 12px;
+        }
+
+        .result h3 {
+            margin-top: 0;
+        }
+
+        .result textarea {
+            min-height: 350px;
+
+            font-family:
+                Consolas,
+                monospace;
+
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 25px 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <h1>Taply</h1>
+
+    <p class="subtitle">
+        Painel de cadastro de clientes
+    </p>
+
+
+    <!-- INFORMAÇÕES -->
+
+    <div class="card">
+
+        <h2>Informações do cliente</h2>
+
+
+        <div class="grid">
+
+            <div class="field">
+
+                <label>
+                    Nome do estabelecimento
+                </label>
+
+                <input
+                    id="nome"
+                    type="text"
+                    placeholder="Ex.: Vila Américo Bar e Restaurante"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Identificador (slug)
+                </label>
+
+                <input
+                    id="slug"
+                    type="text"
+                    placeholder="Ex.: vila-americo"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Descrição
+            </label>
+
+            <textarea
+                id="descricao"
+                placeholder="Descrição que aparecerá na página"
+            ></textarea>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTATO -->
+
+    <div class="card">
+
+        <h2>Contato</h2>
+
+
+        <div class="grid">
+
+            <div class="field">
+
+                <label>
+                    WhatsApp
+                </label>
+
+                <input
+                    id="whatsapp"
+                    type="text"
+                    placeholder="Ex.: 5511999999999"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Instagram
+                </label>
+
+                <input
+                    id="instagram"
+                    type="text"
+                    placeholder="https://www.instagram.com/cliente/"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTÃO PRINCIPAL -->
+
+    <div class="card">
+
+        <h2>Botão principal</h2>
+
+
+        <div class="grid">
+
+            <div class="field">
+
+                <label>
+                    Texto do botão
+                </label>
+
+                <input
+                    id="agendamentoTexto"
+                    type="text"
+                    value="Agende seu horário"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Subtítulo
+                </label>
+
+                <input
+                    id="agendamentoSubtitulo"
+                    type="text"
+                    value="Escolha uma opção"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Link do botão
+            </label>
+
+            <input
+                id="agendamento"
+                type="text"
+                placeholder="https://..."
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- IDENTIDADE VISUAL -->
+
+    <div class="card">
+
+        <h2>Identidade visual</h2>
+
+
+        <div class="grid">
+
+            <div class="field">
+
+                <label>
+                    Nome do arquivo do logo
+                </label>
+
+                <input
+                    id="logo"
+                    type="text"
+                    placeholder="logo-cliente.png"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Nome do arquivo do fundo
+                </label>
+
+                <input
+                    id="fundo"
+                    type="text"
+                    placeholder="fundo-cliente.png"
+                >
+
+            </div>
+
+        </div>
+
+        <p
+            style="
+                margin: 0;
+                color: #888;
+                font-size: 12px;
+            "
+        >
+            Os arquivos devem ser colocados em
+            assets/logos e assets/backgrounds.
+        </p>
+
+    </div>
+
+
+    <!-- BOTÕES -->
+
+    <div class="card">
+
+        <h2>Localização e avaliação</h2>
+
+
+        <div class="grid">
+
+            <div class="field">
+
+                <label>
+                    Texto localização
+                </label>
+
+                <input
+                    id="localizacao"
+                    type="text"
+                    value="Nossa localização"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Subtítulo localização
+                </label>
+
+                <input
+                    id="localizacaoSubtitulo"
+                    type="text"
+                    value="Veja como chegar"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Texto avaliação
+                </label>
+
+                <input
+                    id="avaliacao"
+                    type="text"
+                    value="Avalie no Google"
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Subtítulo avaliação
+                </label>
+
+                <input
+                    id="avaliacaoSubtitulo"
+                    type="text"
+                    value="Sua opinião é muito importante"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- UNIDADE -->
+
+    <div class="card">
+
+        <h2>Unidade</h2>
+
+
+        <div class="field">
+
+            <label>
+                Nome da unidade
+            </label>
+
+            <input
+                id="unidadeNome"
+                type="text"
+                placeholder="Ex.: Vila Américo"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Endereço
+            </label>
+
+            <input
+                id="endereco"
+                type="text"
+                placeholder="Endereço completo"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Link do Google Maps
+            </label>
+
+            <input
+                id="maps"
+                type="text"
+                placeholder="https://www.google.com/maps/..."
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Link de avaliação no Google
+            </label>
+
+            <input
+                id="google"
+                type="text"
+                placeholder="https://search.google.com/local/writereview?..."
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- GERAR -->
+
+    <button
+        class="button"
+        onclick="gerarCliente()"
+    >
+        GERAR CLIENTE
+    </button>
+
+
+    <!-- RESULTADO -->
+
+    <div
+        class="result"
+        id="resultado"
+    >
+
+        <h3>
+            Código gerado
+        </h3>
+
+        <p
+            style="
+                color:#aaa;
+                font-size:13px;
+            "
+        >
+            Copie este bloco e adicione ao
+            clientes.js.
+        </p>
+
+
+        <textarea
+            id="codigo"
+            readonly
+        ></textarea>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+
+function valor(id) {
+
+    return document
+        .getElementById(id)
+        .value
+        .trim();
+
+}
+
+
+function gerarCliente() {
+
+
+    const slug =
+        valor("slug");
+
+
+    const nome =
+        valor("nome");
+
+
+    const descricao =
+        valor("descricao");
+
+
+    const whatsapp =
+        valor("whatsapp");
+
+
+    const instagram =
+        valor("instagram");
+
+
+    const agendamentoTexto =
+        valor("agendamentoTexto");
+
+
+    const agendamentoSubtitulo =
+        valor("agendamentoSubtitulo");
+
+
+    const agendamento =
+        valor("agendamento");
+
+
+    const logo =
+        valor("logo");
+
+
+    const fundo =
+        valor("fundo");
+
+
+    const localizacao =
+        valor("localizacao");
+
+
+    const localizacaoSubtitulo =
+        valor("localizacaoSubtitulo");
+
+
+    const avaliacao =
+        valor("avaliacao");
+
+
+    const avaliacaoSubtitulo =
+        valor("avaliacaoSubtitulo");
+
+
+    const unidadeNome =
+        valor("unidadeNome");
+
+
+    const endereco =
+        valor("endereco");
+
+
+    const maps =
+        valor("maps");
+
+
+    const google =
+        valor("google");
+
+
+    if (
+        !slug ||
+        !nome
+    ) {
+
+        alert(
+            "Preencha pelo menos o nome e o identificador do cliente."
+        );
+
+        return;
+
+    }
+
+
+    const codigo = `
+
+    "${slug}": {
+
+        nome: "${nome}",
+
+        descricao: "${descricao}",
+
+        botoes: {
+
+            agendamento: "${agendamentoTexto}",
+
+            agendamentoSubtitulo: "${agendamentoSubtitulo}",
+
+            localizacao: "${localizacao}",
+
+            localizacaoSubtitulo: "${localizacaoSubtitulo}",
+
+            avaliacao: "${avaliacao}",
+
+            avaliacaoSubtitulo: "${avaliacaoSubtitulo}"
+
+        },
+
+        logo: "assets/logos/${logo}",
+
+        fundo: "assets/backgrounds/${fundo}",
+
+        whatsapp: "${whatsapp}",
+
+        instagram: "${instagram}",
+
+        agendamento: "${agendamento}",
+
+        unidades: [
+
+            {
+
+                nome: "${unidadeNome}",
+
+                endereco: "${endereco}",
+
+                maps: "${maps}",
+
+                google: "${google}"
+
+            }
+
+        ]
+
+    }
+
+    `;
+
+
+    document
+        .getElementById("codigo")
+        .value =
+        codigo;
+
+
+    document
+        .getElementById("resultado")
+        .style.display =
+        "block";
+
+
+    document
+        .getElementById("resultado")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
