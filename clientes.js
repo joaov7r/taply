@@ -58,41 +58,39 @@ const clientes = {
         ]
     },
 
-    "cliente-teste": {
+   "modelo": {
 
-        nome: "Cliente Teste",
+    nome: "Nome do Cliente",
 
-        descricao: "Esta é uma página de teste da Taply.",
+    descricao: "Descrição do cliente",
 
-        botoes: {
-            agendamento: "Agende agora",
-            agendamentoSubtitulo: "Teste de agendamento",
+    botoes: {
+        agendamento: "Agende seu horário",
+        agendamentoSubtitulo: "Escolha uma opção",
 
-            localizacao: "Nossa localização",
-            localizacaoSubtitulo: "Teste de localização",
+        localizacao: "Encontre uma unidade",
+        localizacaoSubtitulo: "Veja onde estamos",
 
-            avaliacao: "Avalie nossa empresa",
-            avaliacaoSubtitulo: "Teste de avaliação"
-        },
+        avaliacao: "Avalie no Google",
+        avaliacaoSubtitulo: "Sua opinião é muito importante"
+    },
 
-        logo: "assets/logos/logo-dom-roger.png",
+    logo: "assets/logos/logo-cliente.png",
 
-        fundo: "assets/backgrounds/fundo-barbearia.png",
+    fundo: "assets/backgrounds/fundo-cliente.png",
 
-        whatsapp: "https://wa.me/5511988734659",
+    whatsapp: "https://wa.me/5500000000000",
 
-        instagram: "https://www.instagram.com/barbeariadom.roger/",
+    instagram: "https://www.instagram.com/cliente/",
 
-        agendamento: "https://cashbarber.com.br/barbeariadomroger/inicio",
+    agendamento: "https://link-do-agendamento.com",
 
-        unidades: [
-            {
-                nome: "Unidade Teste",
-                endereco: "Endereço de teste - Cotia - SP",
-                maps: "https://www.google.com/maps",
-                google: "https://www.google.com/"
-            }
-        ]
-    }
-
+    unidades: [
+        {
+            nome: "Unidade 1",
+            endereco: "Endereço da unidade",
+            maps: "https://www.google.com/maps",
+            google: "https://www.google.com/"
+        }
+    ]
 };
