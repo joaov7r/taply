@@ -56,7 +56,7 @@ const clientes = {
                 google: "https://search.google.com/local/writereview?placeid=ChIJH8PqU9Crz5QReQl_Gn1aRiM"
             }
         ]
-};
+    },
 
     "cliente-teste": {
 
@@ -93,4 +93,4 @@ const clientes = {
                 google: "https://www.google.com/"
             }
         ]
-    },
+    };
