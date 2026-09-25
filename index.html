@@ -1221,22 +1221,6 @@ document.body.style.setProperty(
     `url("${estabelecimento.fundo}")`
 );
 
-    const backgroundStyle = document.createElement("style");
-
-backgroundStyle.textContent = `
-    body::before {
-        background:
-            linear-gradient(
-                rgba(0, 0, 0, 0.72),
-                rgba(0, 0, 0, 0.88)
-            ),
-           var(--cliente-fundo);
-    }
-`;
-
-document.head.appendChild(backgroundStyle);
-
-
 const socials =
     document.getElementById(
         "socials"
