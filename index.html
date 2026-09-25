@@ -1221,10 +1221,22 @@ document.getElementById("description").innerHTML =
 
 document.title = estabelecimento.nome;
 
-document.body.style.setProperty(
-    "--cliente-fundo",
-    `url("${estabelecimento.fundo}")`
-);
+const fundo = estabelecimento.fundo;
+
+if (
+    fundo &&
+    !fundo.endsWith("/")
+) {
+    document.body.style.setProperty(
+        "--cliente-fundo",
+        `url("${fundo}")`
+    );
+} else {
+    document.body.style.setProperty(
+        "--cliente-fundo",
+        'url("assets/backgrounds/fundo-taply.png")'
+    );
+}
 
 const socials =
     document.getElementById(
