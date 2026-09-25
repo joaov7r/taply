@@ -1211,7 +1211,7 @@ const starIcon = `
 document.querySelector(".logo img").src = estabelecimento.logo;
 document.querySelector(".logo img").alt = estabelecimento.nome;
 
-document.getElementById("description").textContent =
+document.getElementById("description").innerHTML =
     estabelecimento.descricao;
 
 document.title = estabelecimento.nome;
