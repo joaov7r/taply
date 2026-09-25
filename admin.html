@@ -625,7 +625,7 @@ function valor(id) {
 }
 
 
-function gerarCliente() {
+async function gerarCliente() {
 
     const slug =
         valor("slug");
@@ -751,6 +751,7 @@ function gerarCliente() {
 `;
 
 
+    // Mostrar o código gerado
     document
         .getElementById("codigo")
         .value =
@@ -770,52 +771,135 @@ function gerarCliente() {
         });
 
 
-    // LIMPA O FORMULÁRIO
-    // depois de gerar o cliente
+    // Enviar cliente para o Worker
+    try {
 
-    setTimeout(() => {
+        const resposta =
+            await fetch(
+                "https://taply-admin.jvc-lopes.workers.dev/",
+                {
+                    method: "POST",
 
-                document
-            .querySelectorAll(
-                ".card input, .card textarea"
-            )
-            .forEach(
-                campo => {
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
 
-                    // Mantém os textos padrão
-                    // dos botões
+                    body:
+                        JSON.stringify({
 
-                    if (
-                        campo.id !==
-                        "agendamentoTexto" &&
+                            slug,
+                            nome,
+                            descricao,
 
-                        campo.id !==
-                        "agendamentoSubtitulo" &&
+                            agendamentoTexto,
+                            agendamentoSubtitulo,
 
-                        campo.id !==
-                        "localizacao" &&
+                            localizacao,
+                            localizacaoSubtitulo,
 
-                        campo.id !==
-                        "localizacaoSubtitulo" &&
+                            avaliacao,
+                            avaliacaoSubtitulo,
 
-                        campo.id !==
-                        "avaliacao" &&
+                            logo,
+                            fundo,
 
-                        campo.id !==
-                        "avaliacaoSubtitulo"
-                    ) {
+                            whatsapp,
+                            instagram,
+                            agendamento,
 
-                        campo.value = "";
+                            unidadeNome,
+                            endereco,
+                            maps,
+                            google
 
-                    }
-
+                        })
                 }
             );
 
-    }, 300);
+
+        const resultado =
+            await resposta.json();
+
+
+        if (!resposta.ok ||
+            !resultado.sucesso) {
+
+            alert(
+                "Não foi possível cadastrar o cliente.\n\n" +
+                (
+                    resultado.mensagem ||
+                    "Erro desconhecido."
+                )
+            );
+
+            return;
+
+        }
+
+
+        alert(
+            "Cliente cadastrado com sucesso!\n\n" +
+            "Slug: " +
+            resultado.slug
+        );
+
+
+        // LIMPA O FORMULÁRIO
+        // depois do cadastro
+
+        setTimeout(() => {
+
+            document
+                .querySelectorAll(
+                    ".card input, .card textarea"
+                )
+                .forEach(
+                    campo => {
+
+                        // Mantém os textos padrão
+                        // dos botões
+
+                        if (
+                            campo.id !==
+                            "agendamentoTexto" &&
+
+                            campo.id !==
+                            "agendamentoSubtitulo" &&
+
+                            campo.id !==
+                            "localizacao" &&
+
+                            campo.id !==
+                            "localizacaoSubtitulo" &&
+
+                            campo.id !==
+                            "avaliacao" &&
+
+                            campo.id !==
+                            "avaliacaoSubtitulo"
+                        ) {
+
+                            campo.value = "";
+
+                        }
+
+                    }
+                );
+
+        }, 300);
+
+
+    } catch (erro) {
+
+        alert(
+            "Erro ao conectar com o servidor.\n\n" +
+            erro.message
+        );
+
+    }
+
 }
-
-
 </script>
 
 
