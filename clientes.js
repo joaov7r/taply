@@ -325,4 +325,30 @@ const clientes = {
         }
     ]
 }
+,
+    "teste-cliente-2": {
+    "nome": "teste-cliente-2",
+    "descricao": "",
+    "botoes": {
+        "agendamento": "Agende seu horário",
+        "agendamentoSubtitulo": "Escolha uma opção",
+        "localizacao": "Nossa localização",
+        "localizacaoSubtitulo": "Veja como chegar",
+        "avaliacao": "Avalie no Google",
+        "avaliacaoSubtitulo": "Sua opinião é muito importante"
+    },
+    "logo": "assets/logos/",
+    "fundo": "assets/backgrounds/",
+    "whatsapp": "",
+    "instagram": "",
+    "agendamento": "",
+    "unidades": [
+        {
+            "nome": "",
+            "endereco": "",
+            "maps": "",
+            "google": ""
+        }
+    ]
+}
 };
