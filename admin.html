@@ -564,39 +564,6 @@
                 placeholder="https://search.google.com/local/writereview?..."
             >
 
-            <div class="grid">
-
-    <div class="field">
-
-        <label>
-            Latitude
-        </label>
-
-        <input
-            id="latitude"
-            type="text"
-            placeholder="Ex.: -23.603456"
-        >
-
-    </div>
-
-
-    <div class="field">
-
-        <label>
-            Longitude
-        </label>
-
-        <input
-            id="longitude"
-            type="text"
-            placeholder="Ex.: -46.987654"
-        >
-
-    </div>
-
-</div>
-
         </div>
 
     </div>
@@ -713,12 +680,6 @@ async function gerarCliente() {
 
     const google =
         valor("google");
-
-    const latitude =
-    valor("latitude");
-
-const longitude =
-    valor("longitude");
 
 
     if (
@@ -850,9 +811,7 @@ const longitude =
                             unidadeNome,
                             endereco,
                             maps,
-                            google,
-                            latitude,
-                            longitude
+                            google
 
                         })
                 }
