@@ -93,4 +93,41 @@ const clientes = {
             google: "https://www.google.com/"
         }
     ]
+},
+
+"vila-americo": {
+
+    nome: "Vila Américo Bar e Restaurante",
+
+    descricao: "",
+
+    botoes: {
+        agendamento: "Cardápio Online",
+        agendamentoSubtitulo: "Confira nosso cardápio",
+
+        localizacao: "Nossa localização",
+        localizacaoSubtitulo: "Veja como chegar",
+
+        avaliacao: "Avalie no Google",
+        avaliacaoSubtitulo: "Sua opinião é muito importante"
+    },
+
+    logo: "assets/logos/logo-vila-americo.png",
+
+    fundo: "assets/backgrounds/fundo-vila-americo.png",
+
+    whatsapp: "https://wa.me/551151821830",
+
+    instagram: "https://www.instagram.com/vila_americo/",
+
+    agendamento: "https://www.canva.com/design/DAHMM-6Yx4M/qVRgqQWGN9NyCrSsq2fWiw/view?utm_content=DAHMM-6Yx4M&utm_campaign=designshare&utm_medium=link&utm_source=viewer&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaf2uCPIAotyMXgPpyx62jbODmeRJ9MhoeHF4VRqoJxH2ji6vHtMolqvyi7YXQ_aem_A4zcxwz53VmDHj1B3CpD-w",
+
+    unidades: [
+        {
+            nome: "Vila Américo",
+            endereco: "R. Américo Brasiliense, 1831 - Chácara Santo Antônio (Zona Sul), São Paulo - SP",
+            maps: "https://www.google.com/maps/dir/?api=1&destination=R.+Américo+Brasiliense,+1831,+Chácara+Santo+Antônio,+São+Paulo+-+SP",
+            google: "https://search.google.com/local/writereview?placeid=ChIJl3hzGHRRzpQRbwN_W_U7zF4"
+        }
+    ]
 };
