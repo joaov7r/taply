@@ -627,74 +627,56 @@ function valor(id) {
 
 function gerarCliente() {
 
-
     const slug =
         valor("slug");
-
 
     const nome =
         valor("nome");
 
-
     const descricao =
         valor("descricao");
-
 
     const whatsapp =
         valor("whatsapp");
 
-
     const instagram =
         valor("instagram");
-
 
     const agendamentoTexto =
         valor("agendamentoTexto");
 
-
     const agendamentoSubtitulo =
         valor("agendamentoSubtitulo");
-
 
     const agendamento =
         valor("agendamento");
 
-
     const logo =
         valor("logo");
-
 
     const fundo =
         valor("fundo");
 
-
     const localizacao =
         valor("localizacao");
-
 
     const localizacaoSubtitulo =
         valor("localizacaoSubtitulo");
 
-
     const avaliacao =
         valor("avaliacao");
-
 
     const avaliacaoSubtitulo =
         valor("avaliacaoSubtitulo");
 
-
     const unidadeNome =
         valor("unidadeNome");
-
 
     const endereco =
         valor("endereco");
 
-
     const maps =
         valor("maps");
-
 
     const google =
         valor("google");
@@ -716,57 +698,57 @@ function gerarCliente() {
 
     const codigo = `
 
-    "${slug}": {
+"${slug}": {
 
-        nome: "${nome}",
+    nome: "${nome}",
 
-        descricao: "${descricao}",
+    descricao: "${descricao}",
 
-        botoes: {
+    botoes: {
 
-            agendamento: "${agendamentoTexto}",
+        agendamento: "${agendamentoTexto}",
 
-            agendamentoSubtitulo: "${agendamentoSubtitulo}",
+        agendamentoSubtitulo: "${agendamentoSubtitulo}",
 
-            localizacao: "${localizacao}",
+        localizacao: "${localizacao}",
 
-            localizacaoSubtitulo: "${localizacaoSubtitulo}",
+        localizacaoSubtitulo: "${localizacaoSubtitulo}",
 
-            avaliacao: "${avaliacao}",
+        avaliacao: "${avaliacao}",
 
-            avaliacaoSubtitulo: "${avaliacaoSubtitulo}"
+        avaliacaoSubtitulo: "${avaliacaoSubtitulo}"
 
-        },
+    },
 
-        logo: "assets/logos/${logo}",
+    logo: "assets/logos/${logo}",
 
-        fundo: "assets/backgrounds/${fundo}",
+    fundo: "assets/backgrounds/${fundo}",
 
-        whatsapp: "${whatsapp}",
+    whatsapp: "${whatsapp}",
 
-        instagram: "${instagram}",
+    instagram: "${instagram}",
 
-        agendamento: "${agendamento}",
+    agendamento: "${agendamento}",
 
-        unidades: [
+    unidades: [
 
-            {
+        {
 
-                nome: "${unidadeNome}",
+            nome: "${unidadeNome}",
 
-                endereco: "${endereco}",
+            endereco: "${endereco}",
 
-                maps: "${maps}",
+            maps: "${maps}",
 
-                google: "${google}"
+            google: "${google}"
 
-            }
+        }
 
-        ]
+    ]
 
-    }
+}
 
-    `;
+`;
 
 
     document
@@ -788,6 +770,49 @@ function gerarCliente() {
         });
 
 
+    // LIMPA O FORMULÁRIO
+    // depois de gerar o cliente
+
+    setTimeout(() => {
+
+        document
+            .querySelectorAll(
+                "input, textarea"
+            )
+            .forEach(
+                campo => {
+
+                    // Mantém os textos padrão
+                    // dos botões
+
+                    if (
+                        campo.id !==
+                        "agendamentoTexto" &&
+
+                        campo.id !==
+                        "agendamentoSubtitulo" &&
+
+                        campo.id !==
+                        "localizacao" &&
+
+                        campo.id !==
+                        "localizacaoSubtitulo" &&
+
+                        campo.id !==
+                        "avaliacao" &&
+
+                        campo.id !==
+                        "avaliacaoSubtitulo"
+                    ) {
+
+                        campo.value = "";
+
+                    }
+
+                }
+            );
+
+    }, 300);
 }
 
 
