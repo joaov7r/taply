@@ -4,7 +4,7 @@ const clientes = {
 
         nome: "Barbearia Dom Roger",
 
-        descricao: "Corte • Barba • Estilo. 🥇 A 1ª barbearia por assinatura de Cotia",
+        descricao: "Corte • Barba • Estilo.<br> 🥇 A 1ª barbearia por assinatura de Cotia",
 
         botoes: {
             agendamento: "Agende seu horário",
