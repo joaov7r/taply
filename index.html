@@ -1466,42 +1466,68 @@ links.forEach(
         }
 
 
-        if (
-            link.action ===
-            "location"
-        ) {
+       if (
+    link.action ===
+    "location"
+) {
 
-            element.addEventListener(
-                "click",
-                () => {
+    element.addEventListener(
+        "click",
+        () => {
 
-                    abrirModal(
-                        locationModal
-                    );
+            if (
+                estabelecimento.unidades.length === 1
+            ) {
 
-                }
-            );
+                window.open(
+                    estabelecimento.unidades[0].maps,
+                    "_blank"
+                );
 
-        }
+            } else {
 
+                abrirModal(
+                    locationModal
+                );
 
-        if (
-            link.action ===
-            "review"
-        ) {
-
-            element.addEventListener(
-                "click",
-                () => {
-
-                    abrirModal(
-                        reviewModal
-                    );
-
-                }
-            );
+            }
 
         }
+    );
+
+}
+
+
+       if (
+    link.action ===
+    "review"
+) {
+
+    element.addEventListener(
+        "click",
+        () => {
+
+            if (
+                estabelecimento.unidades.length === 1
+            ) {
+
+                window.open(
+                    estabelecimento.unidades[0].google,
+                    "_blank"
+                );
+
+            } else {
+
+                abrirModal(
+                    reviewModal
+                );
+
+            }
+
+        }
+    );
+
+}
 
 
         element.innerHTML = `
