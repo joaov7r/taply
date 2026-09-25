@@ -1203,8 +1203,19 @@ const starIcon = `
    IDENTIDADE VISUAL DO CLIENTE
 ===================================================== */
 
-document.querySelector(".logo img").src = estabelecimento.logo;
-document.querySelector(".logo img").alt = estabelecimento.nome;
+const logo = document.querySelector(".logo img");
+
+if (estabelecimento.logo) {
+
+    logo.src = estabelecimento.logo;
+
+} else {
+
+    logo.src = "assets/logos/logo-taply.png";
+
+}
+
+logo.alt = estabelecimento.nome;
 
 document.getElementById("description").innerHTML =
     estabelecimento.descricao;
