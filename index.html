@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Barbearia Dom Roger</title>
+    <title>Taply</title>
 
     <style>
 
@@ -1209,11 +1209,12 @@ const starIcon = `
 ===================================================== */
 
 document.querySelector(".logo img").src = estabelecimento.logo;
-
 document.querySelector(".logo img").alt = estabelecimento.nome;
 
 document.getElementById("description").textContent =
     estabelecimento.descricao;
+
+document.title = estabelecimento.nome;
 
 document.body.style.setProperty(
     "--cliente-fundo",
