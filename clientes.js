@@ -99,7 +99,7 @@ const clientes = {
 
         nome: "Vila Américo Bar e Restaurante",
 
-        descricao: "",
+        descricao: "Bar e Restaurante",
 
         botoes: {
             agendamento: "Cardápio Online",
