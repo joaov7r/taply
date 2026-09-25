@@ -999,55 +999,123 @@ box-shadow:
      POPUP DE LOCALIZAÇÃO
 ===================================================== -->
 
-<div
-    class="modal"
-    id="locationModal"
->
+estabelecimento.unidades.forEach(
+    (unidade, index) => {
 
-    <div class="modal-content">
+        const element =
+            document.createElement("div");
+
+        element.className = "unit";
+
+        const mapaId =
+            `map-${index}`;
+
+        element.innerHTML = `
+
+            <div class="unit-map">
+
+                <div
+                    class="unit-map-container"
+                    id="${mapaId}">
+                </div>
+
+                <a
+                    class="unit-route"
+                    href="${unidade.maps}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    ROTA
+                </a>
+
+            </div>
 
 
-        <div class="modal-header">
+            <div class="unit-info">
 
-            <div>
+                <div class="unit-name">
 
-                <div class="modal-title">
+                    ${locationIcon}
 
-                    Escolha sua unidade
+                    ${unidade.nome}
 
                 </div>
 
-                <div class="modal-subtitle">
 
-                    Encontre a unidade mais próxima de você
+                <div class="unit-address">
+
+                    Clique aqui e veja a rota até a loja
 
                 </div>
 
             </div>
 
-
-            <button
-                class="close-button"
-                data-close="locationModal"
-                aria-label="Fechar"
-            >
-
-                ×
-
-            </button>
-
-        </div>
+        `;
 
 
-        <div
-            class="units"
-            id="locationUnits"
-        ></div>
+        locationUnits.appendChild(
+            element
+        );
 
 
-    </div>
+        if (
+            unidade.latitude &&
+            unidade.longitude
+        ) {
 
-</div>
+            const latitude =
+                Number(unidade.latitude);
+
+            const longitude =
+                Number(unidade.longitude);
+
+
+            const mapa =
+                L.map(mapaId, {
+
+                    zoomControl: false,
+
+                    attributionControl: true
+
+                }).setView(
+                    [
+                        latitude,
+                        longitude
+                    ],
+                    16
+                );
+
+
+            L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+                    maxZoom: 19,
+
+                    attribution:
+                        '&copy; OpenStreetMap contributors'
+                }
+            ).addTo(mapa);
+
+
+            L.marker(
+                [
+                    latitude,
+                    longitude
+                ]
+            ).addTo(mapa);
+
+
+            setTimeout(
+                () => {
+                    mapa.invalidateSize();
+                },
+                300
+            );
+
+        }
+
+    }
+);
 
 
 <!-- =====================================================
