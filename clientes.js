@@ -247,10 +247,10 @@ const clientes = {
         // assets/backgrounds/
 
         logo:
-            "assets/logos/logo-cliente.png",
+            "",
 
         fundo:
-            "assets/backgrounds/fundo-cliente.png",
+            "",
 
         // REDES SOCIAIS
         whatsapp:
