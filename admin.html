@@ -337,20 +337,11 @@
                 >
                 <label>Ícone do botão 1</label>
 
-            <select id="botao1Icone">
-                <option value="">Automático</option>
-                <option value="whatsapp">📱 WhatsApp</option>
-                <option value="instagram">📷 Instagram</option>
-                <option value="compras">🛒 Compras / Pedido</option>
-                <option value="telefone">📞 Telefone</option>
-                <option value="localizacao">📍 Localização</option>
-                <option value="avaliacao">⭐ Avaliação</option>
-                <option value="precos">💰 Preços</option>
-                <option value="servicos">📋 Serviços</option>
-                <option value="promocao">🏷️ Promoção</option>
-                <option value="pagamento">💳 Pagamento</option>
-                <option value="link">🔗 Link</option>
-            </select>
+                <input
+                    id="botao1Icone"
+                    type="text"
+                    placeholder="Ex.: whatsapp, cardapio, agendamento"
+                >
 
             </div>
 
@@ -622,6 +613,14 @@
             readonly
         ></textarea>
 
+        <button
+            class="button"
+            style="margin-top: 12px;"
+            onclick="copiarCodigo()"
+        >
+            COPIAR CÓDIGO
+        </button>
+
     </div>
 
 
@@ -641,7 +640,15 @@ function valor(id) {
 }
 
 
-async function gerarCliente() {
+function escaparJS(valor) {
+    return valor
+        .replace(/\\/g, "\\\\")
+        .replace(/"/g, '\\"')
+        .replace(/\r?\n/g, "\\n");
+}
+
+
+function gerarCliente() {
 
     const slug =
         valor("slug");
@@ -658,16 +665,16 @@ async function gerarCliente() {
     const instagram =
         valor("instagram");
 
-    const agendamentoTexto =
+    const botao1Texto =
         valor("agendamentoTexto");
 
-    const agendamentoSubtitulo =
+    const botao1Subtitulo =
         valor("agendamentoSubtitulo");
-    
-    const botao1Icone =
-    valor("botao1Icone");
 
-    const agendamento =
+    const botao1Icone =
+        valor("botao1Icone");
+
+    const botao1Link =
         valor("agendamento");
 
     const logo =
@@ -701,81 +708,80 @@ async function gerarCliente() {
         valor("google");
 
 
-    if (
-        !slug ||
-        !nome
-    ) {
+    if (!slug || !nome) {
 
         alert(
             "Preencha pelo menos o nome e o identificador do cliente."
         );
 
         return;
-
     }
-    
-const textoBotao1Normalizado =
-    agendamentoTexto
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
 
-const botao1Tipo =
-    textoBotao1Normalizado.includes("cardapio")
-        ? "cardapio"
-        : textoBotao1Normalizado.includes("agendamento")
-            ? "agendamento"
-            : "personalizado";
 
     const codigo = `
 
-"${slug}": {
+"${escaparJS(slug)}": {
 
-    nome: "${nome}",
+    nome: "${escaparJS(nome)}",
 
-    descricao: "${descricao}",
+    descricao:
+        "${escaparJS(descricao)}",
 
-   botoes: {
+    botoes: {
 
-    botao1: "${agendamentoTexto}",
+        botao1:
+            "${escaparJS(botao1Texto)}",
 
-   botao1Tipo: "${botao1Tipo}",
+        botao1Subtitulo:
+            "${escaparJS(botao1Subtitulo)}",
 
-    botao1Subtitulo: "${agendamentoSubtitulo}",
+        botao1Icone:
+            "${escaparJS(botao1Icone)}",
 
-    botao1Icone: "${botao1Icone}",
+        localizacao:
+            "${escaparJS(localizacao)}",
 
-    localizacao: "${localizacao}",
+        localizacaoSubtitulo:
+            "${escaparJS(localizacaoSubtitulo)}",
 
-    localizacaoSubtitulo: "${localizacaoSubtitulo}",
+        avaliacao:
+            "${escaparJS(avaliacao)}",
 
-    avaliacao: "${avaliacao}",
+        avaliacaoSubtitulo:
+            "${escaparJS(avaliacaoSubtitulo)}"
 
-    avaliacaoSubtitulo: "${avaliacaoSubtitulo}"
+    },
 
-},
+    logo:
+        "assets/logos/${escaparJS(logo)}",
 
-    logo: "assets/logos/${logo}",
+    fundo:
+        "assets/backgrounds/${escaparJS(fundo)}",
 
-    fundo: "assets/backgrounds/${fundo}",
+    whatsapp:
+        "${escaparJS(whatsapp)}",
 
-    whatsapp: "${whatsapp}",
+    instagram:
+        "${escaparJS(instagram)}",
 
-    instagram: "${instagram}",
-
-    botao1Link: "${agendamento}",
+    botao1Link:
+        "${escaparJS(botao1Link)}",
 
     unidades: [
 
         {
 
-            nome: "${unidadeNome}",
+            nome:
+                "${escaparJS(unidadeNome)}",
 
-            endereco: "${endereco}",
+            endereco:
+                "${escaparJS(endereco)}",
 
-            maps: "${maps}",
+            maps:
+                "${escaparJS(maps)}",
 
-            google: "${google}"
+            google:
+                "${escaparJS(google)}"
 
         }
 
@@ -786,7 +792,6 @@ const botao1Tipo =
 `;
 
 
-    // Mostrar o código gerado
     document
         .getElementById("codigo")
         .value =
@@ -805,137 +810,28 @@ const botao1Tipo =
             behavior: "smooth"
         });
 
-
-    // Enviar cliente para o Worker
-    try {
-
-        const resposta =
-            await fetch(
-                "https://taply-admin.jvc-lopes.workers.dev/",
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "application/json"
-                    },
-
-                    body:
-                        JSON.stringify({
-
-                            slug,
-                            nome,
-                            descricao,
-
-                            botao1Texto: agendamentoTexto,
-                            botao1Subtitulo: agendamentoSubtitulo,
-                            botao1Icone,
-
-                            localizacao,
-                            localizacaoSubtitulo,
-
-                            avaliacao,
-                            avaliacaoSubtitulo,
-
-                            logo,
-                            fundo,
-
-                            whatsapp,
-                            instagram,
-                            botao1Link: agendamento,
-
-                            unidadeNome,
-                            endereco,
-                            maps,
-                            google
-
-                        })
-                }
-            );
+}
 
 
-        const resultado =
-            await resposta.json();
+function copiarCodigo() {
 
+    const codigo =
+        document.getElementById("codigo").value;
 
-        if (!resposta.ok ||
-            !resultado.sucesso) {
-
-            alert(
-                "Não foi possível cadastrar o cliente.\n\n" +
-                (
-                    resultado.mensagem ||
-                    "Erro desconhecido."
-                )
-            );
-
-            return;
-
-        }
-
-
-        alert(
-            "Cliente cadastrado com sucesso!\n\n" +
-            "Slug: " +
-            resultado.slug
-        );
-
-
-        // LIMPA O FORMULÁRIO
-        // depois do cadastro
-
-        setTimeout(() => {
-
-            document
-                .querySelectorAll(
-                    ".card input, .card textarea"
-                )
-                .forEach(
-                    campo => {
-
-                        // Mantém os textos padrão
-                        // dos botões
-
-                        if (
-                            campo.id !==
-                            "agendamentoTexto" &&
-
-                            campo.id !==
-                            "agendamentoSubtitulo" &&
-
-                            campo.id !==
-                            "localizacao" &&
-
-                            campo.id !==
-                            "localizacaoSubtitulo" &&
-
-                            campo.id !==
-                            "avaliacao" &&
-
-                            campo.id !==
-                            "avaliacaoSubtitulo"
-                        ) {
-
-                            campo.value = "";
-
-                        }
-
-                    }
-                );
-
-        }, 300);
-
-
-    } catch (erro) {
-
-        alert(
-            "Erro ao conectar com o servidor.\n\n" +
-            erro.message
-        );
-
+    if (!codigo) {
+        return;
     }
 
+    navigator.clipboard.writeText(codigo)
+        .then(() => {
+            alert("Código copiado!");
+        })
+        .catch(() => {
+            alert("Não foi possível copiar automaticamente. Selecione e copie o código.");
+        });
+
 }
+
 </script>
 
 
