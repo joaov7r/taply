@@ -212,10 +212,10 @@ const clientes = {
 
         // INFORMAÇÕES PRINCIPAIS
         nome:
-            "Nome do Cliente",
+            "Taply",
 
         descricao:
-            "Descrição do cliente",
+            "Sua presença digital, simples, profissional e personalizada",
 
         // TEXTOS DOS BOTÕES
         botoes: {
@@ -254,10 +254,10 @@ const clientes = {
 
         // REDES SOCIAIS
         whatsapp:
-            "https://wa.me/5500000000000",
+            "https://wa.me/5511959874525",
 
         instagram:
-            "https://www.instagram.com/cliente/",
+            "https://www.instagram.com",
 
         // BOTÃO PRINCIPAL
         //
@@ -269,7 +269,7 @@ const clientes = {
         // - qualquer outro link
 
         agendamento:
-            "https://link-do-cliente.com",
+            "h",
 
         // UNIDADES
         //
@@ -286,7 +286,21 @@ const clientes = {
                     "Unidade 1",
 
                 endereco:
-                    "Endereço da unidade",
+                    "Endereço da unidade 1",
+
+                maps:
+                    "https://www.google.com/maps",
+
+                google:
+                    "https://www.google.com/"
+            }
+
+             {
+                nome:
+                    "Unidade 2",
+
+                endereco:
+                    "Endereço da unidade 2",
 
                 maps:
                     "https://www.google.com/maps",
