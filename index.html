@@ -1422,7 +1422,9 @@ const links = [
     {
 
         icon:
-            calendarIcon,
+    estabelecimento.botoes.agendamentoIcone === "cardapio"
+        ? cardapioIcon
+        : calendarIcon,
 
         title:
             estabelecimento.botoes.agendamento,
