@@ -1451,7 +1451,9 @@ const links = [
         ? cardapioIcon
         : estabelecimento.botoes.botao1Tipo === "agendamento"
             ? calendarIcon
-            : estabelecimento.botoes.botao1Icone,
+            : estabelecimento.botoes.botao1Icone === "whatsapp"
+                ? whatsappIcon
+                : estabelecimento.botoes.botao1Icone,
 
     title:
         estabelecimento.botoes.botao1,
