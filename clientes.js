@@ -15,10 +15,10 @@ const clientes = {
         // TEXTOS DOS BOTÕES
         botoes: {
 
-            agendamento:
+            botao1:
                 "Agende seu horário",
 
-            agendamentoSubtitulo:
+            botao1Subtitulo:
                 "Escolha sua unidade e horário",
 
             localizacao:
@@ -48,8 +48,8 @@ const clientes = {
         instagram:
             "https://www.instagram.com/barbeariadom.roger/",
 
-        // BOTÃO PRINCIPAL
-        agendamento:
+        // BOTÕES VARIÁVEIS
+        botao1link:
             "https://cashbarber.com.br/barbeariadomroger/inicio",
 
         // UNIDADES
@@ -132,10 +132,10 @@ const clientes = {
         // TEXTOS DOS BOTÕES
         botoes: {
 
-            agendamento:
+            botao1:
                 "Cardápio Online",
 
-            agendamentoSubtitulo:
+            botao1Subtitulo:
                 "Confira nosso cardápio",
 
             agendamentoIcone:
@@ -168,8 +168,8 @@ const clientes = {
         instagram:
             "https://www.instagram.com/vila_americo/",
 
-        // BOTÃO PRINCIPAL
-        agendamento:
+        // BOTÕES
+        botao1link:
             "https://www.canva.com/design/DAHMM-6Yx4M/qVRgqQWGN9NyCrSsq2fWiw/view?utm_content=DAHMM-6Yx4M&utm_campaign=designshare&utm_medium=link&utm_source=viewer&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaf2uCPIAotyMXgPpyx62jbODmeRJ9MhoeHF4VRqoJxH2ji6vHtMolqvyi7YXQ_aem_A4zcxwz53VmDHj1B3CpD-w",
 
         // UNIDADES
@@ -223,10 +223,10 @@ const clientes = {
         // TEXTOS DOS BOTÕES
         botoes: {
 
-            agendamento:
+            botao1:
                 "Agende seu horário",
 
-            agendamentoSubtitulo:
+            botao1Subtitulo:
                 "Escolha uma opção",
 
             localizacao:
@@ -271,7 +271,7 @@ const clientes = {
         // - site
         // - qualquer outro link
 
-        agendamento:
+        botao1link:
             "h",
 
         // UNIDADES
