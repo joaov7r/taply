@@ -199,25 +199,16 @@ const clientes = {
             "Sua presença digital, simples, profissional e personalizada",
 
         // TEXTOS DOS BOTÕES
-        botoes: {
-
-            botao1:
-                "Agende seu horário",
-
-            botao1Subtitulo:
-                "Escolha uma opção",
-
-            localizacao:
-                "Nossa localização",
-
-            localizacaoSubtitulo:
-                "Veja onde estamos",
-
-            avaliacao:
-                "Avalie no Google",
-
-            avaliacaoSubtitulo:
-                "Sua opinião é muito importante"
+       botoes: {
+            botao1: "Seu link",
+            botao1Tipo: "link",
+            botao1Subtitulo: "Seu link personalizável aqui",
+        
+            localizacao: "Nossa localização",
+            localizacaoSubtitulo: "Veja como chegar",
+        
+            avaliacao: "Avalie no Google",
+            avaliacaoSubtitulo: "Sua opinião é muito importante"
         },
 
         // IDENTIDADE VISUAL
@@ -265,13 +256,10 @@ const clientes = {
             {
                 nome:
                     "Unidade 1",
-
                 endereco:
                     "Endereço da unidade 1",
-
                 maps:
                     "https://www.google.com/maps",
-
                 google:
                     "https://www.google.com/"
             },
@@ -279,13 +267,10 @@ const clientes = {
              {
                 nome:
                     "Unidade 2",
-
                 endereco:
                     "Endereço da unidade 2",
-
                 maps:
                     "https://www.google.com/maps",
-
                 google:
                     "https://www.google.com/"
             }
