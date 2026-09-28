@@ -309,4 +309,34 @@ const clientes = {
         }
     ]
 }
+,
+    "teste-icone": {
+    "nome": "teste taply",
+    "descricao": "",
+    "botoes": {
+        "botao1": "faça seu pedido",
+        "botao1Tipo": "personalizado",
+        "botao1Subtitulo": "peça pelo whatsapp",
+        "botao1Icone": "whatsapp",
+        "localizacao": "Nossa localização",
+        "localizacaoSubtitulo": "Veja como chegar",
+        "avaliacao": "Avalie no Google",
+        "avaliacaoSubtitulo": "Sua opinião é muito importante"
+    },
+    "logo": "assets/logos/",
+    "fundo": "assets/backgrounds/",
+    "whatsapp": "",
+    "instagram": "",
+    "botao1Link": "",
+    "unidades": [
+        {
+            "nome": "",
+            "endereco": "",
+            "maps": "",
+            "google": "",
+            "latitude": "",
+            "longitude": ""
+        }
+    ]
+}
 };
