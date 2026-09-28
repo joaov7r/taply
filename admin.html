@@ -335,6 +335,22 @@
                     type="text"
                     value="Agende seu horário"
                 >
+                <label>Ícone do botão 1</label>
+
+            <select id="botao1Icone">
+                <option value="">Automático</option>
+                <option value="whatsapp">📱 WhatsApp</option>
+                <option value="instagram">📷 Instagram</option>
+                <option value="compras">🛒 Compras / Pedido</option>
+                <option value="telefone">📞 Telefone</option>
+                <option value="localizacao">📍 Localização</option>
+                <option value="avaliacao">⭐ Avaliação</option>
+                <option value="precos">💰 Preços</option>
+                <option value="servicos">📋 Serviços</option>
+                <option value="promocao">🏷️ Promoção</option>
+                <option value="pagamento">💳 Pagamento</option>
+                <option value="link">🔗 Link</option>
+            </select>
 
             </div>
 
@@ -647,6 +663,9 @@ async function gerarCliente() {
 
     const agendamentoSubtitulo =
         valor("agendamentoSubtitulo");
+    
+    const botao1Icone =
+    valor("botao1Icone");
 
     const agendamento =
         valor("agendamento");
@@ -704,21 +723,25 @@ async function gerarCliente() {
 
     descricao: "${descricao}",
 
-    botoes: {
+   botoes: {
 
-        agendamento: "${agendamentoTexto}",
+    botao1: "${agendamentoTexto}",
 
-        agendamentoSubtitulo: "${agendamentoSubtitulo}",
+    botao1Tipo: "${agendamentoTexto.toLowerCase().includes("cardápio") ? "cardapio" : agendamentoTexto.toLowerCase().includes("agendamento") ? "agendamento" : "personalizado"}",
 
-        localizacao: "${localizacao}",
+    botao1Subtitulo: "${agendamentoSubtitulo}",
 
-        localizacaoSubtitulo: "${localizacaoSubtitulo}",
+    botao1Icone: "${botao1Icone}",
 
-        avaliacao: "${avaliacao}",
+    localizacao: "${localizacao}",
 
-        avaliacaoSubtitulo: "${avaliacaoSubtitulo}"
+    localizacaoSubtitulo: "${localizacaoSubtitulo}",
 
-    },
+    avaliacao: "${avaliacao}",
+
+    avaliacaoSubtitulo: "${avaliacaoSubtitulo}"
+
+},
 
     logo: "assets/logos/${logo}",
 
@@ -728,7 +751,7 @@ async function gerarCliente() {
 
     instagram: "${instagram}",
 
-    agendamento: "${agendamento}",
+    botao1Link: "${agendamento}",
 
     unidades: [
 
