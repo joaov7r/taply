@@ -13,27 +13,17 @@ const clientes = {
             "Corte • Barba • Estilo.<br>🥇 A 1ª barbearia por assinatura de Cotia",
 
         // TEXTOS DOS BOTÕES
-        botoes: {
-
-            botao1:
-                "Agende seu horário",
-
-            botao1Subtitulo:
-                "Escolha sua unidade e horário",
-
-            localizacao:
-                "Encontre uma unidade",
-
-            localizacaoSubtitulo:
-                "Veja todas as nossas unidades",
-
-            avaliacao:
-                "Avalie no Google",
-
-            avaliacaoSubtitulo:
-                "Sua opinião é muito importante"
+       botoes: {
+            botao1: "Agende seu horário",
+            botao1Tipo: "agendamento",
+            botao1Subtitulo: "Escolha sua unidade e horário",
+        
+            localizacao: "Encontre uma unidade",
+            localizacaoSubtitulo: "Veja todas as nossas unidades",
+        
+            avaliacao: "Avalie no Google",
+            avaliacaoSubtitulo: "Sua opinião é muito importante"
         },
-
         // IDENTIDADE VISUAL
         logo:
             "assets/logos/logo-dom-roger.png",
@@ -50,7 +40,7 @@ const clientes = {
 
         // BOTÕES VARIÁVEIS
         botao1link:
-            "https://cashbarber.com.br/barbeariadomroger/inicio",
+            "https://cashbarber.com.br/barbeariadomroger/inicio/agendamento",
 
         // UNIDADES
         unidades: [
@@ -131,27 +121,15 @@ const clientes = {
 
         // TEXTOS DOS BOTÕES
         botoes: {
-
-            botao1:
-                "Cardápio Online",
-
-            botao1Subtitulo:
-                "Confira nosso cardápio",
-
-            agendamentoIcone:
-                "cardapio",
-
-            localizacao:
-                "Nossa localização",
-
-            localizacaoSubtitulo:
-                "Veja como chegar",
-
-            avaliacao:
-                "Avalie no Google",
-
-            avaliacaoSubtitulo:
-                "Sua opinião é muito importante"
+            botao1: "Cardápio Online",
+            botao1Tipo: "cardapio",
+            botao1Subtitulo: "Confira nosso cardápio",
+        
+            localizacao: "Nossa localização",
+            localizacaoSubtitulo: "Veja como chegar",
+        
+            avaliacao: "Avalie no Google",
+            avaliacaoSubtitulo: "Sua opinião é muito importante"
         },
 
         // IDENTIDADE VISUAL
