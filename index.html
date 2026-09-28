@@ -1420,22 +1420,22 @@ socials.appendChild(
 const links = [
 
     {
-
-        icon:
-    estabelecimento.botoes.agendamentoIcone === "cardapio"
+   icon:
+    estabelecimento.botoes.botao1Tipo === "cardapio"
         ? cardapioIcon
-        : calendarIcon,
+        : estabelecimento.botoes.botao1Tipo === "agendamento"
+            ? calendarIcon
+            : estabelecimento.botoes.botao1Icone,
 
-        title:
-            estabelecimento.botoes.agendamento,
+    title:
+        estabelecimento.botoes.botao1,
 
-        subtitle:
-            estabelecimento.botoes.agendamentoSubtitulo,
-        
-        url:
-            estabelecimento.agendamento
+    subtitle:
+        estabelecimento.botoes.botao1Subtitulo,
 
-    },
+    url:
+        estabelecimento.botao1Link
+},
 
 
     {
