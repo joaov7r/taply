@@ -1424,62 +1424,143 @@ socials.appendChild(
 ===================================================== */
 
 
-const links = [
+/*
+   =====================================================
+   ÍCONES DOS BOTÕES PRINCIPAIS
 
-    {
-   icon:
-    estabelecimento.botoes.botao1Tipo === "cardapio"
-        ? cardapioIcon
-        : estabelecimento.botoes.botao1Tipo === "agendamento"
-            ? calendarIcon
-            : estabelecimento.botoes.botao1Icone === "whatsapp"
-                ? whatsappIcon
-                : estabelecimento.botoes.botao1Icone,
+   Os ícones são definidos manualmente aqui.
+   O clientes.js apenas informa o NOME do ícone.
 
-    title:
-        estabelecimento.botoes.botao1,
+   Exemplo:
+   botao1Icone: "whatsapp"
+   botao2Icone: "cardapio"
+   botao3Icone: "meuIcone"
 
-    subtitle:
-        estabelecimento.botoes.botao1Subtitulo,
+   Para adicionar um novo ícone, basta:
+   1. criar a constante do SVG acima;
+   2. adicionar o nome abaixo.
+   =====================================================
+*/
 
-    url:
-        estabelecimento.botao1Link
-},
+const iconesBotoes = {
+    whatsapp: whatsappIcon,
+    instagram: instagramIcon,
+    localizacao: locationIcon,
+    avaliacao: starIcon,
+    agendamento: calendarIcon,
+    cardapio: cardapioIcon
 
-
-    {
-
-        icon:
-            locationIcon,
-
-        title:
-            estabelecimento.botoes.localizacao,
-
-        subtitle:
-            estabelecimento.botoes.localizacaoSubtitulo,
-        action:
-            "location"
-
-    },
+    // Adicione seus próximos ícones aqui:
+    // telefone: telefoneIcon,
+    // promocao: promocaoIcon,
+    // pagamento: pagamentoIcon,
+    // meuIcone: meuIcone
+};
 
 
-    {
+/*
+   =====================================================
+   BOTÕES PRINCIPAIS
 
-        icon:
-            starIcon,
+   Cada botão é independente.
+   Não existe mais seleção automática de ícone.
 
-        title:
-            estabelecimento.botoes.avaliacao,
+   O clientes.js poderá ter:
 
-        subtitle:
-            estabelecimento.botoes.avaliacaoSubtitulo,
+   botao1
+   botao1Subtitulo
+   botao1Icone
+   botao1Link
 
-        action:
-            "review"
+   botao2
+   botao2Subtitulo
+   botao2Icone
+   botao2Link
 
+   botao3
+   botao3Subtitulo
+   botao3Icone
+   botao3Link
+
+   ... e assim por diante.
+   =====================================================
+*/
+
+const links = [];
+
+for (let i = 1; i <= 10; i++) {
+
+    const titulo =
+        estabelecimento.botoes?.[`botao${i}`];
+
+    if (!titulo) {
+        continue;
     }
 
-];
+    const iconeNome =
+        estabelecimento.botoes?.[`botao${i}Icone`];
+
+    const icone =
+        iconeNome &&
+        iconesBotoes[iconeNome]
+            ? iconesBotoes[iconeNome]
+            : "";
+
+    const subtitulo =
+        estabelecimento.botoes?.[`botao${i}Subtitulo`] || "";
+
+    const url =
+        estabelecimento[`botao${i}Link`] || "";
+
+    links.push({
+        icon: icone,
+        title: titulo,
+        subtitle: subtitulo,
+        url: url
+    });
+}
+
+
+/*
+   =====================================================
+   BOTÕES PADRÃO
+   Localização e avaliação continuam separados
+   dos botões personalizados.
+   =====================================================
+*/
+
+links.push({
+
+    icon:
+        locationIcon,
+
+    title:
+        estabelecimento.botoes.localizacao,
+
+    subtitle:
+        estabelecimento.botoes.localizacaoSubtitulo,
+
+    action:
+        "location"
+
+});
+
+
+links.push({
+
+    icon:
+        starIcon,
+
+    title:
+        estabelecimento.botoes.avaliacao,
+
+    subtitle:
+        estabelecimento.botoes.avaliacaoSubtitulo,
+
+    action:
+        "review"
+
+});
 
 
 links.forEach(
