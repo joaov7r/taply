@@ -315,67 +315,96 @@
     </div>
 
 
-    <!-- BOTÃO PRINCIPAL -->
+    <!-- BOTÕES PERSONALIZADOS -->
 
     <div class="card">
 
-        <h2>Botão principal</h2>
+        <h2>Botões personalizados</h2>
 
+        <div id="botoesContainer">
 
-        <div class="grid">
+            <div class="botao-item" data-botao="1">
 
-            <div class="field">
+                <h3 style="margin: 0 0 18px; font-size: 16px;">
+                    Botão 1
+                </h3>
 
-                <label>
-                    Texto do botão
-                </label>
+                <div class="grid">
 
-                <input
-                    id="agendamentoTexto"
-                    type="text"
-                    value="Agende seu horário"
-                >
-                <label>Ícone do botão 1</label>
+                    <div class="field">
 
-                <input
-                    id="botao1Icone"
-                    type="text"
-                    placeholder="Ex.: whatsapp, cardapio, agendamento"
-                >
+                        <label>
+                            Texto do botão
+                        </label>
 
-            </div>
+                        <input
+                            id="botao1Texto"
+                            type="text"
+                            placeholder="Ex.: Faça seu pedido"
+                        >
 
+                    </div>
 
-            <div class="field">
+                    <div class="field">
 
-                <label>
-                    Subtítulo
-                </label>
+                        <label>
+                            Subtítulo
+                        </label>
 
-                <input
-                    id="agendamentoSubtitulo"
-                    type="text"
-                    value="Escolha uma opção"
-                >
+                        <input
+                            id="botao1Subtitulo"
+                            type="text"
+                            placeholder="Ex.: Peça pelo WhatsApp"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="grid">
+
+                    <div class="field">
+
+                        <label>
+                            Ícone do botão
+                        </label>
+
+                        <input
+                            id="botao1Icone"
+                            type="text"
+                            placeholder="Ex.: whatsapp, cardapio, agendamento"
+                        >
+
+                    </div>
+
+                    <div class="field">
+
+                        <label>
+                            Link do botão
+                        </label>
+
+                        <input
+                            id="botao1Link"
+                            type="text"
+                            placeholder="https://..."
+                        >
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-
-        <div class="field">
-
-            <label>
-                Link do botão
-            </label>
-
-            <input
-                id="agendamento"
-                type="text"
-                placeholder="https://..."
-            >
-
-        </div>
+        <button
+            type="button"
+            class="button"
+            style="margin-top: 5px;"
+            onclick="adicionarBotao()"
+        >
+            + ADICIONAR OUTRO BOTÃO
+        </button>
 
     </div>
 
@@ -648,64 +677,126 @@ function escaparJS(valor) {
 }
 
 
+let quantidadeBotoes = 1;
+
+
+function adicionarBotao() {
+
+    quantidadeBotoes++;
+
+    const container =
+        document.getElementById("botoesContainer");
+
+    const div =
+        document.createElement("div");
+
+    div.className = "botao-item";
+
+    div.setAttribute(
+        "data-botao",
+        quantidadeBotoes
+    );
+
+    div.style.marginTop = "25px";
+    div.style.paddingTop = "25px";
+    div.style.borderTop =
+        "1px solid rgba(255,255,255,0.10)";
+
+    div.innerHTML = `
+
+        <h3 style="margin: 0 0 18px; font-size: 16px;">
+            Botão ${quantidadeBotoes}
+        </h3>
+
+        <div class="grid">
+
+            <div class="field">
+
+                <label>
+                    Texto do botão
+                </label>
+
+                <input
+                    id="botao${quantidadeBotoes}Texto"
+                    type="text"
+                    placeholder="Ex.: Faça seu pedido"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label>
+                    Subtítulo
+                </label>
+
+                <input
+                    id="botao${quantidadeBotoes}Subtitulo"
+                    type="text"
+                    placeholder="Ex.: Peça pelo WhatsApp"
+                >
+
+            </div>
+
+        </div>
+
+        <div class="grid">
+
+            <div class="field">
+
+                <label>
+                    Ícone do botão
+                </label>
+
+                <input
+                    id="botao${quantidadeBotoes}Icone"
+                    type="text"
+                    placeholder="Ex.: whatsapp, cardapio, agendamento"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label>
+                    Link do botão
+                </label>
+
+                <input
+                    id="botao${quantidadeBotoes}Link"
+                    type="text"
+                    placeholder="https://..."
+                >
+
+            </div>
+
+        </div>
+
+    `;
+
+    container.appendChild(div);
+}
+
+
 function gerarCliente() {
 
-    const slug =
-        valor("slug");
+    const slug = valor("slug");
+    const nome = valor("nome");
+    const descricao = valor("descricao");
+    const whatsapp = valor("whatsapp");
+    const instagram = valor("instagram");
+    const logo = valor("logo");
+    const fundo = valor("fundo");
 
-    const nome =
-        valor("nome");
+    const localizacao = valor("localizacao");
+    const localizacaoSubtitulo = valor("localizacaoSubtitulo");
+    const avaliacao = valor("avaliacao");
+    const avaliacaoSubtitulo = valor("avaliacaoSubtitulo");
 
-    const descricao =
-        valor("descricao");
-
-    const whatsapp =
-        valor("whatsapp");
-
-    const instagram =
-        valor("instagram");
-
-    const botao1Texto =
-        valor("agendamentoTexto");
-
-    const botao1Subtitulo =
-        valor("agendamentoSubtitulo");
-
-    const botao1Icone =
-        valor("botao1Icone");
-
-    const botao1Link =
-        valor("agendamento");
-
-    const logo =
-        valor("logo");
-
-    const fundo =
-        valor("fundo");
-
-    const localizacao =
-        valor("localizacao");
-
-    const localizacaoSubtitulo =
-        valor("localizacaoSubtitulo");
-
-    const avaliacao =
-        valor("avaliacao");
-
-    const avaliacaoSubtitulo =
-        valor("avaliacaoSubtitulo");
-
-    const unidadeNome =
-        valor("unidadeNome");
-
-    const endereco =
-        valor("endereco");
-
-    const maps =
-        valor("maps");
-
-    const google =
-        valor("google");
+    const unidadeNome = valor("unidadeNome");
+    const endereco = valor("endereco");
+    const maps = valor("maps");
+    const google = valor("google");
 
 
     if (!slug || !nome) {
@@ -718,25 +809,66 @@ function gerarCliente() {
     }
 
 
+    const botoes = [];
+    const links = [];
+
+    for (let i = 1; i <= quantidadeBotoes; i++) {
+
+        const texto = valor(`botao${i}Texto`);
+        const subtitulo = valor(`botao${i}Subtitulo`);
+        const icone = valor(`botao${i}Icone`);
+        const link = valor(`botao${i}Link`);
+
+        // Botão completamente vazio = não entra no código.
+        if (!texto && !subtitulo && !icone && !link) {
+            continue;
+        }
+
+        // Se começou a preencher o botão, o texto é obrigatório.
+        if (!texto) {
+
+            alert(
+                `Preencha o texto do Botão ${i} ou deixe todos os campos desse botão vazios.`
+            );
+
+            return;
+        }
+
+        botoes.push(`
+
+        botao${i}:
+            "${escaparJS(texto)}",
+
+        botao${i}Subtitulo:
+            "${escaparJS(subtitulo)}",
+
+        botao${i}Icone:
+            "${escaparJS(icone)}"`);
+
+        links.push(`
+
+    botao${i}Link:
+        "${escaparJS(link)}",`);
+    }
+
+
+    const botoesCodigo =
+        botoes.length > 0
+            ? botoes.join(",") + ","
+            : "";
+
+
     const codigo = `
 
 "${escaparJS(slug)}": {
 
-    nome: "${escaparJS(nome)}",
+    nome:
+        "${escaparJS(nome)}",
 
     descricao:
         "${escaparJS(descricao)}",
 
-    botoes: {
-
-        botao1:
-            "${escaparJS(botao1Texto)}",
-
-        botao1Subtitulo:
-            "${escaparJS(botao1Subtitulo)}",
-
-        botao1Icone:
-            "${escaparJS(botao1Icone)}",
+    botoes: {${botoesCodigo}
 
         localizacao:
             "${escaparJS(localizacao)}",
@@ -763,9 +895,7 @@ function gerarCliente() {
 
     instagram:
         "${escaparJS(instagram)}",
-
-    botao1Link:
-        "${escaparJS(botao1Link)}",
+${links.join("\n")}
 
     unidades: [
 
