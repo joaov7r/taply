@@ -138,6 +138,9 @@ const clientes = {
             agendamentoSubtitulo:
                 "Confira nosso cardápio",
 
+            agendamentoIcone:
+                "cardapio",
+
             localizacao:
                 "Nossa localização",
 
