@@ -713,7 +713,19 @@ async function gerarCliente() {
         return;
 
     }
+    
+const textoBotao1Normalizado =
+    agendamentoTexto
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 
+const botao1Tipo =
+    textoBotao1Normalizado.includes("cardapio")
+        ? "cardapio"
+        : textoBotao1Normalizado.includes("agendamento")
+            ? "agendamento"
+            : "personalizado";
 
     const codigo = `
 
@@ -727,7 +739,7 @@ async function gerarCliente() {
 
     botao1: "${agendamentoTexto}",
 
-    botao1Tipo: "${agendamentoTexto.toLowerCase().includes("cardápio") ? "cardapio" : agendamentoTexto.toLowerCase().includes("agendamento") ? "agendamento" : "personalizado"}",
+   botao1Tipo: "${botao1Tipo}",
 
     botao1Subtitulo: "${agendamentoSubtitulo}",
 
