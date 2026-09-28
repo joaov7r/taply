@@ -7,23 +7,25 @@ const clientes = {
     "dom-roger": {
 
         // INFORMAÇÕES PRINCIPAIS
-        nome: "Barbearia Dom Roger",
+        nome:
+            "Barbearia Dom Roger",
 
         descricao:
             "Corte • Barba • Estilo.<br>🥇 A 1ª barbearia por assinatura de Cotia",
 
-        // TEXTOS DOS BOTÕES
-       botoes: {
+        // TEXTOS E ÍCONES DOS BOTÕES
+        botoes: {
             botao1: "Agende seu horário",
-            botao1Tipo: "agendamento",
             botao1Subtitulo: "Escolha sua unidade e horário",
-        
+            botao1Icone: "agendamento",
+
             localizacao: "Encontre uma unidade",
             localizacaoSubtitulo: "Veja todas as nossas unidades",
-        
+
             avaliacao: "Avalie no Google",
             avaliacaoSubtitulo: "Sua opinião é muito importante"
         },
+
         // IDENTIDADE VISUAL
         logo:
             "assets/logos/logo-dom-roger.png",
@@ -38,8 +40,8 @@ const clientes = {
         instagram:
             "https://www.instagram.com/barbeariadom.roger/",
 
-        // BOTÕES VARIÁVEIS
-        botao1link:
+        // LINK DO BOTÃO 1
+        botao1Link:
             "https://cashbarber.com.br/barbeariadomroger/inicio/agendamento",
 
         // UNIDADES
@@ -119,15 +121,15 @@ const clientes = {
         descricao:
             "Bar e Restaurante",
 
-        // TEXTOS DOS BOTÕES
+        // TEXTOS E ÍCONES DOS BOTÕES
         botoes: {
             botao1: "Cardápio Online",
-            botao1Tipo: "cardapio",
             botao1Subtitulo: "Confira nosso cardápio",
-        
+            botao1Icone: "cardapio",
+
             localizacao: "Nossa localização",
             localizacaoSubtitulo: "Veja como chegar",
-        
+
             avaliacao: "Avalie no Google",
             avaliacaoSubtitulo: "Sua opinião é muito importante"
         },
@@ -146,8 +148,8 @@ const clientes = {
         instagram:
             "https://www.instagram.com/vila_americo/",
 
-        // BOTÕES
-        botao1link:
+        // LINK DO BOTÃO 1
+        botao1Link:
             "https://www.canva.com/design/DAHMM-6Yx4M/qVRgqQWGN9NyCrSsq2fWiw/view?utm_content=DAHMM-6Yx4M&utm_campaign=designshare&utm_medium=link&utm_source=viewer&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaf2uCPIAotyMXgPpyx62jbODmeRJ9MhoeHF4VRqoJxH2ji6vHtMolqvyi7YXQ_aem_A4zcxwz53VmDHj1B3CpD-w",
 
         // UNIDADES
@@ -175,19 +177,6 @@ const clientes = {
     // ============================================================
     // MODELO PARA NOVOS CLIENTES
     // ============================================================
-    //
-    // Para criar um novo cliente:
-    //
-    // 1. Copie o bloco abaixo
-    // 2. Cole antes do último "};"
-    // 3. Troque "novo-cliente" pelo identificador
-    // 4. Preencha os campos
-    //
-    // A página ficará:
-    //
-    // https://taply-6f2.pages.dev/?cliente=novo-cliente
-    //
-    // ============================================================
 
     "modelo": {
 
@@ -198,26 +187,20 @@ const clientes = {
         descricao:
             "Sua presença digital, simples, profissional e personalizada",
 
-        // TEXTOS DOS BOTÕES
-       botoes: {
+        // TEXTOS E ÍCONES DOS BOTÕES
+        botoes: {
             botao1: "Seu link",
-            botao1Tipo: "link",
             botao1Subtitulo: "Seu link personalizável aqui",
-        
+            botao1Icone: "link",
+
             localizacao: "Nossa localização",
             localizacaoSubtitulo: "Veja como chegar",
-        
+
             avaliacao: "Avalie no Google",
             avaliacaoSubtitulo: "Sua opinião é muito importante"
         },
 
         // IDENTIDADE VISUAL
-        //
-        // Coloque os arquivos nestas pastas:
-        //
-        // assets/logos/
-        // assets/backgrounds/
-
         logo:
             "",
 
@@ -231,112 +214,163 @@ const clientes = {
         instagram:
             "https://www.instagram.com",
 
-        // BOTÃO PRINCIPAL
-        //
-        // Pode ser:
-        // - agendamento
-        // - cardápio
-        // - reservas
-        // - site
-        // - qualquer outro link
-
-        botao1link:
-            "h",
+        // LINK DO BOTÃO 1
+        botao1Link:
+            "",
 
         // UNIDADES
-        //
-        // Se tiver apenas 1 unidade:
-        // localização e avaliação abrem diretamente.
-        //
-        // Se tiver 2 ou mais:
-        // aparece o popup para escolher a unidade.
-
         unidades: [
 
             {
                 nome:
                     "Unidade 1",
+
                 endereco:
                     "Endereço da unidade 1",
+
                 maps:
                     "https://www.google.com/maps",
+
                 google:
                     "https://www.google.com/"
             },
 
-             {
+            {
                 nome:
                     "Unidade 2",
+
                 endereco:
                     "Endereço da unidade 2",
+
                 maps:
                     "https://www.google.com/maps",
+
                 google:
                     "https://www.google.com/"
             }
 
         ]
 
+    },
+
+
+    // ============================================================
+    // CLIENTE: TESTE TESTE
+    // ============================================================
+
+    "teste-teste": {
+
+        nome:
+            "tyeste",
+
+        descricao:
+            "teste",
+
+        botoes: {
+            botao1: "faça seu pedido",
+            botao1Subtitulo: "peça pelo whatsapp",
+            botao1Icone: "whatsapp",
+
+            localizacao: "Nossa localização",
+            localizacaoSubtitulo: "Veja como chegar",
+
+            avaliacao: "Avalie no Google",
+            avaliacaoSubtitulo: "Sua opinião é muito importante"
+        },
+
+        logo:
+            "assets/logos/",
+
+        fundo:
+            "assets/backgrounds/",
+
+        whatsapp:
+            "",
+
+        instagram:
+            "",
+
+        botao1Link:
+            "google.com.br",
+
+        unidades: [
+
+            {
+                nome:
+                    "",
+
+                endereco:
+                    "",
+
+                maps:
+                    "",
+
+                google:
+                    ""
+            }
+
+        ]
+
+    },
+
+
+    // ============================================================
+    // CLIENTE: TESTE ÍCONE
+    // ============================================================
+
+    "teste-icone": {
+
+        nome:
+            "teste taply",
+
+        descricao:
+            "",
+
+        botoes: {
+            botao1: "faça seu pedido",
+            botao1Subtitulo: "peça pelo whatsapp",
+            botao1Icone: "whatsapp",
+
+            localizacao: "Nossa localização",
+            localizacaoSubtitulo: "Veja como chegar",
+
+            avaliacao: "Avalie no Google",
+            avaliacaoSubtitulo: "Sua opinião é muito importante"
+        },
+
+        logo:
+            "assets/logos/",
+
+        fundo:
+            "assets/backgrounds/",
+
+        whatsapp:
+            "",
+
+        instagram:
+            "",
+
+        botao1Link:
+            "",
+
+        unidades: [
+
+            {
+                nome:
+                    "",
+
+                endereco:
+                    "",
+
+                maps:
+                    "",
+
+                google:
+                    ""
+            }
+
+        ]
+
     }
 
-,
-    "teste-teste": {
-    "nome": "tyeste",
-    "descricao": "teste",
-    "botoes": {
-        "botao1": "faça seu pedido",
-        "botao1Tipo": "personalizado",
-        "botao1Subtitulo": "peça pelo whatsapp",
-        "botao1Icone": "whatsapp",
-        "localizacao": "Nossa localização",
-        "localizacaoSubtitulo": "Veja como chegar",
-        "avaliacao": "Avalie no Google",
-        "avaliacaoSubtitulo": "Sua opinião é muito importante"
-    },
-    "logo": "assets/logos/",
-    "fundo": "assets/backgrounds/",
-    "whatsapp": "",
-    "instagram": "",
-    "botao1Link": "google.com.br",
-    "unidades": [
-        {
-            "nome": "",
-            "endereco": "",
-            "maps": "",
-            "google": "",
-            "latitude": "",
-            "longitude": ""
-        }
-    ]
-}
-,
-    "teste-icone": {
-    "nome": "teste taply",
-    "descricao": "",
-    "botoes": {
-        "botao1": "faça seu pedido",
-        "botao1Tipo": "personalizado",
-        "botao1Subtitulo": "peça pelo whatsapp",
-        "botao1Icone": "whatsapp",
-        "localizacao": "Nossa localização",
-        "localizacaoSubtitulo": "Veja como chegar",
-        "avaliacao": "Avalie no Google",
-        "avaliacaoSubtitulo": "Sua opinião é muito importante"
-    },
-    "logo": "assets/logos/",
-    "fundo": "assets/backgrounds/",
-    "whatsapp": "",
-    "instagram": "",
-    "botao1Link": "",
-    "unidades": [
-        {
-            "nome": "",
-            "endereco": "",
-            "maps": "",
-            "google": "",
-            "latitude": "",
-            "longitude": ""
-        }
-    ]
-}
 };
