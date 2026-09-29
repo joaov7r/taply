@@ -11,7 +11,7 @@ const clientes = {
             "Barbearia Dom Roger",
 
         descricao:
-            "Corte • Barba • Estilo.<br>🥇 A 1ª barbearia por assinatura de Cotia",
+            "Corte • Barba • Estilo<br>🥇 A 1ª barbearia por assinatura de Cotia",
 
         // TEXTOS E ÍCONES DOS BOTÕES
         botoes: {
