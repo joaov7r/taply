@@ -1,7 +1,7 @@
-const params = new URLSearchParams(window.location.search);
+const caminho = window.location.pathname;
 
 const clienteSelecionado =
-    params.get("cliente") || "dom-roger";
+    caminho.split("/").filter(Boolean)[0];
 
 const estabelecimento = clientes[clienteSelecionado];
 
