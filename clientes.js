@@ -13,21 +13,27 @@ const clientes = {
         descricao:
             "Corte • Barba • Estilo<br>🥇 A 1ª barbearia por assinatura de Cotia",
 
-        // TEXTOS E ÍCONES DOS BOTÕES
+        // TEXTOS, ÍCONES E CORES DOS BOTÕES
         botoes: {
+
             botao1: "Agende seu horário",
             botao1Subtitulo: "Escolha sua unidade e horário",
             botao1Icone: "agendamento",
+            botao1Cor: "#4A90E2",
 
             botao2: "Campanhas",
             botao2Subtitulo: "Confira nossas campanhas",
             botao2Icone: "campanhas",
+            botao2Cor: "#E53935",
 
             localizacao: "Encontre uma unidade",
             localizacaoSubtitulo: "Veja todas as nossas unidades",
+            localizacaoCor: "#E53935",
 
             avaliacao: "Avalie no Google",
-            avaliacaoSubtitulo: "Sua opinião é muito importante"
+            avaliacaoSubtitulo: "Sua opinião é muito importante",
+            avaliacaoCor: "#F4B400"
+
         },
 
         // IDENTIDADE VISUAL
@@ -44,32 +50,64 @@ const clientes = {
         instagram:
             "https://www.instagram.com/barbeariadom.roger/",
 
-        // LINK DO BOTÃO 1
+        // LINKS DOS BOTÕES
         botao1Link:
             "https://cashbarber.com.br/barbeariadomroger/inicio/agendamento",
 
-        campanhas: [
-    {
-        titulo: "Campanha Novembro Azul",
-        subtitulo: "Confira nossa campanha especial",
-        link: "",
-        destaque: true
-    },
-    {
-        titulo: "Campanha 1",
-        subtitulo: "Confira esta campanha",
-        link: "",
-        destaque: false
-    },
-    {
-        titulo: "Campanha 2",
-        subtitulo: "Confira esta campanha",
-        link: "",
-        destaque: false
-    }
-],
+        // ========================================================
+        // CAMPANHAS
+        // ========================================================
 
+        campanhas: [
+
+            {
+                titulo:
+                    "Campanha Novembro Azul",
+
+                subtitulo:
+                    "Confira nossa campanha especial",
+
+                link:
+                    "",
+
+                destaque:
+                    true
+            },
+
+            {
+                titulo:
+                    "Campanha 1",
+
+                subtitulo:
+                    "Confira esta campanha",
+
+                link:
+                    "",
+
+                destaque:
+                    false
+            },
+
+            {
+                titulo:
+                    "Campanha 2",
+
+                subtitulo:
+                    "Confira esta campanha",
+
+                link:
+                    "",
+
+                destaque:
+                    false
+            }
+
+        ],
+
+        // ========================================================
         // UNIDADES
+        // ========================================================
+
         unidades: [
 
             {
@@ -146,17 +184,22 @@ const clientes = {
         descricao:
             "Bar e Restaurante",
 
-        // TEXTOS E ÍCONES DOS BOTÕES
+        // TEXTOS, ÍCONES E CORES DOS BOTÕES
         botoes: {
+
             botao1: "Cardápio Online",
             botao1Subtitulo: "Confira nosso cardápio",
             botao1Icone: "cardapio",
+            botao1Cor: "#F4B400",
 
             localizacao: "Nossa localização",
             localizacaoSubtitulo: "Veja como chegar",
+            localizacaoCor: "#E53935",
 
             avaliacao: "Avalie no Google",
-            avaliacaoSubtitulo: "Sua opinião é muito importante"
+            avaliacaoSubtitulo: "Sua opinião é muito importante",
+            avaliacaoCor: "#F4B400"
+
         },
 
         // IDENTIDADE VISUAL
@@ -175,9 +218,12 @@ const clientes = {
 
         // LINK DO BOTÃO 1
         botao1Link:
-            "https://www.canva.com/design/DAHMM-6Yx4M/qVRgqQWGN9NyCrSsq2fWiw/view?utm_content=DAHMM-6Yx4M&utm_campaign=designshare&utm_medium=link&utm_source=viewer&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaf2uCPIAotyMXgPpyx62jbODmeRJ9MhoeHF4VRqoJxH2ji6vHtMolqvyi7YXQ_aem_A4zcxwz53VmDHj1B3CpD-w",
+            "https://www.canva.com/design/DAHMM-6Yx4M/qVRgqQWGN9NyCrSsq2fWiw/view?utm_content=DAHMM-6Yx4M&utm_campaign=designshare&utm_medium=link&utm_source=viewer&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaf2uCPIAotyMXgPpyx62jbODmeRJ9MhoeHF4VRqoJxH2ji6vHtMolqvyi7YXQ_aem_A4zcwz53VmDHj1B3CpD-w",
 
+        // ========================================================
         // UNIDADES
+        // ========================================================
+
         unidades: [
 
             {
@@ -212,17 +258,22 @@ const clientes = {
         descricao:
             "Sua presença digital, simples, profissional e personalizada",
 
-        // TEXTOS E ÍCONES DOS BOTÕES
+        // TEXTOS, ÍCONES E CORES DOS BOTÕES
         botoes: {
+
             botao1: "Seu link",
             botao1Subtitulo: "Seu link personalizável aqui",
             botao1Icone: "link",
+            botao1Cor: "#4A90E2",
 
             localizacao: "Nossa localização",
             localizacaoSubtitulo: "Veja como chegar",
+            localizacaoCor: "#E53935",
 
             avaliacao: "Avalie no Google",
-            avaliacaoSubtitulo: "Sua opinião é muito importante"
+            avaliacaoSubtitulo: "Sua opinião é muito importante",
+            avaliacaoCor: "#F4B400"
+
         },
 
         // IDENTIDADE VISUAL
@@ -243,7 +294,10 @@ const clientes = {
         botao1Link:
             "",
 
+        // ========================================================
         // UNIDADES
+        // ========================================================
+
         unidades: [
 
             {
@@ -278,80 +332,107 @@ const clientes = {
 
     },
 
-            "teste2": {
 
+    // ============================================================
+    // CLIENTE: TESTE 2
+    // ============================================================
+
+    "teste2": {
+
+        // INFORMAÇÕES PRINCIPAIS
+        nome:
+            "teste2",
+
+        descricao:
+            "teste2",
+
+        // TEXTOS, ÍCONES E CORES DOS BOTÕES
+        botoes: {
+
+            botao1:
+                "FAÇA SEU PEDIDO",
+
+            botao1Subtitulo:
+                "seu pedido aqui",
+
+            botao1Icone:
+                "",
+
+            botao1Cor:
+                "#4A90E2",
+
+            botao2:
+                "agende seu horário aqui",
+
+            botao2Subtitulo:
+                "seu horário aqui",
+
+            botao2Icone:
+                "",
+
+            botao2Cor:
+                "#E53935",
+
+            localizacao:
+                "Nossa localização",
+
+            localizacaoSubtitulo:
+                "Veja como chegar",
+
+            localizacaoCor:
+                "#E53935",
+
+            avaliacao:
+                "Avalie no Google",
+
+            avaliacaoSubtitulo:
+                "Sua opinião é muito importante",
+
+            avaliacaoCor:
+                "#F4B400"
+
+        },
+
+        // IDENTIDADE VISUAL
+        logo:
+            "assets/logos/",
+
+        fundo:
+            "assets/backgrounds/",
+
+        // REDES SOCIAIS
+        whatsapp:
+            "",
+
+        instagram:
+            "",
+
+        // LINKS DOS BOTÕES
+        botao1Link:
+            "",
+
+        botao2Link:
+            "",
+
+        // ========================================================
+        // UNIDADES
+        // ========================================================
+
+        unidades: [
+
+            {
                 nome:
-                    "teste2",
-        
-                descricao:
-                    "teste2",
-        
-                botoes: {
-        
-                    botao1:
-                        "FAÇA SEU PEDIDO",
-        
-                    botao1Subtitulo:
-                        "seu pedido aqui",
-        
-                    botao1Icone:
-                        "",
-        
-                    botao2:
-                        "agende seu horário aqui",
-        
-                    botao2Subtitulo:
-                        "seu horário aqui",
-        
-                    botao2Icone:
-                        "",
-        
-                    localizacao:
-                        "Nossa localização",
-        
-                    localizacaoSubtitulo:
-                        "Veja como chegar",
-        
-                    avaliacao:
-                        "Avalie no Google",
-        
-                    avaliacaoSubtitulo:
-                        "Sua opinião é muito importante"
-                },
-        
-                logo:
-                    "assets/logos/",
-        
-                fundo:
-                    "assets/backgrounds/",
-        
-                whatsapp:
                     "",
-        
-                instagram:
+
+                endereco:
                     "",
-        
-                botao1Link:
+
+                maps:
                     "",
-        
-                botao2Link:
-                    "",
-        
-                unidades: [
-        
-                    {
-                        nome:
-                            "",
-        
-                        endereco:
-                            "",
-        
-                        maps:
-                            "",
-        
-                        google:
-                            ""
-                }
+
+                google:
+                    ""
+            }
 
         ]
 
