@@ -16,7 +16,7 @@
             --secondary: rgba(20,20,20,0.78);
             --text: #ffffff;
             --muted: #a0a0a0;
-            --border: rgba(255,255,255,0.10);]
+            --border: rgba(255,255,255,0.10);
 
             --cliente-fundo: none;
         }
@@ -346,23 +346,10 @@ box-shadow:
 
         }
 
-        /* CORES DOS ÍCONES */
-
-       .main-link:nth-child(1) .main-icon {
-            color: #4A90E2;
-        }
-        
-        .main-link:nth-child(2) .main-icon {
-            color: #E53935;
-        }
-        
-        .main-link:nth-child(3) .main-icon {
-            color: #E53935;
-        }
-        
-        .main-link:nth-child(4) .main-icon {
-            color: #F4B400;
-        }
+        /*
+           As cores dos ícones são definidas individualmente
+           no clientes.js e aplicadas pelo JavaScript.
+        */
 
 
         .main-icon svg {
@@ -1613,8 +1600,10 @@ for (let i = 1; i <= 10; i++) {
         title: titulo,
         subtitle: subtitulo,
         url: url,
+        color:
+            estabelecimento.botoes?.[`botao${i}Cor`] || "",
 
-         action:
+        action:
         iconeNome === "campanhas"
             ? "campaigns"
             : undefined
@@ -1641,6 +1630,9 @@ links.push({
     subtitle:
         estabelecimento.botoes.localizacaoSubtitulo,
 
+    color:
+        estabelecimento.botoes.localizacaoCor || "",
+
     action:
         "location"
 
@@ -1657,6 +1649,9 @@ links.push({
 
     subtitle:
         estabelecimento.botoes.avaliacaoSubtitulo,
+
+    color:
+        estabelecimento.botoes.avaliacaoCor || "",
 
     action:
         "review"
@@ -1809,6 +1804,14 @@ links.forEach(
             </div>
 
         `;
+
+
+        const mainIcon =
+            element.querySelector(".main-icon");
+
+        if (link.color) {
+            mainIcon.style.color = link.color;
+        }
 
 
         mainLinks.appendChild(
