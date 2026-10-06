@@ -19,6 +19,10 @@ const clientes = {
             botao1Subtitulo: "Escolha sua unidade e horário",
             botao1Icone: "agendamento",
 
+            botao2: "Campanhas",
+            botao2Subtitulo: "Confira nossas campanhas",
+            botao2Icone: "campanhas",
+
             localizacao: "Encontre uma unidade",
             localizacaoSubtitulo: "Veja todas as nossas unidades",
 
@@ -43,6 +47,27 @@ const clientes = {
         // LINK DO BOTÃO 1
         botao1Link:
             "https://cashbarber.com.br/barbeariadomroger/inicio/agendamento",
+
+        campanhas: [
+    {
+        titulo: "Campanha Novembro Azul",
+        subtitulo: "Confira nossa campanha especial",
+        link: "",
+        destaque: true
+    },
+    {
+        titulo: "Campanha 1",
+        subtitulo: "Confira esta campanha",
+        link: "",
+        destaque: false
+    },
+    {
+        titulo: "Campanha 2",
+        subtitulo: "Confira esta campanha",
+        link: "",
+        destaque: false
+    }
+],
 
         // UNIDADES
         unidades: [
