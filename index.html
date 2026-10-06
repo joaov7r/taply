@@ -1020,6 +1020,50 @@ box-shadow:
 
 </div>
 
+    <!-- =====================================================
+     POPUP DE CAMPANHAS
+===================================================== -->
+
+<div
+    class="modal"
+    id="campaignModal"
+>
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <div>
+
+                <div class="modal-title">
+                    Campanhas
+                </div>
+
+                <div class="modal-subtitle">
+                    Confira nossas campanhas e novidades
+                </div>
+
+            </div>
+
+            <button
+                class="close-button"
+                data-close="campaignModal"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div
+            class="units"
+            id="campaignUnits"
+        ></div>
+
+    </div>
+
+</div>
+
 <script src="./clientes.js"></script>
 <script src="./cliente.js"></script>
 <script>
@@ -1233,6 +1277,24 @@ const starIcon = `
 </svg>
 `;
 
+    const campanhasIcon = `
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <path
+        d="M4 5.5C4 4.67 4.67 4 5.5 4H18.5C19.33 4 20 4.67 20 5.5V18.5C20 19.33 19.33 20 18.5 20H5.5C4.67 20 4 19.33 4 18.5V5.5Z"
+        stroke="currentColor"
+        stroke-width="1.8"
+    />
+
+    <path
+        d="M7 9H17M7 12H17M7 15H13"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+    />
+
+</svg>
+`;
 
 /* =====================================================
    ELEMENTOS
@@ -1319,6 +1381,16 @@ const locationModal =
 const reviewModal =
     document.getElementById(
         "reviewModal"
+    );
+
+const campaignModal =
+    document.getElementById(
+        "campaignModal"
+    );
+
+const campaignUnits =
+    document.getElementById(
+        "campaignUnits"
     );
 
 
@@ -1467,7 +1539,8 @@ const iconesBotoes = {
     avaliacao: starIcon,
     agendamento: calendarIcon,
     link: linkIcon,
-    cardapio: cardapioIcon
+    cardapio: cardapioIcon,
+    campanhas: campanhasIcon
 
     // Adicione seus próximos ícones aqui:
     // telefone: telefoneIcon,
@@ -1536,6 +1609,11 @@ for (let i = 1; i <= 10; i++) {
         title: titulo,
         subtitle: subtitulo,
         url: url
+
+         action:
+        iconeNome === "campanhas"
+            ? "campaigns"
+            : undefined
     });
 }
 
@@ -1675,6 +1753,23 @@ links.forEach(
 
 }
 
+        if (
+    link.action ===
+    "campaigns"
+) {
+
+    element.addEventListener(
+        "click",
+        () => {
+
+            abrirModal(
+                campaignModal
+            );
+
+        }
+    );
+
+}
 
         element.innerHTML = `
 
@@ -1837,6 +1932,70 @@ estabelecimento.unidades.forEach(
     }
 );
 
+    /* =====================================================
+   POPUP DE CAMPANHAS
+===================================================== */
+
+if (estabelecimento.campanhas) {
+
+    estabelecimento.campanhas.forEach(
+        campanha => {
+
+            const element =
+                document.createElement("div");
+
+            element.className = "unit";
+
+            if (campanha.destaque) {
+
+                element.style.border =
+                    "1px solid #2196F3";
+
+                element.style.background =
+                    "rgba(33,150,243,0.12)";
+
+            }
+
+            element.innerHTML = `
+
+                <div class="unit-name">
+                    ${campanha.titulo}
+                </div>
+
+                <div class="unit-address">
+                    ${campanha.subtitulo}
+                </div>
+
+            `;
+
+            if (campanha.link) {
+
+                element.style.cursor =
+                    "pointer";
+
+                element.addEventListener(
+                    "click",
+                    () => {
+
+                        window.open(
+                            campanha.link,
+                            "_blank"
+                        );
+
+                    }
+                );
+
+            }
+
+            campaignUnits.appendChild(
+                element
+            );
+
+        }
+    );
+
+}
+
 
 /* =====================================================
    BOTÕES FECHAR
@@ -1917,6 +2076,24 @@ reviewModal.addEventListener(
     }
 );
 
+    campaignModal.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target ===
+            campaignModal
+        ) {
+
+            fecharModal(
+                campaignModal
+            );
+
+        }
+
+    }
+);
+
 
 /* =====================================================
    FECHAR COM ESC
@@ -1938,6 +2115,10 @@ document.addEventListener(
 
             fecharModal(
                 reviewModal
+            );
+
+            fecharModal(
+                campaignModal
             );
 
         }
