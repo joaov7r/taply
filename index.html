@@ -404,6 +404,55 @@ box-shadow:
 
 
         /* =========================================
+           CAMPANHA EM DESTAQUE
+        ========================================= */
+
+        .featured-campaign {
+
+            background: #2196F3;
+
+            border-color: #2196F3;
+
+            justify-content: center;
+
+        }
+
+        .featured-campaign:hover {
+
+            background: #1976D2;
+
+            border-color: #1976D2;
+
+        }
+
+        .featured-campaign .main-content {
+
+            align-items: center;
+
+            text-align: center;
+
+        }
+
+        .featured-campaign .main-title {
+
+            color: white;
+
+        }
+
+        .featured-campaign .main-subtitle {
+
+            color: rgba(255,255,255,0.85);
+
+        }
+
+        .featured-campaign .main-arrow {
+
+            display: none;
+
+        }
+
+
+        /* =========================================
            MODAL
         ========================================= */
 
@@ -1593,7 +1642,7 @@ if (campanhaDestaque) {
     links.push({
 
         icon:
-            campanhasIcon,
+            "",
 
         title:
             campanhaDestaque.titulo,
@@ -1605,7 +1654,10 @@ if (campanhaDestaque) {
             "",
 
         color:
-            "#2196F3"
+            "#2196F3",
+
+        featured:
+            true
 
     });
 
@@ -1713,7 +1765,9 @@ links.forEach(
 
 
         element.className =
-            "main-link";
+            link.featured
+                ? "main-link featured-campaign"
+                : "main-link";
 
 
         if (link.url) {
@@ -1850,8 +1904,14 @@ links.forEach(
         const mainIcon =
             element.querySelector(".main-icon");
 
-        if (link.color) {
+        if (link.featured) {
+
+            mainIcon.style.display = "none";
+
+        } else if (link.color) {
+
             mainIcon.style.color = link.color;
+
         }
 
 
