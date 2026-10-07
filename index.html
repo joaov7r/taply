@@ -1571,6 +1571,47 @@ const iconesBotoes = {
 
 const links = [];
 
+
+/*
+    =====================================================
+    CAMPANHA EM DESTAQUE
+
+    A campanha marcada como destaque: true no clientes.js
+    aparece como o primeiro botão da página principal.
+
+    Ela não abre o popup de campanhas.
+    =====================================================
+*/
+
+const campanhaDestaque =
+    estabelecimento.campanhas?.find(
+        campanha => campanha.destaque
+    );
+
+if (campanhaDestaque) {
+
+    links.push({
+
+        icon:
+            campanhasIcon,
+
+        title:
+            campanhaDestaque.titulo,
+
+        subtitle:
+            campanhaDestaque.subtitulo,
+
+        url:
+            "",
+
+        color:
+            "#2196F3"
+
+    });
+
+}
+
+
 for (let i = 1; i <= 10; i++) {
 
     const titulo =
@@ -1945,7 +1986,9 @@ estabelecimento.unidades.forEach(
 
 if (estabelecimento.campanhas) {
 
-    estabelecimento.campanhas.forEach(
+    estabelecimento.campanhas
+        .filter(campanha => !campanha.destaque)
+        .forEach(
         campanha => {
 
             const element =
